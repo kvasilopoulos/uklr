@@ -1,4 +1,5 @@
-
+#' Get House Priced data
+#'
 #' @export
 ukhp_get <- function(region = "newport", item = NULL,
                      start_date = NULL, end_date = NULL) {
@@ -11,7 +12,8 @@ ukhp_get <- function(region = "newport", item = NULL,
   results
 }
 
-
+#' Get Price Paid Date
+#'
 #' @export
 #' @examples
 #'
