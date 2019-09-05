@@ -1,6 +1,10 @@
 #' Get House Priced data
 #'
 #' @export
+#' @param region the region to select
+#' @param item the item to select
+#' @param start_date the start date
+#' @param end_date the end date
 ukhp_get <- function(region = "newport", item = NULL,
                      start_date = NULL, end_date = NULL) {
   query <- ukhp_build_sparql_query(
@@ -13,6 +17,11 @@ ukhp_get <- function(region = "newport", item = NULL,
 }
 
 #' Get Price Paid Date
+#'
+#' @param postcode postcode to select
+#' @param item item to select
+#' @param optional_item optional item to select
+#' @inheritParams ukhp_get
 #'
 #' @export
 #' @examples

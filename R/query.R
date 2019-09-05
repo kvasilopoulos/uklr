@@ -9,7 +9,7 @@ prefix_query <- function(.query) {
     prefix sr: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
     prefix ukhpi: <http://landregistry.data.gov.uk/def/ukhpi/>
     prefix lrppi: <http://landregistry.data.gov.uk/def/ppi/>
-    prefix lrcommon: <http://landregistry.data.gov.uk/def/common/
+    prefix lrcommon: <http://landregistry.data.gov.uk/def/common/>
     prefix trans: <http://landregistry.data.gov.uk/def/trans/>'
   paste(prefix, .query, collapse = "\n")
 }

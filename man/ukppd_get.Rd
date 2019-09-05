@@ -7,6 +7,17 @@
 ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
   start_date = NULL, end_date = NULL)
 }
+\arguments{
+\item{postcode}{postcode to select}
+
+\item{item}{item to select}
+
+\item{optional_item}{optional item to select}
+
+\item{start_date}{the start date}
+
+\item{end_date}{the end date}
+}
 \description{
 Get Price Paid Date
 }

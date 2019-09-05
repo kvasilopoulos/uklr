@@ -7,6 +7,15 @@
 ukhp_get(region = "newport", item = NULL, start_date = NULL,
   end_date = NULL)
 }
+\arguments{
+\item{region}{the region to select}
+
+\item{item}{the item to select}
+
+\item{start_date}{the start date}
+
+\item{end_date}{the end date}
+}
 \description{
 Get House Priced data
 }

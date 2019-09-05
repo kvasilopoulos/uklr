@@ -19,15 +19,13 @@ sparql_filter <- function(...) {
 }
 
 sparql_filter_start_date <- function(start_date) {
-  assert_valid_date_format(start_date)
   start_date %!||%
-    paste("?dateStr >=", shQuote(as.Date(start_date), "csh"), "^^xsd:date")
+    paste("?dateStr >=", shQuote(start_date, "csh"), "^^xsd:date")
 }
 
 sparql_filter_end_date <- function(end_date) {
-  assert_valid_date_format(end_date)
   end_date %!||%
-    paste("?dateStr <=", shQuote(as.Date(end_date), "csh"), "^^xsd:date")
+    paste("?dateStr <=", shQuote(end_date, "csh"), "^^xsd:date")
 }
 
 # assert generic ----------------------------------------------------------
@@ -53,8 +51,6 @@ ukppd_build_sparql_query <-
   }
 
 ukppd_sparql_select <- function(..., postcode, item, optional_item ) {
-  assert_valid_ukppd_categories(item)
-  assert_valid_ukppd_optional_categories(optional_item)
   base_item <- "?postcode ?amount (STR(?dateStr) as ?date) ?category"
   categ_item <- item %!||%
     paste0("?", item, collapse = " ")
@@ -106,7 +102,6 @@ ukhp_build_sparql_query <- function(.item = NULL, .extra = NULL, .region = NULL,
 }
 
 ukhp_sparql_select <- function(..., item, extra) {
-  assert_valid_ukhp_item(item)
   base_item <- "?region (STR(?dateStr) as ?date) ?housePriceIndex"
   categ_item <- item %!||% paste0("?", item, collapse = " ")
   slct <- paste("Select", extra, base_item, categ_item)
@@ -120,7 +115,6 @@ ukhp_sparql_select <- function(..., item, extra) {
 }
 
 ukhp_sparql_filter_region <- function(region) {
-  assert_valid_ukhp_region(region)
   inner <- region %!||%
     paste0("regex(str(?region), ", shQuote(region, "csh"), ", 'i' )",
            collapse = "||")
@@ -136,6 +130,6 @@ assert_valid_ukhp_item <- function(x) {
 }
 
 assert_valid_ukhp_region <- function(x) {
-  if (x %ni% ukhp_avail_region())
+  if (x %ni% ukhp_avail_regions())
     stop("invalid region name", call. = FALSE)
 }
