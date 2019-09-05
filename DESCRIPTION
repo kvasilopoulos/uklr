@@ -1,5 +1,5 @@
 Package: uklr
-Title: What the Package Does (One Line, Title Case)
+Title: R Client to United Kingdom Land Registry
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kostas",
@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "k.vasilopoulo@gmail.com",
            comment = c(ORCID = "0000-0002-9769-6395"))
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: Access data from HM Land Registry Open Data through SPARQL queries.
+    {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
