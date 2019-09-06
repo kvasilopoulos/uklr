@@ -31,10 +31,12 @@ devtools::install_github("kvasilopoulos/uklr")
 ## Example
 
 
-```{r eval = FALSE}
-ukhp_get(region = "newport")
+```{r eval = TRUE}
+library(uklr)
 
-ukppd_get(postcode = "PL6 8RU")
+ukhp_get(region = "newport", start_date = "2019-01-01")
+
+ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 
 ```
 
