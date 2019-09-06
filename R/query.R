@@ -15,8 +15,6 @@ prefix_query <- function(.query) {
 }
 
 #' @importFrom SPARQL SPARQL
-#' @importFrom RCurl getURL
-#' @importFrom XML xmlParse getNodeSet xpathApply xmlGetAttr xmlDoc xpathSApply xmlValue
 process_request <- function(.query) {
   req <- prefix_query(.query)
   endpoint <- "http://landregistry.data.gov.uk/landregistry/query"
