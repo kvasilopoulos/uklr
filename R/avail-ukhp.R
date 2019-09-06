@@ -3,7 +3,7 @@
 #' @export
 #'
 ukhp_avail_categories <- function() {
-  .query <- ukhp_build_sparql_file_query(
+  .query <- build_sparql_file_query(
     "ukhpi", "region", "newport", "month","2013-10")
   proc <- process_request(.query)
   categories_url <- grep("ukhpi", proc$results$type, value = TRUE)
@@ -23,7 +23,7 @@ ukhp_avail_regions <- function() {
 
 
 ukhp_avail_categories_ref <- function() {
-  .query <- ukhp_build_sparql_file_query(
+  .query <- build_sparql_file_query(
     "ukhpi", "region", "newport", "month","2013-10")
   proc <- process_request(.query)
   categories_url <- grep("ukhpi", proc$results$property, value = TRUE)
