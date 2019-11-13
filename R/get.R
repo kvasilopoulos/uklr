@@ -35,7 +35,7 @@ ukhp_get <- function(region = "england", item = NULL,
   res[,item_names] <- lapply(res[,item_names], as.numeric)
   if (isFALSE(regexp)) {
     region_filter <- region
-    res <- subset(res, region == region_filter)
+    res <- subset(res, region %in% region_filter)
   }
   res
 }
