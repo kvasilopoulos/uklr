@@ -5,6 +5,7 @@
 #' @param item the item to select
 #' @param start_date the start date
 #' @param end_date the end date
+#' @param regexp use regular expression in sparql to search for regions.
 #'
 #' @examples
 #'

@@ -16,12 +16,12 @@ ukppd_avail_optional_categories <- function() {
   gsub(".*/common/(.+)>", "\\1", proc$results[-1,1])
 }
 
-ukppd_avail_postcodes <- function() {
-  query <- sparql_select_where(
-    type = "Distinct",
-    "?s lrcommon:postcode ?postcode",
-    append = sparql_limit(100))
-
-  proc <- process_request(query)
-  unlist(proc, use.names = F)
-}
+# ukppd_avail_postcodes <- function() {
+#   query <- sparql_select_where(
+#     type = "Distinct",
+#     "?s lrcommon:postcode ?postcode",
+#     append = sparql_limit(100))
+#
+#   proc <- process_request(query)
+#   unlist(proc, use.names = F)
+# }

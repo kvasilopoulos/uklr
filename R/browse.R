@@ -12,16 +12,19 @@ uklr_browse <- function() {
 }
 
 #' @rdname uklr_browse
+#' @export
 ukhp_browse <- function() {
   view_url("http://landregistry.data.gov.uk/def/ukhpi")
 }
 
 #' @rdname uklr_browse
+#' @export
 ukppd_browse <- function() {
   view_url("http://landregistry.data.gov.uk/def/ppi")
 }
 
 #' @rdname uklr_browse
+#' @export
 uktrans_browse <- function() {
   view_url("http://landregistry.data.gov.uk/def/trans")
 }

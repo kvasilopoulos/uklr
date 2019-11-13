@@ -2,17 +2,17 @@
 % Please edit documentation in R/avail-ukhp.R
 \name{ukhp_avail_regions}
 \alias{ukhp_avail_regions}
-\alias{ukhp_avail_categories_ref}
 \alias{ukhp_avail_items}
+\alias{ukhp_avail_items_ref}
 \alias{ukhp_avail_date_span}
 \alias{ukhp_avail_date_last}
 \title{Display Land Registry available regions, items and date-spanning.}
 \usage{
 ukhp_avail_regions()
 
-ukhp_avail_categories_ref()
-
 ukhp_avail_items()
+
+ukhp_avail_items_ref()
 
 ukhp_avail_date_span()
 

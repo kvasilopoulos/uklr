@@ -17,6 +17,7 @@ prefix_query <- function(.query) {
   paste(prefix, .query, collapse = "\n")
 }
 
+#' @importFrom utils URLencode
 #' @importFrom tibble as_tibble
 sparql <- function(query){
   endpoint <- "http://landregistry.data.gov.uk/landregistry/query"
@@ -30,8 +31,6 @@ sparql <- function(query){
 }
 
 
-
-#' @importFrom SPARQL SPARQL
 process_request <- function(.query, ...) {
   req <- prefix_query(.query)
   endpoint <- "http://landregistry.data.gov.uk/landregistry/query"

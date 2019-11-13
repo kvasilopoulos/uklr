@@ -1,7 +1,7 @@
 
 #' Display House Price definitions
 #'
-#'
+#' @importFrom utils read.csv
 #' @export
 ukhp_def <- function() {
   def <- read.csv("http://landregistry.data.gov.uk/def/ukhpi.csv?_pageSize=100")
@@ -27,16 +27,7 @@ ukhp_avail_regions <- function() {
 }
 
 #' @rdname ukhp_avail_regions
-ukhp_avail_categories_ref <- function() {
-  .query <- build_sparql_file_query(
-    "ukhpi", "region", "newport", "month","2013-10")
-  proc <- process_request(.query)
-  categories_url <- grep("ukhpi", proc$type, value = TRUE)
-  complete <- gsub(".*ukhpi/(.+)", "\\1", categories_url)
-  grep("ref", complete, value = TRUE)
-}
-
-#' @rdname ukhp_avail_regions
+#' @export
 ukhp_avail_items <- function() {
   .query <- build_sparql_file_query(
     "ukhpi", "region", "newport", "month","2013-10")
@@ -48,6 +39,18 @@ ukhp_avail_items <- function() {
 }
 
 #' @rdname ukhp_avail_regions
+#' @export
+ukhp_avail_items_ref <- function() {
+  .query <- build_sparql_file_query(
+    "ukhpi", "region", "newport", "month","2013-10")
+  proc <- process_request(.query)
+  categories_url <- grep("ukhpi", proc$type, value = TRUE)
+  complete <- gsub(".*ukhpi/(.+)", "\\1", categories_url)
+  grep("ref", complete, value = TRUE)
+}
+
+#' @rdname ukhp_avail_regions
+#' @export
 ukhp_avail_date_span <- function() {
   .query <- ukhp_build_sparql_query(
     .region = "east-midlands")
@@ -56,6 +59,7 @@ ukhp_avail_date_span <- function() {
 }
 
 #' @rdname ukhp_avail_regions
+#' @export
 ukhp_avail_date_last <- function() {
   .query <- ukhp_build_sparql_query(
     .start_date = "2019-01-01",

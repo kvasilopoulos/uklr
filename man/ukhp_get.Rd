@@ -15,6 +15,8 @@ ukhp_get(region = "england", item = NULL, start_date = NULL,
 \item{start_date}{the start date}
 
 \item{end_date}{the end date}
+
+\item{regexp}{use regular expression in sparql to search for regions.}
 }
 \description{
 Get House Price Data

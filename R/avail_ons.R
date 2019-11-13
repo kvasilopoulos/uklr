@@ -28,5 +28,5 @@ ons_regions <- function(parse = FALSE) {
 ons_eng_counties <- function(parse = FALSE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/1e96fd2cc44e4dbc8c6f96f7340562fe_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
-  gsbu_lr(parse, y$properties$CTY18NM)
+  gsub_lr(parse, y$properties$CTY18NM)
 }

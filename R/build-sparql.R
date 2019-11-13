@@ -74,7 +74,7 @@ sparql_limit <- function(limit) {
 
 sparql_offset <- function(offset) {
   offset %!||%
-    paste("Offset", limit)
+    paste("Offset", offset)
 }
 
 # assert generic ----------------------------------------------------------
@@ -178,7 +178,7 @@ ukhp_sparql_select <- function(..., item, extra) {
 # assertions ukhp -----------------------------------------------------------
 
 assert_valid_ukhp_item <- function(x) {
-  if (x %ni% ukhp_avail_categories())
+  if (x %ni% ukhp_avail_items())
     stop("invalid category name", call. = FALSE)
 }
 
