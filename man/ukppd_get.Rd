@@ -2,7 +2,7 @@
 % Please edit documentation in R/get.R
 \name{ukppd_get}
 \alias{ukppd_get}
-\title{Get Price Paid Date}
+\title{Get Price Paid Data}
 \usage{
 ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
   start_date = NULL, end_date = NULL)
@@ -19,7 +19,7 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 \item{end_date}{the end date}
 }
 \description{
-Get Price Paid Date
+Get Price Paid Data
 }
 \examples{
 

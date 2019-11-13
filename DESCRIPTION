@@ -7,13 +7,15 @@ Authors@R:
            role = c("aut", "cre"),
            email = "k.vasilopoulo@gmail.com",
            comment = c(ORCID = "0000-0002-9769-6395"))
-Description: Access data from HM Land Registry Open Data through SPARQL queries.
-    {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
+Description: Access data from HM Land Registry Open Data < http://landregistry.data.gov.uk/> 
+    through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Depends: 
-    SPARQL
+Imports: 
+  httr,
+  jsonlite,
+  tibble
 URL: https://github.com/kvasilopoulos/uklr
 BugReports: https://github.com/kvasilopoulos/uklr/issues

@@ -2,10 +2,10 @@
 % Please edit documentation in R/get.R
 \name{ukhp_get}
 \alias{ukhp_get}
-\title{Get House Priced data}
+\title{Get House Price Data}
 \usage{
-ukhp_get(region = "newport", item = NULL, start_date = NULL,
-  end_date = NULL)
+ukhp_get(region = "england", item = NULL, start_date = NULL,
+  end_date = NULL, regexp = FALSE)
 }
 \arguments{
 \item{region}{the region to select}
@@ -17,5 +17,22 @@ ukhp_get(region = "newport", item = NULL, start_date = NULL,
 \item{end_date}{the end date}
 }
 \description{
-Get House Priced data
+Get House Price Data
+}
+\examples{
+
+# This is case sensitive
+ukhp_get("england")
+
+# However you can use regular expression instead of exact match
+ukhp_get("england", regexp = TRUE)
+
+# For all available regions
+ukhp_avail_regions()
+
+# For all available items
+ukhp_avail_items()
+
+ukhp_get(c("endland", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
+
 }

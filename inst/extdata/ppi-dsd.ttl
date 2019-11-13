@@ -1,0 +1,286 @@
+@prefix common: <http://landregistry.data.gov.uk/def/common/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix ppi:   <http://landregistry.data.gov.uk/def/ppi/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix api:   <http://purl.org/linked-data/api/vocab#> .
+
+ppi:TransactionIdDatatype
+        a             rdfs:Datatype ;
+        rdfs:comment  "Transaction id datatype"@en ;
+        rdfs:label    "TransactionId datatype"@en .
+
+ppi:publishDate  a    owl:DatatypeProperty ;
+        rdfs:comment  "Date that price paid information is published, this is not the date of the Land Registry transaction that created a Price Paid Information entry."@en ;
+        rdfs:label    "Publication date"@en ;
+        rdfs:range    xsd:date .
+
+common:EstateTypeConcept
+        a                owl:Class ;
+        rdfs:comment     "EstateTypeConcept Class in which specific instances are defined using a skos structure"@en ;
+        rdfs:label       "Estate type concept"@en ;
+        rdfs:subClassOf  skos:Concept .
+
+ppi:propertyType  a   owl:ObjectProperty ;
+        rdfs:comment  "The type of property, or household, in a Price Paid Information transaction. Property types include Detached, Semi-Detached, Terraced and Flat/Maisonette."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Property type"@en ;
+        rdfs:range    common:PropertyTypeConcept .
+
+ppi:hasTransactionRecord
+        a             owl:ObjectProperty ;
+        rdfs:comment  "has transaction record"@en ;
+        rdfs:domain   ppi:Transaction ;
+        rdfs:label    "Has TransactionRecord"@en ;
+        rdfs:range    ppi:TransactionRecord .
+
+ppi:transactionDate  a  owl:DatatypeProperty ;
+        rdfs:comment  "The date of the Transfer deed lodged with Land Registry for registration."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Transaction date."@en ;
+        rdfs:range    xsd:date .
+
+ppi:transactionCategoryNotation
+        a                   owl:DatatypeProperty ;
+        rdfs:domain         ppi:TransactionCategory ;
+        rdfs:label          "Transaction Category notation"@en ;
+        rdfs:range          ppi:TransactionCategoryNotationDatatype ;
+        rdfs:subPropertyOf  skos:notation .
+
+ppi:newBuild  a       owl:DatatypeProperty ;
+        rdfs:comment  "New build indicator, true indicates the building structure known as the property, is of new construction, false otherwise."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "New build"@en ;
+        rdfs:range    xsd:boolean .
+
+ppi:propertyAddress  a  owl:ObjectProperty ;
+        rdfs:comment  "Address information for the property"@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Property address"@en ;
+        rdfs:range    common:Address .
+
+ppi:additionalPricePaidTransaction
+        a                  ppi:TransactionCategory ;
+        rdfs:label         "Additional price paid transaction"@en ;
+        ppi:transactionCategoryNotation
+                "B"^^ppi:TransactionCategoryNotationDatatype ;
+        skos:definition    "Repossessions, Buy-to-lets and transfers of property sold to non-private individuals"@en ;
+        skos:notation      "B"^^ppi:TransactionCategoryNotationDatatype , "B" ;
+        skos:prefLabel     "Additional price paid transaction"@en ;
+        skos:topConceptOf  ppi:transactionCategoryConceptScheme .
+
+ppi:delete  a                     ppi:RecordStatusConcept ;
+        rdfs:label                "Delete"@en ;
+        ppi:recordStatusNotation  "D"^^ppi:RecordStatusNotationDatatype ;
+        skos:definition           "D - Deleted records: those deleted from the price paid dataset in the monthly refresh. These should be deleted from any stored data using the unique identifier."@en ;
+        skos:notation             "D"^^ppi:RecordStatusNotationDatatype , "D" ;
+        skos:prefLabel            "Delete"@en ;
+        skos:topConceptOf         ppi:recordStatusConceptScheme .
+
+ppi:TransactionRecord
+        a                owl:Class ;
+        rdfs:comment     "TransactionRecord Class which is a single record belonging to a Transaction."@en ;
+        rdfs:label       "TransactionRecord"@en ;
+        rdfs:subClassOf  owl:Thing ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:pricePaid
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:newBuild
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:transactionCategory
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:propertyAddress
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:recordStatus
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:propertyType
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:transactionId
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:estateType
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:transactionDate
+                         ] .
+
+ppi:TransactionCategoryNotationDatatype
+        a             rdfs:Datatype ;
+        rdfs:comment  "Transaction Category notation data type"@en ;
+        rdfs:label    "Transaction Category notation datatype"@en .
+
+ppi:transactionId  a  owl:DatatypeProperty ;
+        rdfs:comment  "Transaction unique identifier - is a number which is generated automatically and is a number reference recording each sale published. The number is unique and will change each time a sale is recorded."@en ;
+        rdfs:domain   [ a            owl:Class ;
+                        owl:unionOf  [] 
+                      ] ;
+        rdfs:label    "Transaction Id"@en ;
+        rdfs:range    ppi:TransactionIdDatatype .
+
+ppi:recordStatus  a   owl:ObjectProperty ;
+        rdfs:comment  "The status code indicates if this PPI record has been added (A), Changed (C) or is a deletion record (D)."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Record status"@en ;
+        rdfs:range    ppi:RecordStatusConcept .
+
+ppi:hasTransaction  a  owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:comment  "has transaction"@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Has Transaction"@en ;
+        rdfs:range    ppi:Transaction .
+
+ppi:transactionCategory
+        a             owl:ObjectProperty ;
+        rdfs:comment  "The property transactionCategory relates a transaction record to the category of the transaction"@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Transaction category"@en ;
+        rdfs:range    ppi:TransactionCategory .
+
+common:  a               owl:Ontology ;
+        rdfs:comment     "Common definitions for Land Registry Linked Data that forms part of the 'Day1' dataset published each month that contains information on property transactions for full value."@en ;
+        rdfs:label       "Common definitions for Land Registry Linked Data"@en ;
+        owl:imports      <http://www.w3.org/2004/02/skos/core> ;
+        owl:versionInfo  "Land Registry Property Market Trend Data - COMMON Model version 1.0"@en .
+
+ppi:standardPricePaidTransaction
+        a                  ppi:TransactionCategory ;
+        rdfs:label         "Standard price paid transaction"@en ;
+        ppi:transactionCategoryNotation
+                "A"^^ppi:TransactionCategoryNotationDatatype ;
+        skos:definition    "Single residential property sold for full market value to private individual"@en ;
+        skos:notation      "A"^^ppi:TransactionCategoryNotationDatatype , "A" ;
+        skos:prefLabel     "Standard price paid transaction"@en ;
+        skos:topConceptOf  ppi:transactionCategoryConceptScheme .
+
+common:PropertyTypeConcept
+        a                owl:Class ;
+        rdfs:comment     "PropertyTypeConcept Class in which specific instances are defined using a skos structure"@en ;
+        rdfs:label       "Property type concept"@en ;
+        rdfs:subClassOf  skos:Concept ;
+        skos:prefLabel   "Property type concept"@en .
+
+ppi:pricePaid  a      owl:DatatypeProperty ;
+        rdfs:comment  "The price paid in pound sterling (GBP). GBP is the ISO 4217 code. The value held is whole pounds."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Price paid"@en ;
+        rdfs:range    xsd:integer .
+
+ppi:recordStatusNotation
+        a                   owl:DatatypeProperty ;
+        rdfs:domain         ppi:RecordStatusConcept ;
+        rdfs:label          "Record status notation"@en ;
+        rdfs:range          ppi:RecordStatusNotationDatatype ;
+        rdfs:subPropertyOf  skos:notation .
+
+ppi:RecordStatusConcept
+        a                owl:Class ;
+        rdfs:comment     "RecordStatusConcept Class in which specific instances are defined using a skos structure."@en ;
+        rdfs:label       "Record status concept"@en ;
+        rdfs:subClassOf  skos:Concept .
+
+ppi:TransactionCategory
+        a                owl:Class ;
+        rdfs:comment     "The class of Price Paid Transaction Categories"@en ;
+        rdfs:label       "Transaction category"@en ;
+        rdfs:subClassOf  skos:Concept .
+
+ppi:    a                owl:Ontology ;
+        rdfs:comment     "Land Registry generated Price Paid Data. This data forms part of the Land Registry 'Day1' dataset published each month that contains information on property transactions for full value. Please see the Land Registry website for details of transactions that are excluded from these figures. The data within this store is the same as that published in a CSV file on the 20th working day of each month."@en ;
+        rdfs:label       "Monthly Land Registry Price Paid Data"@en ;
+        owl:imports      <http://www.w3.org/2004/02/skos/core> , common: ;
+        owl:versionInfo  "Land Registry Property Market Trend Data - PPI Model version 1.0"@en .
+
+ppi:estateType  a     owl:ObjectProperty ;
+        rdfs:comment  "Estate type is used to describe the tenure of a registered property in England and Wales. Values include Freehold (F) and Leasehold (L)."@en ;
+        rdfs:domain   ppi:TransactionRecord ;
+        rdfs:label    "Estate type"@en ;
+        rdfs:range    common:EstateTypeConcept .
+
+ppi:transactionCategoryConceptScheme
+        a                   skos:ConceptScheme ;
+        rdfs:comment        "This is the skos Concept Scheme for Transaction Category"@en ;
+        rdfs:label          "Transaction category concept scheme"@en ;
+        skos:hasTopConcept  ppi:additionalPricePaidTransaction , ppi:standardPricePaidTransaction .
+
+common:Address  a        owl:Class ;
+        rdfs:comment     "Super Class for Address implementations"@en ;
+        rdfs:label       "Address"@en ;
+        rdfs:subClassOf  owl:Thing .
+
+ppi:recordStatusConceptScheme
+        a                   skos:ConceptScheme ;
+        rdfs:comment        "Skos Concept Scheme for Record Status"@en ;
+        rdfs:label          "Record status concept scheme"@en ;
+        skos:hasTopConcept  ppi:delete , ppi:change , ppi:add ;
+        skos:prefLabel      "record status concept scheme"@en .
+
+ppi:Transaction  a       owl:Class ;
+        rdfs:comment     "Transaction Class which may have multiple TransactionRecords datatype"@en ;
+        rdfs:label       "Transaction"@en ;
+        rdfs:subClassOf  owl:Thing ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  1 ;
+                           owl:onProperty      ppi:hasTransactionRecord
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  1 ;
+                           owl:onProperty   ppi:transactionId
+                         ] .
+
+ppi:change  a                     ppi:RecordStatusConcept ;
+        rdfs:label                "Change"@en ;
+        ppi:recordStatusNotation  "C"^^ppi:RecordStatusNotationDatatype ;
+        skos:definition           "C - Changed records: those changed in the price paid dataset in the monthly refresh. These should be replaced/updated in any stored data using the unique identifier to identify them."@en ;
+        skos:notation             "C"^^ppi:RecordStatusNotationDatatype , "C" ;
+        skos:prefLabel            "Change"@en ;
+        skos:topConceptOf         ppi:recordStatusConceptScheme .
+
+ppi:RecordStatusNotationDatatype
+        a             rdfs:Datatype ;
+        rdfs:comment  "Record status notation data type"@en ;
+        rdfs:label    "Record status notation datatype"@en .
+
+ppi:add  a                        ppi:RecordStatusConcept ;
+        rdfs:label                "Add"@en ;
+        ppi:recordStatusNotation  "A"^^ppi:RecordStatusNotationDatatype ;
+        skos:definition           "A - Added records: those added into the price paid dataset in the monthly refresh due to new sales transactions."@en ;
+        skos:notation             "A" , "A"^^ppi:RecordStatusNotationDatatype ;
+        skos:prefLabel            "Add"@en ;
+        skos:topConceptOf         ppi:recordStatusConceptScheme .
+
+<http://landregistry.data.gov.uk/def/ppi.ttl>
+        a                api:ListEndpoint ;
+        dcterms:hasPart  <http://landregistry.data.gov.uk/def/ppi.ttl?_pageSize=50&_page=0> ;
+        api:definition   <http://landregistry.data.gov.uk/meta/def/_scheme.ttl> .
+
+<http://landregistry.data.gov.uk/def/ppi.ttl?_pageSize=50&_page=0>
+        a                            api:Page ;
+        <http://a9.com/-/spec/opensearch/1.1/itemsPerPage>
+                "50"^^xsd:long ;
+        <http://a9.com/-/spec/opensearch/1.1/startIndex>
+                "1"^^xsd:long ;
+        dcterms:isPartOf             <http://landregistry.data.gov.uk/def/ppi.ttl> ;
+        api:definition               <http://landregistry.data.gov.uk/meta/def/_scheme.ttl> ;
+        api:extendedMetadataVersion  <http://landregistry.data.gov.uk/def/ppi.ttl?_pageSize=50&_page=0&_metadata=all> ;
+        api:items                    ( ppi: ppi:RecordStatusConcept ppi:RecordStatusNotationDatatype ppi:Transaction ppi:TransactionCategory ppi:TransactionCategoryNotationDatatype ppi:TransactionIdDatatype ppi:TransactionRecord ppi:add ppi:change ppi:delete ppi:estateType ppi:hasTransaction ppi:hasTransactionRecord ppi:newBuild ppi:pricePaid ppi:propertyAddress ppi:propertyType ppi:publishDate ppi:recordStatus ppi:recordStatusConceptScheme ppi:recordStatusNotation ppi:transactionCategory ppi:transactionCategoryConceptScheme ppi:transactionCategoryNotation ppi:transactionDate ppi:transactionId ) ;
+        api:page                     "0"^^xsd:long ;
+        <http://www.w3.org/1999/xhtml/vocab#first>
+                <http://landregistry.data.gov.uk/def/ppi.ttl?_pageSize=50&_page=0> .

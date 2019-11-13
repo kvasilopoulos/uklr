@@ -22,6 +22,9 @@ snake_to_camel <- function(x, first = FALSE) {
 
 `%ni%` <- Negate(`%in%`)
 
-has_package <- function(pkg) {
-  pkg %in% loadedNamespaces()
+view_url <- function(url, open = interactive()) {
+  if (open) {
+    utils::browseURL(url)
+  }
+  invisible(url)
 }

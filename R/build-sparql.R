@@ -1,5 +1,6 @@
 
-# generic -----------------------------------------------------------------
+
+# result clause -----------------------------------------------------------
 
 build_sparql_file_query <- function(...) {
   slct <- "Select * where"
@@ -12,6 +13,18 @@ sparql_file <- function(...) {
   full_url <- paste(base_url, ..., sep = "/")
   paste0("<", full_url, ">")
 }
+
+sql_build <- function(...) {
+  paste(..., collapse = "")
+}
+
+sql_select <- function(..., type = NULL) {
+  paste("Select", type)
+}
+
+
+# query pattern -----------------------------------------------------------
+
 
 sparql_filter <- function(...) {
   c(...) %!||%
@@ -28,6 +41,42 @@ sparql_filter_end_date <- function(end_date) {
     paste("?dateStr <=", shQuote(end_date, "csh"), "^^xsd:date")
 }
 
+sparql_filter_region <- function(region) {
+  inner <- region %!||%
+    paste0("regex(str(?region), ", shQuote(region, "csh"), ", 'i' )",
+           collapse = "||")
+  region %!||%
+    paste0("(", inner, ")")
+}
+
+rdf_optional <- function(optional) {
+  optional %!||%
+    paste("Optional {", optional, "}", sep = ";")
+}
+
+
+# Query modifiers ---------------------------------------------------------
+
+
+rdf_modifiers <- function(...) {
+  paste(..., collapse = " ")
+}
+
+sparql_order_by <- function(order_by) {
+  order_by %!||%
+    paste("Order By", paste0("?", order_by, collapse = " "))
+}
+
+sparql_limit <- function(limit) {
+  limit %!||%
+    paste("Limit", limit)
+}
+
+sparql_offset <- function(offset) {
+  offset %!||%
+    paste("Offset", limit)
+}
+
 # assert generic ----------------------------------------------------------
 
 
@@ -35,6 +84,16 @@ assert_valid_date_format <- function(x) {
   date_format <- as.Date(x, "%Y%m%d")
   if (is.na(date_format))
     stop("invalid date format")
+}
+
+# uktrans -----------------------------------------------------------------
+
+uktrans_build_sparql_query <- function() {
+
+}
+
+uktrans_sparql <- function() {
+
 }
 
 # ukppd -------------------------------------------------------------------
@@ -96,14 +155,15 @@ ukhp_build_sparql_query <- function(.item = NULL, .extra = NULL, .region = NULL,
     sparql_filter(
       sparql_filter_start_date(.start_date),
       sparql_filter_end_date(.end_date),
-      ukhp_sparql_filter_region(.region)
+      sparql_filter_region(.region)
     )
   )
 }
 
 ukhp_sparql_select <- function(..., item, extra) {
   base_item <- "?region (STR(?dateStr) as ?date) ?housePriceIndex"
-  categ_item <- item %!||% paste0("?", item, collapse = " ")
+  categ_item <- item %!||%
+    paste0("?", item, collapse = " ")
   slct <- paste("Select", extra, base_item, categ_item)
 
   init_alloc <- "?region ukhpi:refPeriodStart ?dateStr;
@@ -114,13 +174,6 @@ ukhp_sparql_select <- function(..., item, extra) {
   paste(slct, "where {", init_alloc, ukhpi_item, ..., "}", order_by)
 }
 
-ukhp_sparql_filter_region <- function(region) {
-  inner <- region %!||%
-    paste0("regex(str(?region), ", shQuote(region, "csh"), ", 'i' )",
-           collapse = "||")
-  region %!||%
-    paste0("(", inner, ")")
-}
 
 # assertions ukhp -----------------------------------------------------------
 
