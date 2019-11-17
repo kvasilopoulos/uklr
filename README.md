@@ -7,9 +7,15 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
 <!-- badges: end -->
 
-The goal of uklr is to …
+The goal of {uklr} is to access data from HM Land Registry Open Data
+<http://landregistry.data.gov.uk/> through SPARQL queries. {uklr}
+supports the UK HPI, Transaction Data and Price Paid Data.
 
 ## Installation
 
