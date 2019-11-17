@@ -22,4 +22,5 @@ Imports:
 URL: https://github.com/kvasilopoulos/uklr
 BugReports: https://github.com/kvasilopoulos/uklr/issues
 Suggests: 
-    covr
+    covr,
+    testthat (>= 2.1.0)

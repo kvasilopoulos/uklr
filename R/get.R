@@ -51,15 +51,15 @@ ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = TRUE
 # assertions ukhp -----------------------------------------------------------
 
 assert_valid_ukhp_items <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% ukhp_avail_items()))
-    stop("invalid item name, see `ukhp_avail_items()`", call. = FALSE)
+    stop("invalid item, see `ukhp_avail_items()`", call. = FALSE)
 }
 
 assert_valid_ukhp_region <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% ukhp_avail_regions()))
-    stop("invalid region name, see `ukhp_avail_regions()`", call. = FALSE)
+    stop("invalid region, see `ukhp_avail_regions()`", call. = FALSE)
 }
 
 
@@ -99,22 +99,22 @@ ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 # assertions ukppd ---------------------------------------------------------
 
 assert_valid_ukppd_items <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% ukppd_avail_items()))
-    stop("invalid item name, see `ukppd_avail_items()`", call. = FALSE)
+    stop("invalid item, see `ukppd_avail_items()`", call. = FALSE)
 }
 
 assert_valid_ukppd_optional_items <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% ukppd_avail_optional_items()))
-    stop("invalid optional item name, see `ukppd_avail_optional_items()`",
+    stop("invalid optional item, see `ukppd_avail_optional_items()`",
          call. = FALSE)
 }
 
 assert_valid_ukppd_postcodes <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% ukppd_avail_postcodes()))
-    stop("invalid postcode name, see `ukppd_avail_postcodes()`", call. = FALSE)
+    stop("invalid postcode, see `ukppd_avail_postcodes()`", call. = FALSE)
 }
 
 
@@ -136,8 +136,8 @@ assert_valid_ukppd_postcodes <- function(x) {
 #' # Quering all available transaction data
 #' uktrans_get(item = uktrans_avail_items())
 #' }
-uktrans_get <- function(item = NULL, region = NULL, regexp = TRUE,
-                        start_date = NULL, end_date = NULL, ...) {
+uktrans_get <- function(item = "totalApplicationCountByRegion", region = NULL,
+                        regexp = TRUE, start_date = NULL, end_date = NULL, ...) {
   assert_valid_uktrans_items(item)
   assert_valid_uktrans_regions(region)
   query <- uktrans_build_sparql(
@@ -155,13 +155,13 @@ uktrans_get <- function(item = NULL, region = NULL, regexp = TRUE,
 # assertions uktrans ------------------------------------------------------
 
 assert_valid_uktrans_items <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% uktrans_avail_items()))
-    stop("invalid item name, see `uktrans_avail_items()`", call. = FALSE)
+    stop("invalid item, see `uktrans_avail_items()`", call. = FALSE)
 }
 
 assert_valid_uktrans_regions <- function(x) {
-  x %||% return()
+  x %||% invisible()
   if (any(x %ni% uktrans_avail_regions()))
-    stop("invalid region name, see `uktrans_avail_regions()`", call. = FALSE)
+    stop("invalid region, see `uktrans_avail_regions()`", call. = FALSE)
 }

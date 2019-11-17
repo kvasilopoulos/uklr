@@ -13,7 +13,7 @@ snake_to_camel <- function(x, first = FALSE) {
 }
 
 `%||%`  <- function(x, y) {
-  if (!is.null(x)) {
+  if (is.null(x)) {
     y
   } else{
     x
