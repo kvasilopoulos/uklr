@@ -18,14 +18,15 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 
 \item{end_date}{the end date}
 
-\item{...}{rdf modifiers}
+\item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
 \description{
 Get Price Paid Data
 }
 \examples{
-
+\donttest{
 ukppd_get("PL6 8RU")
 ukppd_get("PL6 8RU", start_date = "2001-01-01")
 ukppd_get("PL6 8RU", start_date = "2001-01-01")
+}
 }

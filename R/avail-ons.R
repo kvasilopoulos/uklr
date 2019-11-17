@@ -50,14 +50,14 @@ ons_eng_counties <- function(modify = TRUE) {
 }
 
 #' @rdname ons_lookup
-ons_lau1 <- function(modify = FALSE) {
+ons_la <- function(modify = FALSE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/17eb563791b648f9a7025ca408bb09c6_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   out <- y$properties$LAD18NM
   if (modify) {
     out <- gsub_lr(out, TRUE)
     all <- ukhp_avail_regions()
-    out[!la %in% all] <- c(
+    out[!ukhp_avail_regions() %in% all] <- c(
       "north-down-and-ards",
       "city-of-kingston-upon-hull",
       "city-of-aberdeen",
@@ -103,6 +103,12 @@ ons_nuts3 <- function() {
   unique(ons_lookup()$NUTS318NM)
 }
 
-ons_lad1 <- function() {
+ons_lad <- function() {
   unique(ons_lookup()$LAU118NM)
 }
+
+#' UK Postcodes
+#'
+#'
+#'
+"pc"

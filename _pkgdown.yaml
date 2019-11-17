@@ -1,0 +1,64 @@
+title: exuber
+url: https://kvasilopoulos.github.io/exuber/
+
+template:
+  params:
+    bootswatch: cosmo
+
+authors:
+  Kostas Vasilopoulos:
+    href: https://kvasilopoulos.netlify.com/
+
+reference:
+
+  - title: House Price Data
+    contents:
+      - ukhp_get
+      - ukhp_avail_items
+
+  - title: Price Paid Data
+    contents:
+      - ukppd_get
+      - ukppd_avail_items
+
+  - title: Transaction Data
+    contents:
+      - uktrans_get
+      - uktrans_avail_items
+
+  - title: ONS Data
+    contents:
+      - ons_lookup
+      - pc
+
+  - title: Build Custom Query
+    contents:
+      - build_sparql
+
+  - title: Definitions & Browsing
+    contents:
+      - uklr_def
+      - uklr_browse
+
+navbar:
+  type: default
+  structure:
+    left:
+    - home
+    - reference
+    right:
+    - news
+    - github
+  components:
+    home:
+      icon: fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: News
+      href: news/index.html
+    github:
+      icon: fa-github fa-lg
+      href: https://github.com/kvasilopoulos/uklr

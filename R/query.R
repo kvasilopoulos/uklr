@@ -1,21 +1,5 @@
 # endpoint <- "http://landregistry.data.gov.uk/landregistry/query"
 
-#'@rdname build_sparql
-prefix_query <- function(query) {
-  prefix <-
-   'prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    prefix owl: <http://www.w3.org/2002/07/owl#>
-    prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-    prefix skos: <http://www.w3.org/2004/02/skos/core#>
-    prefix sr: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
-    prefix ukhpi: <http://landregistry.data.gov.uk/def/ukhpi/>
-    prefix lrppi: <http://landregistry.data.gov.uk/def/ppi/>
-    prefix lrcommon: <http://landregistry.data.gov.uk/def/common/>
-    prefix trans: <http://landregistry.data.gov.uk/def/trans/>'
-  paste(prefix, query, collapse = "\n")
-}
-
 #' @importFrom httr stop_for_status
 #' @importFrom utils URLencode
 #' @importFrom tibble as_tibble
@@ -48,3 +32,19 @@ process_request <- function(.query, ...) {
 #' @param query custom query
 #' @export
 build_sparql <- sparql
+
+#' @rdname build_sparql
+prefix_query <- function(query) {
+  prefix <-
+    'prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    prefix owl: <http://www.w3.org/2002/07/owl#>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+    prefix skos: <http://www.w3.org/2004/02/skos/core#>
+    prefix sr: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
+    prefix ukhpi: <http://landregistry.data.gov.uk/def/ukhpi/>
+    prefix lrppi: <http://landregistry.data.gov.uk/def/ppi/>
+    prefix lrcommon: <http://landregistry.data.gov.uk/def/common/>
+    prefix trans: <http://landregistry.data.gov.uk/def/trans/>'
+  paste(prefix, query, collapse = "\n")
+}

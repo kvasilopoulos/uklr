@@ -12,6 +12,14 @@ snake_to_camel <- function(x, first = FALSE) {
   }
 }
 
+`%||%`  <- function(x, y) {
+  if (!is.null(x)) {
+    y
+  } else{
+    x
+  }
+}
+
 `%!||%` <- function(x, y) {
   if (!is.null(x)) {
     y
@@ -27,4 +35,11 @@ view_url <- function(url, open = interactive()) {
     utils::browseURL(url)
   }
   invisible(url)
+}
+
+
+if (getRversion() >= "2.15.1") {
+  utils::globalVariables(
+    c("pc")
+  )
 }

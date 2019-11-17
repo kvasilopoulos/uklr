@@ -44,12 +44,28 @@ ukhp_get(region = "newport", start_date = "2019-01-01")
 ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 #> # A tibble: 7 x 4
 #>   postcode amount date       category                       
-#>   <chr>    <chr>  <chr>      <chr>                          
+#>   <chr>     <dbl> <date>     <chr>                          
 #> 1 PL6 8RU  202500 2015-06-29 Standard price paid transaction
 #> 2 PL6 8RU  195000 2016-07-08 Standard price paid transaction
-#> 3 PL6 8RU  245000 2016-08-19 Standard price paid transaction
-#> 4 PL6 8RU  255000 2016-09-07 Standard price paid transaction
-#> 5 PL6 8RU  280000 2017-10-02 Standard price paid transaction
-#> 6 PL6 8RU  207000 2018-03-29 Standard price paid transaction
+#> 3 PL6 8RU  207000 2018-03-29 Standard price paid transaction
+#> 4 PL6 8RU  245000 2016-08-19 Standard price paid transaction
+#> 5 PL6 8RU  255000 2016-09-07 Standard price paid transaction
+#> 6 PL6 8RU  280000 2017-10-02 Standard price paid transaction
 #> 7 PL6 8RU  205000 2018-09-07 Standard price paid transaction
+
+uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
+#> # A tibble: 94 x 3
+#>    region      date       totalApplicationCountByRegion
+#>    <chr>       <date>     <chr>                        
+#>  1 East Anglia 2011-12-01 37819                        
+#>  2 East Anglia 2012-01-01 44231                        
+#>  3 East Anglia 2012-02-01 44453                        
+#>  4 East Anglia 2012-03-01 46814                        
+#>  5 East Anglia 2012-04-01 40693                        
+#>  6 East Anglia 2012-05-01 47885                        
+#>  7 East Anglia 2012-06-01 39506                        
+#>  8 East Anglia 2012-07-01 46539                        
+#>  9 East Anglia 2012-08-01 45942                        
+#> 10 East Anglia 2012-09-01 41976                        
+#> # ... with 84 more rows
 ```

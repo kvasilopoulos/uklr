@@ -76,10 +76,11 @@ assert_valid_ukhp_region <- function(x) {
 #'
 #' @export
 #' @examples
-#'
+#' \donttest{
 #' ukppd_get("PL6 8RU")
 #' ukppd_get("PL6 8RU", start_date = "2001-01-01")
 #' ukppd_get("PL6 8RU", start_date = "2001-01-01")
+#' }
 ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
                       start_date = NULL, end_date = NULL, ...) {
   assert_valid_ukppd_postcodes(postcode)
@@ -119,8 +120,24 @@ assert_valid_ukppd_postcodes <- function(x) {
 
 # Transaction data --------------------------------------------------------
 
-uktrans_get <- function(item = NULL, region = NULL, start_date = NULL,
-                      end_date = NULL, ...) {
+#' Get Transaction Data
+#'
+#' @param item item to select
+#' @inheritParams ukhp_get
+#'
+#' @export
+#' @examples
+#'\donttest{
+#' uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
+#'
+#' # If `region` is left as NULL then it returns all available regions
+#' uktrans_get(item = "totalApplicationCountByRegion")
+#'
+#' # Quering all available transaction data
+#' uktrans_get(item = uktrans_avail_items())
+#' }
+uktrans_get <- function(item = NULL, region = NULL, regexp = TRUE,
+                        start_date = NULL, end_date = NULL, ...) {
   assert_valid_uktrans_items(item)
   assert_valid_uktrans_regions(region)
   query <- uktrans_build_sparql(
@@ -128,6 +145,10 @@ uktrans_get <- function(item = NULL, region = NULL, start_date = NULL,
     .end_date = end_date)
   res <- process_request(query)
   res$date <- as.Date(res$date)
+  if (isFALSE(regexp) & !is.null(region)) {
+    region_filter <- region
+    res <- subset(res, region %in% region_filter)
+  }
   res
 }
 
@@ -136,7 +157,7 @@ uktrans_get <- function(item = NULL, region = NULL, start_date = NULL,
 assert_valid_uktrans_items <- function(x) {
   x %||% return()
   if (any(x %ni% uktrans_avail_items()))
-    stop("invalid item name, see `uktrans_avail_regions()`", call. = FALSE)
+    stop("invalid item name, see `uktrans_avail_items()`", call. = FALSE)
 }
 
 assert_valid_uktrans_regions <- function(x) {

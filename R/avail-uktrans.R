@@ -1,4 +1,9 @@
 
+#' Diplay Land Registry Transaction available data
+#'
+#'
+#' @export
+#'
 uktrans_avail_items <- function() {
   .query <- build_sparql_file_query(
     "trans", "applications-by-region", "2011-12-00009")
@@ -8,6 +13,7 @@ uktrans_avail_items <- function() {
   complete[-c(5, 14)]
 }
 
+#' @rdname uktrans_avail_items
 uktrans_avail_regions <- function() {
   .query <- "SELECT DISTINCT ?region{ ?type trans:regionName ?region}"
   proc <- process_request(.query)

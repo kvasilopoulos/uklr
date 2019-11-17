@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//index.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/build_sparql.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ons_lookup.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/pc.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ukhp_avail_regions.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ukhp_get.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/uklr_browse.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/uklr_def.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ukppd_avail_items.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ukppd_get.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/uktrans_get.html</loc>
+  </url>
+</urlset>

@@ -39,5 +39,7 @@ ukhp_get(region = "newport", start_date = "2019-01-01")
 
 ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 
+uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
+
 ```
 
