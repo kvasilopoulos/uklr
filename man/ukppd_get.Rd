@@ -5,7 +5,7 @@
 \title{Get Price Paid Data}
 \usage{
 ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
-  start_date = NULL, end_date = NULL)
+  start_date = NULL, end_date = NULL, ...)
 }
 \arguments{
 \item{postcode}{postcode to select}
@@ -17,6 +17,8 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 \item{start_date}{the start date}
 
 \item{end_date}{the end date}
+
+\item{...}{rdf modifiers}
 }
 \description{
 Get Price Paid Data

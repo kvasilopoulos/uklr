@@ -14,34 +14,34 @@ sparql_file <- function(...) {
   paste0("<", full_url, ">")
 }
 
-sql_build <- function(...) {
-  paste(..., collapse = "")
-}
+# sql_build <- function(...) {
+#   paste(..., collapse = "")
+# }
 
-sql_select <- function(..., type = NULL) {
-  paste("Select", type)
-}
+# sql_select <- function(..., type = NULL) {
+#   paste("Select", type)
+# }
 
 
 # query pattern -----------------------------------------------------------
 
 
-sparql_filter <- function(...) {
+build_sparql_filter <- function(...) {
   c(...) %!||%
     paste("Filter (", paste(c(...), collapse = " && "), ")")
 }
 
-sparql_filter_start_date <- function(start_date) {
+build_sparql_filter_start_date <- function(start_date) {
   start_date %!||%
     paste("?dateStr >=", shQuote(start_date, "csh"), "^^xsd:date")
 }
 
-sparql_filter_end_date <- function(end_date) {
+build_sparql_filter_end_date <- function(end_date) {
   end_date %!||%
     paste("?dateStr <=", shQuote(end_date, "csh"), "^^xsd:date")
 }
 
-sparql_filter_region <- function(region) {
+build_sparql_filter_region <- function(region) {
   inner <- region %!||%
     paste0("regex(str(?region), ", shQuote(region, "csh"), ", 'i' )",
            collapse = "||")
@@ -49,30 +49,50 @@ sparql_filter_region <- function(region) {
     paste0("(", inner, ")")
 }
 
-rdf_optional <- function(optional) {
-  optional %!||%
-    paste("Optional {", optional, "}", sep = ";")
-}
+# rdf_optional <- function(optional) {
+#   optional %!||%
+#     paste("Optional {", optional, "}", sep = ";")
+# }
 
 
 # Query modifiers ---------------------------------------------------------
 
 
-rdf_modifiers <- function(...) {
-  paste(..., collapse = " ")
+rdf_modifiers <- function(order_by = NULL, limit = NULL, offset = NULL) {
+  paste(
+    build_sparql_order_by(order_by),
+    build_sparql_limit(limit),
+    build_sparql_offset(offset),
+    collapse = " ")
 }
 
-sparql_order_by <- function(order_by) {
+# order_by <- "third desc(cos) third asc(mpla) "
+
+fix_order <- function(x) {
+  splited <- strsplit(x, " ")[[1]]
+  has_ordering <- grepl("\\(", splited)
+  ordering <- gsub("\\(.*", "\\", splited[has_ordering])
+  vars <- gsub(".*\\((.*)\\).*", "\\1", splited)
+  ordered_vars <- paste0(ordering, "(?", vars[has_ordering], ")")
+  unordered_vars <- paste0("?", vars[!has_ordering])
+
+  fvars <- character(length = length(vars))
+  fvars[has_ordering] <- ordered_vars
+  fvars[!has_ordering] <- unordered_vars
+  paste(fvars, collapse = " ")
+}
+
+build_sparql_order_by <- function(order_by) {
   order_by %!||%
-    paste("Order By", paste0("?", order_by, collapse = " "))
+    paste("Order By", fix_order(order_by))
 }
 
-sparql_limit <- function(limit) {
+build_sparql_limit <- function(limit) {
   limit %!||%
     paste("Limit", limit)
 }
 
-sparql_offset <- function(offset) {
+build_sparql_offset <- function(offset) {
   offset %!||%
     paste("Offset", offset)
 }
@@ -88,28 +108,49 @@ assert_valid_date_format <- function(x) {
 
 # uktrans -----------------------------------------------------------------
 
-uktrans_build_sparql_query <- function() {
-
+uktrans_build_sparql <-
+  function(.item, .region, .start_date, .end_date, ...) {
+    uktrans_build_sparql_query(
+      item = .item,
+      build_sparql_filter(
+        build_sparql_filter_start_date(.start_date),
+        build_sparql_filter_end_date(.end_date),
+        build_sparql_filter_region(.region)
+      ),
+      modifiers = rdf_modifiers(...)
+    )
 }
 
-uktrans_sparql <- function() {
+uktrans_build_sparql_query <- function(..., item, modifiers) {
+  base_item <- "?region ?date"
+  categ_item <- item %!||%
+    paste0("?", item, collapse = " ")
+  slct <- paste("Select", base_item, categ_item)
 
+  type_base <- "?type trans:regionName ?region; trans:countPeriod ?dt;"
+  transx_item <- item %!||%
+    paste0("trans:", item, " ?", item, collapse = "; ")
+  bind_date <- "bind(concat(str(year(?dt)),'-', str(month(?dt)), '-01') as ?date)"
+  whr <- paste(type_base, transx_item, bind_date)
+
+  paste(slct, "where {",  whr, ..., "}", modifiers)
 }
 
 # ukppd -------------------------------------------------------------------
 
-ukppd_build_sparql_query <-
-  function(.postcode, .item, .optional_item, .start_date, .end_date) {
-    ukppd_sparql_select(
+ukppd_build_sparql <-
+  function(.postcode, .item, .optional_item, .start_date, .end_date, ...) {
+    ukppd_build_sparql_query(
       postcode = .postcode, item = .item, optional_item = .optional_item,
-      sparql_filter(
-        sparql_filter_start_date(.start_date),
-        sparql_filter_end_date(.end_date)
-      )
+      build_sparql_filter(
+        build_sparql_filter_start_date(.start_date),
+        build_sparql_filter_end_date(.end_date)
+      ),
+      modifiers = rdf_modifiers(...)
     )
   }
 
-ukppd_sparql_select <- function(..., postcode, item, optional_item ) {
+ukppd_build_sparql_query <- function(..., postcode, item, optional_item, modifiers) {
   base_item <- "?postcode ?amount (STR(?dateStr) as ?date) ?category"
   categ_item <- item %!||%
     paste0("?", item, collapse = " ")
@@ -128,61 +169,39 @@ ukppd_sparql_select <- function(..., postcode, item, optional_item ) {
   transx <- paste(transx_base, transx_item)
   lrppi_item <- optional_item %!||%
     paste0("lrppi:", optional_item, " ?", item, collapse = "; ")
-  order_by <- "ORDER BY ?postcode ?dateStr ?amount"
-  paste(slct, "where {", values, addr_postcode, transx,
-        lrppi_item, ..., "}", order_by)
-}
+  whr <- paste(values, addr_postcode, transx, lrppi_item)
 
-# assertion ukppd ---------------------------------------------------------
-
-assert_valid_ukppd_categories <- function(x) {
-  if (x %ni% ukppd_avail_categories())
-    stop("invalid category name", call. = FALSE)
-}
-
-assert_valid_ukppd_optional_categories <- function(x) {
-  if (x %ni% ukppd_avail_optional_categories())
-    stop("invalid category name", call. = FALSE)
+  paste(slct, "where {", whr, ..., "}", modifiers)
 }
 
 # ukhp --------------------------------------------------------------------
 
 
-ukhp_build_sparql_query <- function(.item = NULL, .extra = NULL, .region = NULL,
-                                    .start_date = NULL, .end_date = NULL) {
-  ukhp_sparql_select(
-    item = .item, extra = .extra,
-    sparql_filter(
-      sparql_filter_start_date(.start_date),
-      sparql_filter_end_date(.end_date),
-      sparql_filter_region(.region)
-    )
+ukhp_build_sparql <- function(.item = NULL, .extra = NULL, .region = NULL,
+                                    .start_date = NULL, .end_date = NULL, ...) {
+  ukhp_build_sparql_query(
+    item = .item,
+    extra = .extra,
+    build_sparql_filter(
+      build_sparql_filter_start_date(.start_date),
+      build_sparql_filter_end_date(.end_date),
+      build_sparql_filter_region(.region)
+    ),
+    modifiers = rdf_modifiers(...)
   )
 }
 
-ukhp_sparql_select <- function(..., item, extra) {
+
+ukhp_build_sparql_query <- function(..., item, extra, modifiers) {
   base_item <- "?region (STR(?dateStr) as ?date) ?housePriceIndex"
   categ_item <- item %!||%
     paste0("?", item, collapse = " ")
   slct <- paste("Select", extra, base_item, categ_item)
 
-  init_alloc <- "?region ukhpi:refPeriodStart ?dateStr;
-  ukhpi:housePriceIndex ?housePriceIndex;"
+  init_alloc <- "?region ukhpi:refPeriodStart ?dateStr;"
   ukhpi_item <- item %!||%
     paste0("ukhpi:", item, " ?", item, collapse = "; ")
-  order_by <- "ORDER BY ?region ?date"
-  paste(slct, "where {", init_alloc, ukhpi_item, ..., "}", order_by)
+  paste(slct, "where {", init_alloc, ukhpi_item, ..., "}", modifiers)
 }
 
 
-# assertions ukhp -----------------------------------------------------------
-
-assert_valid_ukhp_item <- function(x) {
-  if (x %ni% ukhp_avail_items())
-    stop("invalid category name", call. = FALSE)
-}
-
-assert_valid_ukhp_region <- function(x) {
-  if (x %ni% ukhp_avail_regions())
-    stop("invalid region name", call. = FALSE)
-}

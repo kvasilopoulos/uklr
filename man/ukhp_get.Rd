@@ -4,25 +4,30 @@
 \alias{ukhp_get}
 \title{Get House Price Data}
 \usage{
-ukhp_get(region = "england", item = NULL, start_date = NULL,
-  end_date = NULL, regexp = FALSE)
+ukhp_get(region = NULL, item = NULL, regexp = TRUE,
+  start_date = NULL, end_date = NULL, ...)
 }
 \arguments{
-\item{region}{the region to select}
+\item{region}{the region to select. If regexp is set to FALSE then the matching
+should be exact, see \code{ukhp_avail_regions} for available regions. If regexp
+is set to TRUE then partial matching is possible. Furthermore it is set to
+NULL selects all available regions.}
 
-\item{item}{the item to select}
+\item{item}{the item to select. See \code{ukhp_avail_items} for the available categories.}
+
+\item{regexp}{use regular expression in sparql to search for regions.}
 
 \item{start_date}{the start date}
 
 \item{end_date}{the end date}
 
-\item{regexp}{use regular expression in sparql to search for regions.}
+\item{...}{rdf modifiers}
 }
 \description{
 Get House Price Data
 }
 \examples{
-
+\donttest{
 # This is case sensitive
 ukhp_get("england")
 
@@ -36,5 +41,5 @@ ukhp_avail_regions()
 ukhp_avail_items()
 
 ukhp_get(c("endland", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
-
+}
 }
