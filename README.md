@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# uklr
+# uklr <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
@@ -11,6 +11,10 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
+[![Codecov test
+coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr?branch=master)
 <!-- badges: end -->
 
 The goal of {uklr} is to access data from HM Land Registry Open Data

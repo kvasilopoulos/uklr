@@ -13,7 +13,7 @@
     <loc>https://kvasilopoulos.github.io/exuber//reference/pc.html</loc>
   </url>
   <url>
-    <loc>https://kvasilopoulos.github.io/exuber//reference/ukhp_avail_regions.html</loc>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/ukhp_avail_items.html</loc>
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/exuber//reference/ukhp_get.html</loc>
@@ -29,6 +29,9 @@
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/exuber//reference/ukppd_get.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/exuber//reference/uktrans_avail_items.html</loc>
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/exuber//reference/uktrans_get.html</loc>
