@@ -166,37 +166,50 @@ NULL selects all available regions.</p></td>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='st'>"East Anglia"</span>)</div><div class='output co'>#&gt; # A tibble: 94 x 3
 #&gt;    region      date       totalApplicationCountByRegion
-#&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;chr&gt;                        
-#&gt;  1 East Anglia 2011-12-01 37819                        
-#&gt;  2 East Anglia 2012-01-01 44231                        
-#&gt;  3 East Anglia 2012-02-01 44453                        
-#&gt;  4 East Anglia 2012-03-01 46814                        
-#&gt;  5 East Anglia 2012-04-01 40693                        
-#&gt;  6 East Anglia 2012-05-01 47885                        
-#&gt;  7 East Anglia 2012-06-01 39506                        
-#&gt;  8 East Anglia 2012-07-01 46539                        
-#&gt;  9 East Anglia 2012-08-01 45942                        
-#&gt; 10 East Anglia 2012-09-01 41976                        
+#&gt;    &lt;chr&gt;       &lt;date&gt;                             &lt;dbl&gt;
+#&gt;  1 East Anglia 2011-12-01                         37819
+#&gt;  2 East Anglia 2012-01-01                         44231
+#&gt;  3 East Anglia 2012-02-01                         44453
+#&gt;  4 East Anglia 2012-03-01                         46814
+#&gt;  5 East Anglia 2012-04-01                         40693
+#&gt;  6 East Anglia 2012-05-01                         47885
+#&gt;  7 East Anglia 2012-06-01                         39506
+#&gt;  8 East Anglia 2012-07-01                         46539
+#&gt;  9 East Anglia 2012-08-01                         45942
+#&gt; 10 East Anglia 2012-09-01                         41976
 #&gt; # ... with 84 more rows</div><div class='input'>
 <span class='co'># If `region` is left as NULL then it returns all available regions</span>
-<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in sparql(query = req): Gateway Timeout (HTTP 504).</span></div><div class='input'>
+<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>)</div><div class='output co'>#&gt; # A tibble: 1,128 x 3
+#&gt;    region     date       totalApplicationCountByRegion
+#&gt;    &lt;chr&gt;      &lt;date&gt;                             &lt;dbl&gt;
+#&gt;  1 South East 2011-12-01                        214852
+#&gt;  2 South East 2012-01-01                        247768
+#&gt;  3 South East 2012-02-01                        250045
+#&gt;  4 South East 2012-03-01                        271010
+#&gt;  5 South East 2012-04-01                        233486
+#&gt;  6 South East 2012-05-01                        267587
+#&gt;  7 South East 2012-06-01                        222280
+#&gt;  8 South East 2012-07-01                        263214
+#&gt;  9 South East 2012-08-01                        255424
+#&gt; 10 South East 2012-09-01                        233684
+#&gt; # ... with 1,118 more rows</div><div class='input'>
 <span class='co'># Quering all available transaction data</span>
 <span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='fu'><a href='uktrans_avail_items.html'>uktrans_avail_items</a></span>())</div><div class='output co'>#&gt; # A tibble: 1,128 x 14
 #&gt;    region date       DFLCount DLGCount FRCount TPCount OSPCount OSWCount
-#&gt;    &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   
-#&gt;  1 South~ 2011-12-01 2969     74122    1846    2010    5859     29053   
-#&gt;  2 South~ 2012-01-01 3950     71168    2106    2874    4571     28591   
-#&gt;  3 South~ 2012-02-01 4071     63747    2229    3118    4811     28164   
-#&gt;  4 South~ 2012-03-01 4126     70021    2382    2578    6183     32853   
-#&gt;  5 South~ 2012-04-01 3802     65445    1821    2055    4306     25757   
-#&gt;  6 South~ 2012-05-01 3951     69133    1993    2426    5113     32780   
-#&gt;  7 South~ 2012-06-01 2940     58046    1838    2138    5478     28140   
-#&gt;  8 South~ 2012-07-01 3675     73408    2271    2769    4697     33578   
-#&gt;  9 South~ 2012-08-01 2978     72609    1959    2549    5114     32433   
-#&gt; 10 South~ 2012-09-01 2951     63909    1837    2376    4882     28948   
-#&gt; # ... with 1,118 more rows, and 6 more variables: OSNPWCount &lt;chr&gt;,
-#&gt; #   OC1Count &lt;chr&gt;, SIMCount &lt;chr&gt;, OSNPPCount &lt;chr&gt;, OC2Count &lt;chr&gt;,
-#&gt; #   totalApplicationCountByRegion &lt;chr&gt;</div><div class='input'># }
+#&gt;    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+#&gt;  1 South~ 2011-12-01     2969    74122    1846    2010     5859    29053
+#&gt;  2 South~ 2012-01-01     3950    71168    2106    2874     4571    28591
+#&gt;  3 South~ 2012-02-01     4071    63747    2229    3118     4811    28164
+#&gt;  4 South~ 2012-03-01     4126    70021    2382    2578     6183    32853
+#&gt;  5 South~ 2012-04-01     3802    65445    1821    2055     4306    25757
+#&gt;  6 South~ 2012-05-01     3951    69133    1993    2426     5113    32780
+#&gt;  7 South~ 2012-06-01     2940    58046    1838    2138     5478    28140
+#&gt;  8 South~ 2012-07-01     3675    73408    2271    2769     4697    33578
+#&gt;  9 South~ 2012-08-01     2978    72609    1959    2549     5114    32433
+#&gt; 10 South~ 2012-09-01     2951    63909    1837    2376     4882    28948
+#&gt; # ... with 1,118 more rows, and 6 more variables: OSNPWCount &lt;dbl&gt;,
+#&gt; #   OC1Count &lt;dbl&gt;, SIMCount &lt;dbl&gt;, OSNPPCount &lt;dbl&gt;, OC2Count &lt;dbl&gt;,
+#&gt; #   totalApplicationCountByRegion &lt;dbl&gt;</div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

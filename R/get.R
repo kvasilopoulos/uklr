@@ -145,6 +145,8 @@ uktrans_get <- function(item = "totalApplicationCountByRegion", region = NULL,
     .end_date = end_date)
   res <- process_request(query)
   res$date <- as.Date(res$date)
+  item_names <- names(res)[-c(1,2)]
+  res[,item_names] <- lapply(res[,item_names], as.numeric)
   if (isFALSE(regexp) & !is.null(region)) {
     region_filter <- region
     res <- subset(res, region %in% region_filter)

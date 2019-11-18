@@ -161,7 +161,20 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in sparql(query = req): Gateway Timeout (HTTP 504).</span></div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; # A tibble: 30 x 4
+<span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>)</div><div class='output co'>#&gt; # A tibble: 32 x 4
+#&gt;    postcode amount date       category                       
+#&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          
+#&gt;  1 PL6 8RU  227000 2007-06-29 Standard price paid transaction
+#&gt;  2 PL6 8RU  149950 2002-11-08 Standard price paid transaction
+#&gt;  3 PL6 8RU  220000 2005-06-29 Standard price paid transaction
+#&gt;  4 PL6 8RU  195000 2004-06-17 Standard price paid transaction
+#&gt;  5 PL6 8RU  172000 2008-11-14 Standard price paid transaction
+#&gt;  6 PL6 8RU  180000 2014-06-02 Standard price paid transaction
+#&gt;  7 PL6 8RU   58000 2000-05-19 Standard price paid transaction
+#&gt;  8 PL6 8RU  179000 2011-04-20 Standard price paid transaction
+#&gt;  9 PL6 8RU  192500 2011-07-27 Standard price paid transaction
+#&gt; 10 PL6 8RU  202500 2015-06-29 Standard price paid transaction
+#&gt; # ... with 22 more rows</div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; # A tibble: 30 x 4
 #&gt;    postcode amount date       category                       
 #&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          
 #&gt;  1 PL6 8RU  227000 2007-06-29 Standard price paid transaction
