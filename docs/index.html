@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R Client to United Kingdom Land Registry • exuber</title>
+<title>R Client to United Kingdom HM Land Registry • exuber</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -16,8 +16,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="R Client to United Kingdom Land Registry">
-<meta property="og:description" content="Access data from HM Land Registry Open Data &lt; http://landregistry.data.gov.uk/&gt; 
+<script src="pkgdown.js"></script><meta property="og:title" content="R Client to United Kingdom HM Land Registry">
+<meta property="og:description" content="Access data from HM Land Registry Open Data &lt;http://landregistry.data.gov.uk/&gt; 
     through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.">
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png">
 <meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">exuber</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -126,17 +126,17 @@
 <a class="sourceLine" id="cb2-30" title="30"><span class="kw"><a href="reference/uktrans_get.html">uktrans_get</a></span>(<span class="dt">item =</span> <span class="st">"totalApplicationCountByRegion"</span>, <span class="dt">region =</span> <span class="st">"East Anglia"</span>)</a>
 <a class="sourceLine" id="cb2-31" title="31"><span class="co">#&gt; # A tibble: 94 x 3</span></a>
 <a class="sourceLine" id="cb2-32" title="32"><span class="co">#&gt;    region      date       totalApplicationCountByRegion</span></a>
-<a class="sourceLine" id="cb2-33" title="33"><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;chr&gt;                        </span></a>
-<a class="sourceLine" id="cb2-34" title="34"><span class="co">#&gt;  1 East Anglia 2011-12-01 37819                        </span></a>
-<a class="sourceLine" id="cb2-35" title="35"><span class="co">#&gt;  2 East Anglia 2012-01-01 44231                        </span></a>
-<a class="sourceLine" id="cb2-36" title="36"><span class="co">#&gt;  3 East Anglia 2012-02-01 44453                        </span></a>
-<a class="sourceLine" id="cb2-37" title="37"><span class="co">#&gt;  4 East Anglia 2012-03-01 46814                        </span></a>
-<a class="sourceLine" id="cb2-38" title="38"><span class="co">#&gt;  5 East Anglia 2012-04-01 40693                        </span></a>
-<a class="sourceLine" id="cb2-39" title="39"><span class="co">#&gt;  6 East Anglia 2012-05-01 47885                        </span></a>
-<a class="sourceLine" id="cb2-40" title="40"><span class="co">#&gt;  7 East Anglia 2012-06-01 39506                        </span></a>
-<a class="sourceLine" id="cb2-41" title="41"><span class="co">#&gt;  8 East Anglia 2012-07-01 46539                        </span></a>
-<a class="sourceLine" id="cb2-42" title="42"><span class="co">#&gt;  9 East Anglia 2012-08-01 45942                        </span></a>
-<a class="sourceLine" id="cb2-43" title="43"><span class="co">#&gt; 10 East Anglia 2012-09-01 41976                        </span></a>
+<a class="sourceLine" id="cb2-33" title="33"><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;                             &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb2-34" title="34"><span class="co">#&gt;  1 East Anglia 2011-12-01                         37819</span></a>
+<a class="sourceLine" id="cb2-35" title="35"><span class="co">#&gt;  2 East Anglia 2012-01-01                         44231</span></a>
+<a class="sourceLine" id="cb2-36" title="36"><span class="co">#&gt;  3 East Anglia 2012-02-01                         44453</span></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="co">#&gt;  4 East Anglia 2012-03-01                         46814</span></a>
+<a class="sourceLine" id="cb2-38" title="38"><span class="co">#&gt;  5 East Anglia 2012-04-01                         40693</span></a>
+<a class="sourceLine" id="cb2-39" title="39"><span class="co">#&gt;  6 East Anglia 2012-05-01                         47885</span></a>
+<a class="sourceLine" id="cb2-40" title="40"><span class="co">#&gt;  7 East Anglia 2012-06-01                         39506</span></a>
+<a class="sourceLine" id="cb2-41" title="41"><span class="co">#&gt;  8 East Anglia 2012-07-01                         46539</span></a>
+<a class="sourceLine" id="cb2-42" title="42"><span class="co">#&gt;  9 East Anglia 2012-08-01                         45942</span></a>
+<a class="sourceLine" id="cb2-43" title="43"><span class="co">#&gt; 10 East Anglia 2012-09-01                         41976</span></a>
 <a class="sourceLine" id="cb2-44" title="44"><span class="co">#&gt; # ... with 84 more rows</span></a></code></pre></div>
 </div>
 </div>
@@ -177,10 +177,10 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://CRAN.R-project.org/package=uklr"><img src="https://www.r-pkg.org/badges/version/uklr" alt="CRAN status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 <li><a href="https://travis-ci.org/kvasilopoulos/uklr"><img src="https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master" alt="Travis build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/kvasilopoulos/uklr"><img src="https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="https://CRAN.R-project.org/package=uklr"><img src="https://www.r-pkg.org/badges/version/uklr" alt="CRAN status"></a></li>
 <li><a href="https://codecov.io/gh/kvasilopoulos/uklr?branch=master"><img src="https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>

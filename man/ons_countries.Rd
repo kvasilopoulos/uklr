@@ -24,6 +24,7 @@ and \code{ons_la} provide a vector of countries, regions, English counties
 and local authorities respectively.
 }
 \examples{
-
+\donttest{
 ons_countries()
+}
 }
