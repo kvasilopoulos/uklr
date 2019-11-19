@@ -23,6 +23,7 @@ ukppd_avail_items <- function() {
 }
 
 #'@rdname ukppd_avail_items
+#'@export
 ukppd_avail_optional_items <- function() {
   query <- build_sparql_file_query(
     "ppi", "address", "e738e64c33d83e5492f9a1bb0e3e4c24ed4ce684")
@@ -31,6 +32,7 @@ ukppd_avail_optional_items <- function() {
 }
 
 #' @rdname ukppd_avail_items
+#' @export
 ukppd_avail_postcodes <- function() {
  ons_pc()
 }

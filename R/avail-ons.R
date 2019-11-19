@@ -120,7 +120,7 @@ ons_lad <- function() {
 #'
 #' Vector of UK postcodes. Search for matches with the `pattern` argument.
 #'
-#' @param regexp partial matching
+#' @param pattern partial matching
 #' @export
 #' @details
 #' ons_pc("EH21 8A")

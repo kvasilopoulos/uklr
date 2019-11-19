@@ -7,7 +7,7 @@
 ons_pc(pattern = NULL)
 }
 \arguments{
-\item{regexp}{partial matching}
+\item{pattern}{partial matching}
 }
 \description{
 Vector of UK postcodes. Search for matches with the `pattern` argument.
