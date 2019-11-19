@@ -1,5 +1,5 @@
 
-#' Diplay Land Registry Transaction available categories
+#' Display Land Registry Transaction available categories
 #'
 #' \code{uktrans_avail_items()} and \code{uktrans_avail_regions()} display
 #' available items and regions for search respectively.

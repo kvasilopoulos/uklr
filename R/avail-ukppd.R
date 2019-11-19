@@ -1,8 +1,8 @@
 #' Display Price Paid Date available categories
 #'
-#' \code{ukppd_avail_items()} displays all availale items for search,
+#' \code{ukppd_avail_items()} displays all available items for search,
 #' \code{ukppd_avail_optional_items()} displays optional items that refer to the
-#' location of the transcaction and \code{ukppd_avail_postcodes} displays the
+#' location of the transaction and \code{ukppd_avail_postcodes} displays the
 #' available postcodes.
 #'/
 #' @export

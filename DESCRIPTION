@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "k.vasilopoulo@gmail.com",
            comment = c(ORCID = "0000-0002-9769-6395"))
-Description: Access data from HM Land Registry Open Data < http://landregistry.data.gov.uk/> 
+Description: Access data from HM Land Registry Open Data <http://landregistry.data.gov.uk/> 
     through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
 License: GPL-3
 Encoding: UTF-8
@@ -23,4 +23,6 @@ URL: https://github.com/kvasilopoulos/uklr
 BugReports: https://github.com/kvasilopoulos/uklr/issues
 Suggests: 
     covr,
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    spelling
+Language: en-US

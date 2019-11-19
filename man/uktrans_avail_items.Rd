@@ -3,7 +3,7 @@
 \name{uktrans_avail_items}
 \alias{uktrans_avail_items}
 \alias{uktrans_avail_regions}
-\title{Diplay Land Registry Transaction available categories}
+\title{Display Land Registry Transaction available categories}
 \usage{
 uktrans_avail_items()
 
