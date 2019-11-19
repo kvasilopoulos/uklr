@@ -4,8 +4,14 @@
 \alias{ukppd_get}
 \title{Get Price Paid Data}
 \usage{
-ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
-  start_date = NULL, end_date = NULL, ...)
+ukppd_get(
+  postcode = "PL6 8RU",
+  item = NULL,
+  optional_item = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  ...
+)
 }
 \arguments{
 \item{postcode}{postcode to select, see \code{ukppd_avail_postcode()} for

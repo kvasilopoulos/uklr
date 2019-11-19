@@ -6,9 +6,8 @@
   * macOS on travis-ci (devel and release)
   * Windows Server 2012 on appveyor (devel and release)
 * Rhub
-  * Debian Linux, R-devel, GCC ASAN/UBSAN
-  * Fedora Linux, R-devel, clang, gfortran
-* win-builder (devel)
+  * Debian Linux, R-devel & R-devel, GCC ASAN/UBSAN
+  * Fedora Linux, R-devel & R-devel, clang, gfortran
 
 ## R CMD check results
 

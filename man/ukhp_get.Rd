@@ -4,8 +4,14 @@
 \alias{ukhp_get}
 \title{Get House Price Data}
 \usage{
-ukhp_get(region = "england", item = "housePriceIndex", regexp = TRUE,
-  start_date = NULL, end_date = NULL, ...)
+ukhp_get(
+  region = "england",
+  item = "housePriceIndex",
+  regexp = TRUE,
+  start_date = NULL,
+  end_date = NULL,
+  ...
+)
 }
 \arguments{
 \item{region}{the region to select. If regexp is set to FALSE then the matching

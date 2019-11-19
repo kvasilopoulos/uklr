@@ -4,8 +4,14 @@
 \alias{uktrans_get}
 \title{Get Transaction Data}
 \usage{
-uktrans_get(item = "totalApplicationCountByRegion", region = NULL,
-  regexp = TRUE, start_date = NULL, end_date = NULL, ...)
+uktrans_get(
+  item = "totalApplicationCountByRegion",
+  region = NULL,
+  regexp = TRUE,
+  start_date = NULL,
+  end_date = NULL,
+  ...
+)
 }
 \arguments{
 \item{item}{item to select, see \code{uktrans_avail_item()} for
