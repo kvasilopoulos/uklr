@@ -24,3 +24,6 @@ districts (lad), local administrative units (lau), nomenclature of territorial
 units for statistics(NUTS) 1,2 and 3. The other functions can extract the
 mentioned variables.
 }
+\examples{
+ons_lookup()
+}

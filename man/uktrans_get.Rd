@@ -12,12 +12,12 @@ uktrans_get(item = "totalApplicationCountByRegion", region = NULL,
 
 \item{region}{the region to select. If regexp is set to FALSE then the matching
 should be exact, see \code{ukhp_avail_regions} for available regions. If regexp
-is set to TRUE then partial matching is possible. Furthermore it is set to
-NULL selects all available regions.}
+is set to TRUE then partial matching is possible. Furthermore if it is set to
+NULL then selects all available regions.}
 
 \item{regexp}{use regular expression in sparql to search for regions.}
 
-\item{start_date}{the start date}
+\item{start_date}{the start date as YYYY-MM-DD}
 
 \item{end_date}{the end date}
 

@@ -14,7 +14,7 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 
 \item{optional_item}{optional item to select}
 
-\item{start_date}{the start date}
+\item{start_date}{the start date as YYYY-MM-DD}
 
 \item{end_date}{the end date}
 

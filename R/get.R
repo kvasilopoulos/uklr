@@ -23,7 +23,7 @@
 #' @param item the item to select. See \code{ukhp_avail_items} for the available
 #' categories.
 #' @param regexp use regular expression in sparql to search for regions.
-#' @param start_date the start date
+#' @param start_date the start date as YYYY-MM-DD
 #' @param end_date the end date
 #' @param ... query modifiers passed through \code{rdf_modifiers}.
 #'

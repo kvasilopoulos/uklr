@@ -39,6 +39,7 @@ process_request <- function(.query, ...) {
 build_sparql <- sparql
 
 #' @rdname build_sparql
+#' @export
 prefix_query <- function(query) {
   prefix <-
     'prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>

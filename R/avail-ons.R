@@ -13,7 +13,7 @@ gsub_lr <- function(x, lgl) {
 #' @export
 #' @examples
 #'
-#'
+#' ons_countries()
 ons_countries <- function(modify = TRUE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/7579a399b413418db5a3bdd1c824bffb_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -79,6 +79,8 @@ ons_la <- function(modify = FALSE) {
 #' mentioned variables.
 #'
 #' @export
+#' @examples
+#' ons_lookup()
 ons_lookup <- function() {
   x <- httr::GET("http://geoportal1-ons.opendata.arcgis.com/datasets/9b4c94e915c844adb11e15a4b1e1294d_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features

@@ -25,5 +25,5 @@ and local authorities respectively.
 }
 \examples{
 
-
+ons_countries()
 }
