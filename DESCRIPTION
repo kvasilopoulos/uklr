@@ -1,5 +1,5 @@
 Package: uklr
-Title: R Client to United Kingdom Land Registry
+Title: R Client to United Kingdom HM Land Registry
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kostas",

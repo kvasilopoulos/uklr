@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diplay Land Registry Transaction available data — uktrans_avail_items • exuber</title>
+<title>Diplay Land Registry Transaction available categories — uktrans_avail_items • exuber</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="Diplay Land Registry Transaction available data — uktrans_avail_items" />
+<meta property="og:title" content="Diplay Land Registry Transaction available categories — uktrans_avail_items" />
 
-<meta property="og:description" content="Diplay Land Registry Transaction available data" />
+<meta property="og:description" content="uktrans_avail_items() and uktrans_avail_regions() display
+available items and regions for search respectively." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -115,14 +116,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Diplay Land Registry Transaction available data</h1>
+    <h1>Diplay Land Registry Transaction available categories</h1>
     <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/avail-uktrans.R'><code>R/avail-uktrans.R</code></a></small>
     <div class="hidden name"><code>uktrans_avail_items.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Diplay Land Registry Transaction available data</p>
+    <p><code>uktrans_avail_items()</code> and <code>uktrans_avail_regions()</code> display
+available items and regions for search respectively.</p>
     
     </div>
 
@@ -131,11 +133,26 @@
 <span class='fu'>uktrans_avail_regions</span>()</pre>
         
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'>uktrans_avail_items</span>()</div><div class='output co'>#&gt;  [1] "DFLCount"                      "DLGCount"                     
+#&gt;  [3] "FRCount"                       "TPCount"                      
+#&gt;  [5] "OSPCount"                      "OSWCount"                     
+#&gt;  [7] "OSNPWCount"                    "OC1Count"                     
+#&gt;  [9] "SIMCount"                      "OSNPPCount"                   
+#&gt; [11] "OC2Count"                      "totalApplicationCountByRegion"</div><div class='input'><span class='fu'>uktrans_avail_regions</span>()</div><div class='output co'>#&gt;  [1] "South East"                     "West Midlands"                 
+#&gt;  [3] "South West"                     "North West"                    
+#&gt;  [5] "Wales"                          "East Midlands"                 
+#&gt;  [7] "Greater London"                 "North"                         
+#&gt;  [9] "Isles of Scilly"                "East Anglia"                   
+#&gt; [11] "England &amp; Wales (not assigned)" "Yorks &amp; Humber"                </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

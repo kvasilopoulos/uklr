@@ -23,8 +23,8 @@
 #' @param item the item to select. See \code{ukhp_avail_items} for the available
 #' categories.
 #' @param regexp use regular expression in sparql to search for regions.
-#' @param start_date the start date as YYYY-MM-DD
-#' @param end_date the end date
+#' @param start_date the start date as YYYY-MM-DD.
+#' @param end_date the end date as YYYY-MM-DD.
 #' @param ... query modifiers passed through \code{rdf_modifiers}.
 #'
 #' @seealso \code{rdf_modifiers}
@@ -36,9 +36,6 @@
 #'
 #' # However you can use regular expression instead of exact match
 #' ukhp_get("england", regexp = TRUE)
-#'
-#' # For all available regions
-#' ukhp_avail_regions()
 #'
 #' # For all available items
 #' ukhp_avail_items()
@@ -88,9 +85,13 @@ assert_valid_ukhp_region <- function(x) {
 #' Price Paid Data tracks property sales in England and Wales submitted to HM Land
 #' Registry for registration.  Price Paid Data is based on the raw data released each month.
 #'
-#' @param postcode postcode to select
-#' @param item item to select
-#' @param optional_item optional item to select
+#' @param postcode postcode to select, see \code{ukppd_avail_postcode()} for
+#' available postcodes.
+#' @param item item to select, see \code{ukppd_avail_items()} for
+#' available items.
+#' @param optional_item optional item to select that describes the location of
+#' the transaction, , see \code{ukppd_avail_optional_items()} for available
+#' items.
 #' @inheritParams ukhp_get
 #'
 #' @export
@@ -145,7 +146,10 @@ assert_valid_ukppd_postcodes <- function(x) {
 #' in the preceding month for: first registrations, leases, transfers of part,
 #' dealings, official copies and searches. This is based on customer and location.
 #'
-#' @param item item to select
+#' @param item item to select, see \code{uktrans_avail_item()} for
+#' available items.
+#' @param region  region to select, see \code{uktrans_avail_regions()} for
+#' available regions.
 #' @inheritParams ukhp_get
 #'
 #' @export

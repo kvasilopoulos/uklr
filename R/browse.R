@@ -5,8 +5,7 @@
 #' @export
 #' @examples
 #' uklr_browse()
-#' ukhp_browse()
-#' ukppd_browse()
+#'
 uklr_browse <- function() {
   view_url("http://landregistry.data.gov.uk")
 }

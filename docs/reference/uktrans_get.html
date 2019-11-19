@@ -138,14 +138,13 @@ dealings, official copies and searches. This is based on customer and location.<
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>item</th>
-      <td><p>item to select</p></td>
+      <td><p>item to select, see <code>uktrans_avail_item()</code> for
+available items.</p></td>
     </tr>
     <tr>
       <th>region</th>
-      <td><p>the region to select. If regexp is set to FALSE then the matching
-should be exact, see <code>ukhp_avail_regions</code> for available regions. If regexp
-is set to TRUE then partial matching is possible. Furthermore it is set to
-NULL selects all available regions.</p></td>
+      <td><p>region to select, see <code><a href='uktrans_avail_items.html'>uktrans_avail_regions()</a></code> for
+available regions.</p></td>
     </tr>
     <tr>
       <th>regexp</th>
@@ -153,11 +152,11 @@ NULL selects all available regions.</p></td>
     </tr>
     <tr>
       <th>start_date</th>
-      <td><p>the start date</p></td>
+      <td><p>the start date as YYYY-MM-DD.</p></td>
     </tr>
     <tr>
       <th>end_date</th>
-      <td><p>the end date</p></td>
+      <td><p>the end date as YYYY-MM-DD.</p></td>
     </tr>
     <tr>
       <th>...</th>

@@ -13,5 +13,18 @@ ukppd_avail_optional_items()
 ukppd_avail_postcodes()
 }
 \description{
-Display Price Paid Date available categories
+\code{ukppd_avail_items()} displays all availale items for search,
+\code{ukppd_avail_optional_items()} displays optional items that refer to the
+location of the transcaction and \code{ukppd_avail_postcodes} displays the
+available postcodes.
+/
+}
+\examples{
+
+ukppd_avail_items()
+
+ukppd_avail_optional_items()
+
+ukppd_avail_postcodes()[1:10]
+
 }

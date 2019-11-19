@@ -8,15 +8,19 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
   start_date = NULL, end_date = NULL, ...)
 }
 \arguments{
-\item{postcode}{postcode to select}
+\item{postcode}{postcode to select, see \code{ukppd_avail_postcode()} for
+available postcodes.}
 
-\item{item}{item to select}
+\item{item}{item to select, see \code{ukppd_avail_items()} for
+available items.}
 
-\item{optional_item}{optional item to select}
+\item{optional_item}{optional item to select that describes the location of
+the transaction, , see \code{ukppd_avail_optional_items()} for available
+items.}
 
-\item{start_date}{the start date as YYYY-MM-DD}
+\item{start_date}{the start date as YYYY-MM-DD.}
 
-\item{end_date}{the end date}
+\item{end_date}{the end date as YYYY-MM-DD.}
 
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }

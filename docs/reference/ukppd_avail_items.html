@@ -41,7 +41,11 @@
 
 <meta property="og:title" content="Display Price Paid Date available categories — ukppd_avail_items" />
 
-<meta property="og:description" content="Display Price Paid Date available categories" />
+<meta property="og:description" content="ukppd_avail_items() displays all availale items for search,
+ukppd_avail_optional_items() displays optional items that refer to the
+location of the transcaction and ukppd_avail_postcodes displays the
+available postcodes.
+/" />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -122,7 +126,11 @@
 
     <div class="ref-description">
     
-    <p>Display Price Paid Date available categories</p>
+    <p><code>ukppd_avail_items()</code> displays all availale items for search,
+<code>ukppd_avail_optional_items()</code> displays optional items that refer to the
+location of the transcaction and <code>ukppd_avail_postcodes</code> displays the
+available postcodes.
+/</p>
     
     </div>
 
@@ -133,11 +141,22 @@
 <span class='fu'>ukppd_avail_postcodes</span>()</pre>
         
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'>ukppd_avail_items</span>()</div><div class='output co'>#&gt;  [1] "transactionId"       "recordStatus"        "hasTransaction"     
+#&gt;  [4] "transactionDate"     "pricePaid"           "propertyType"       
+#&gt;  [7] "newBuild"            "estateType"          "transactionCategory"
+#&gt; [10] "propertyAddress"    </div><div class='input'>
+<span class='fu'>ukppd_avail_optional_items</span>()</div><div class='output co'>#&gt; <span class='error'>Error in ukppd_avail_optional_items(): could not find function "ukppd_avail_optional_items"</span></div><div class='input'>
+<span class='fu'>ukppd_avail_postcodes</span>()[<span class='fl'>1</span>:<span class='fl'>10</span>]</div><div class='output co'>#&gt; <span class='error'>Error in ukppd_avail_postcodes(): could not find function "ukppd_avail_postcodes"</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

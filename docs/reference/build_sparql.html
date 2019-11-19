@@ -148,7 +148,20 @@ dataframe. The most common prefixes can be include with <code>prefix_query</code
     <pre class="examples"><div class='input'><span class='no'>custom_query</span> <span class='kw'>&lt;-</span> <span class='st'>"select * where {
   &lt;http://landregistry.data.gov.uk/data/ukhpi/region/newport/month/2013-10&gt; ?property ?value
 }"</span>
-<span class='fu'>build_sparql</span>(<span class='fu'>prefix_query</span>(<span class='no'>custom_query</span>))</div><div class='output co'>#&gt; <span class='error'>Error in prefix_query(custom_query): could not find function "prefix_query"</span></div></pre>
+<span class='fu'>build_sparql</span>(<span class='fu'>prefix_query</span>(<span class='no'>custom_query</span>))</div><div class='output co'>#&gt; # A tibble: 56 x 2
+#&gt;    property                                value                                
+#&gt;    &lt;chr&gt;                                   &lt;chr&gt;                                
+#&gt;  1 http://www.w3.org/1999/02/22-rdf-synta~ http://purl.org/linked-data/cube#Obs~
+#&gt;  2 http://www.w3.org/1999/02/22-rdf-synta~ http://landregistry.data.gov.uk/def/~
+#&gt;  3 http://purl.org/linked-data/cube#dataS~ http://landregistry.data.gov.uk/data~
+#&gt;  4 http://landregistry.data.gov.uk/def/uk~ 2013-10                              
+#&gt;  5 http://landregistry.data.gov.uk/def/uk~ http://landregistry.data.gov.uk/id/r~
+#&gt;  6 http://landregistry.data.gov.uk/def/uk~ 130801                               
+#&gt;  7 http://landregistry.data.gov.uk/def/uk~ 94.12                                
+#&gt;  8 http://landregistry.data.gov.uk/def/uk~ -0.90                                
+#&gt;  9 http://landregistry.data.gov.uk/def/uk~ -1.30                                
+#&gt; 10 http://landregistry.data.gov.uk/def/uk~ 155                                  
+#&gt; # ... with 46 more rows</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

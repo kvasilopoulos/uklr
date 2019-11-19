@@ -28,7 +28,9 @@ reference:
 
   - title: ONS Location Data
     contents:
+      - ons_countries
       - ons_lookup
+      - ons_pc
       - pc
 
   - title: Build Custom Query

@@ -21,9 +21,9 @@ displays available items, \code{ukhp_avail_date_span()} displays available date 
 and \code{ukhp_avail_date_last} displays the last available date.
 }
 \examples{
-ukhp_avail_regions()
+
+ukhp_avail_regions()[1:10]
 ukhp_avail_items()
-ukhp_avail_date_span()
 ukhp_avail_date_last()
 
 }

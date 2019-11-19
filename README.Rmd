@@ -15,10 +15,10 @@ knitr::opts_chunk$set(
 # uklr <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
-[![CRAN status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
 [![Codecov test coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr?branch=master)
 <!-- badges: end -->
 

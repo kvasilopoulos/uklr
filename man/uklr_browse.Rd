@@ -20,6 +20,5 @@ These functions take you to land registry's webpages and return the URL invisibl
 }
 \examples{
 uklr_browse()
-ukhp_browse()
-ukppd_browse()
+
 }

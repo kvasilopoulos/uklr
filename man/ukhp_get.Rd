@@ -18,9 +18,9 @@ categories.}
 
 \item{regexp}{use regular expression in sparql to search for regions.}
 
-\item{start_date}{the start date as YYYY-MM-DD}
+\item{start_date}{the start date as YYYY-MM-DD.}
 
-\item{end_date}{the end date}
+\item{end_date}{the end date as YYYY-MM-DD.}
 
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
@@ -46,9 +46,6 @@ ukhp_get("england")
 
 # However you can use regular expression instead of exact match
 ukhp_get("england", regexp = TRUE)
-
-# For all available regions
-ukhp_avail_regions()
 
 # For all available items
 ukhp_avail_items()

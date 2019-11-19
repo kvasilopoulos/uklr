@@ -6,9 +6,9 @@
 #'
 #' @export
 #' @examples
-#' ukhp_avail_regions()
+#'
+#' ukhp_avail_regions()[1:10]
 #' ukhp_avail_items()
-#' ukhp_avail_date_span()
 #' ukhp_avail_date_last()
 #'
 ukhp_avail_items <- function() {

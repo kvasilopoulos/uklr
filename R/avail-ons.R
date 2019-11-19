@@ -24,6 +24,7 @@ ons_countries <- function(modify = TRUE) {
 
 
 #' @rdname ons_countries
+#' @export
 ons_regions <- function(modify = TRUE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/7d1316afac3f4d508cd07592715cb0ee_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -31,6 +32,7 @@ ons_regions <- function(modify = TRUE) {
 }
 
 #' @rdname ons_countries
+#' @export
 ons_eng_counties <- function(modify = TRUE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/1e96fd2cc44e4dbc8c6f96f7340562fe_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -38,6 +40,7 @@ ons_eng_counties <- function(modify = TRUE) {
 }
 
 #' @rdname ons_countries
+#' @export
 ons_la <- function(modify = FALSE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/17eb563791b648f9a7025ca408bb09c6_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -88,21 +91,25 @@ ons_lookup <- function() {
 }
 
 #' @rdname ons_lookup
+#' @export
 ons_nuts1 <- function() {
   unique(ons_lookup()$NUTS118NM)
 }
 
 #' @rdname ons_lookup
+#' @export
 ons_nuts2 <- function() {
   unique(ons_lookup()$NUTS218NM)
 }
 
 #' @rdname ons_lookup
+#' @export
 ons_nuts3 <- function() {
   unique(ons_lookup()$NUTS318NM)
 }
 
 #' @rdname ons_lookup
+#' @export
 ons_lad <- function() {
   unique(ons_lookup()$LAU118NM)
 }
@@ -111,16 +118,24 @@ ons_lad <- function() {
 
 #' UK Postcodes
 #'
-#' @param pmatch partial matching
+#' Vector of UK postcodes. Search for matches with the `pattern` argument.
+#'
+#' @param regexp partial matching
 #' @export
-ons_pc <- function(pmatch = FALSE) {
-  if (isTRUE(pmatch)) {
-    out <- grep(pmatch, pc$CODE, value = TRUE)
+#' @details
+#' ons_pc("EH21 8A")
+ons_pc <- function(pattern = NULL) {
+  if (!is.null(pattern)) {
+    out <- grep(pattern, pc$CODE, value = TRUE)
   } else {
     out <- pc$CODE
   }
   out
 }
 
-#' @rdname ons_pc
+
+#' UK Postcodes and NUTS3 Codes
+#'
+#' @examples
+#' pc
 "pc"

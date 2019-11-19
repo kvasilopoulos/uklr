@@ -41,7 +41,7 @@
 
 <meta property="og:title" content="UK Postcodes — ons_pc" />
 
-<meta property="og:description" content="UK Postcodes" />
+<meta property="og:description" content="Vector of UK postcodes. Search for matches with the `pattern` argument." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -122,26 +122,24 @@
 
     <div class="ref-description">
     
-    <p>UK Postcodes</p>
+    <p>Vector of UK postcodes. Search for matches with the `pattern` argument.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ons_pc</span>(<span class='kw'>pmatch</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='no'>pc</span></pre>
+    <pre class="usage"><span class='fu'>ons_pc</span>(<span class='kw'>pattern</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pmatch</th>
+      <th>regexp</th>
       <td><p>partial matching</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 1759911 rows and 2 columns.</p>
+    <p>ons_pc("EH21 8A")</p>
     
 
   </div>
@@ -150,7 +148,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -5,14 +5,14 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
 [![Codecov test
 coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr?branch=master)
 <!-- badges: end -->
@@ -66,16 +66,16 @@ ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
 #> # A tibble: 94 x 3
 #>    region      date       totalApplicationCountByRegion
-#>    <chr>       <date>     <chr>                        
-#>  1 East Anglia 2011-12-01 37819                        
-#>  2 East Anglia 2012-01-01 44231                        
-#>  3 East Anglia 2012-02-01 44453                        
-#>  4 East Anglia 2012-03-01 46814                        
-#>  5 East Anglia 2012-04-01 40693                        
-#>  6 East Anglia 2012-05-01 47885                        
-#>  7 East Anglia 2012-06-01 39506                        
-#>  8 East Anglia 2012-07-01 46539                        
-#>  9 East Anglia 2012-08-01 45942                        
-#> 10 East Anglia 2012-09-01 41976                        
+#>    <chr>       <date>                             <dbl>
+#>  1 East Anglia 2011-12-01                         37819
+#>  2 East Anglia 2012-01-01                         44231
+#>  3 East Anglia 2012-02-01                         44453
+#>  4 East Anglia 2012-03-01                         46814
+#>  5 East Anglia 2012-04-01                         40693
+#>  6 East Anglia 2012-05-01                         47885
+#>  7 East Anglia 2012-06-01                         39506
+#>  8 East Anglia 2012-07-01                         46539
+#>  9 East Anglia 2012-08-01                         45942
+#> 10 East Anglia 2012-09-01                         41976
 #> # ... with 84 more rows
 ```

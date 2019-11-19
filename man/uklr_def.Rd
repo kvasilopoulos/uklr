@@ -19,3 +19,9 @@ uktrans_def()
 These functions return the definitions for the linked data construction in
 a tibble.
 }
+\examples{
+
+uklr_def()
+
+ukhp_def()
+}

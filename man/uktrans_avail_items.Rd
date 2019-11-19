@@ -3,12 +3,18 @@
 \name{uktrans_avail_items}
 \alias{uktrans_avail_items}
 \alias{uktrans_avail_regions}
-\title{Diplay Land Registry Transaction available data}
+\title{Diplay Land Registry Transaction available categories}
 \usage{
 uktrans_avail_items()
 
 uktrans_avail_regions()
 }
 \description{
-Diplay Land Registry Transaction available data
+\code{uktrans_avail_items()} and \code{uktrans_avail_regions()} display
+available items and regions for search respectively.
+}
+\examples{
+
+uktrans_avail_items()
+uktrans_avail_regions()
 }
