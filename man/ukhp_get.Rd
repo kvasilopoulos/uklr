@@ -13,7 +13,8 @@ should be exact, see \code{ukhp_avail_regions} for available regions. If regexp
 is set to TRUE then partial matching is possible. Furthermore it is set to
 NULL selects all available regions.}
 
-\item{item}{the item to select. See \code{ukhp_avail_items} for the available categories.}
+\item{item}{the item to select. See \code{ukhp_avail_items} for the available
+categories.}
 
 \item{regexp}{use regular expression in sparql to search for regions.}
 
@@ -24,7 +25,19 @@ NULL selects all available regions.}
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
 \description{
-Get House Price Data
+The UK House Price Index (UK HPI) captures changes in the value of residential
+properties. The UK HPI uses sales data collected on residential housing
+transactions, whether for cash or with a mortgage. Data is available at a
+national and regional level, as well as counties, local authorities and London boroughs.
+}
+\details{
+Properties have been included:
+
+\itemize{
+ \item in England and Wales since January 1995
+ \item in Scotland since January 2004
+ \item in Northern Ireland since January 2005
+}
 }
 \examples{
 \donttest{
@@ -40,7 +53,7 @@ ukhp_avail_regions()
 # For all available items
 ukhp_avail_items()
 
-ukhp_get(c("endland", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
+ukhp_get(c("england", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
 }
 }
 \seealso{

@@ -1,12 +1,15 @@
-#' Definitions
+#' Linked Data Definitions
+#'
+#' These functions return the definitions for the linked data construction in
+#' a tibble.
 #'
 #' @importFrom utils read.csv
 #' @export
 #'
 uklr_def <- function() {
-read.csv("http://landregistry.data.gov.uk/def/common.csv?_page=1")
-def <- read.csv("http://landregistry.data.gov.uk/def/commmon.csv?_pageSize=100")
-def$uri <- gsub(".*ukhpi/(.+)", "\\1", def$uri)
+  read.csv("http://landregistry.data.gov.uk/def/common.csv?_page=1")
+  def <- read.csv("http://landregistry.data.gov.uk/def/commmon.csv?_pageSize=100")
+  def$uri <- gsub(".*ukhpi/(.+)", "\\1", def$uri)
 }
 
 #' @rdname uklr_def

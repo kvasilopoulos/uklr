@@ -4,8 +4,8 @@
 \alias{uktrans_get}
 \title{Get Transaction Data}
 \usage{
-uktrans_get(item = NULL, region = NULL, regexp = TRUE,
-  start_date = NULL, end_date = NULL, ...)
+uktrans_get(item = "totalApplicationCountByRegion", region = NULL,
+  regexp = TRUE, start_date = NULL, end_date = NULL, ...)
 }
 \arguments{
 \item{item}{item to select}
@@ -24,7 +24,9 @@ NULL selects all available regions.}
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
 \description{
-Get Transaction Data
+Transaction Data is a dataset that shows how many customer applications we completed,
+in the preceding month for: first registrations, leases, transfers of part,
+dealings, official copies and searches. This is based on customer and location.
 }
 \examples{
 \donttest{

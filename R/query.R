@@ -23,14 +23,19 @@ process_request <- function(.query, ...) {
   res
 }
 
-#' Perform
+#' Tools to create a custom SPARQL query
 #'
 #' Function to create custom queries with the `/landregistry/query endpoint`. All
 #' necessary prefixes have to be included and output will be parsed from json to
-#' dataframe.
+#' dataframe. The most common prefixes can be include with \code{prefix_query}
 #'
 #' @param query custom query
 #' @export
+#' @examples
+#' custom_query <- "select * where {
+#'   <http://landregistry.data.gov.uk/data/ukhpi/region/newport/month/2013-10> ?property ?value
+#' }"
+#' build_sparql(prefix_query(custom_query))
 build_sparql <- sparql
 
 #' @rdname build_sparql

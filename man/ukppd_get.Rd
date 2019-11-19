@@ -21,7 +21,8 @@ ukppd_get(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
 \description{
-Get Price Paid Data
+Price Paid Data tracks property sales in England and Wales submitted to HM Land
+Registry for registration.  Price Paid Data is based on the raw data released each month.
 }
 \examples{
 \donttest{

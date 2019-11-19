@@ -26,7 +26,7 @@ reference:
       - uktrans_get
       - uktrans_avail_items
 
-  - title: ONS Data
+  - title: ONS Location Data
     contents:
       - ons_lookup
       - pc
@@ -35,9 +35,12 @@ reference:
     contents:
       - build_sparql
 
-  - title: Definitions & Browsing
+  - title: Definitions
     contents:
       - uklr_def
+
+  - title: Browse
+    contents:
       - uklr_browse
 
 navbar:

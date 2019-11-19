@@ -41,7 +41,9 @@
 
 <meta property="og:title" content="Get Transaction Data — uktrans_get" />
 
-<meta property="og:description" content="Get Transaction Data" />
+<meta property="og:description" content="Transaction Data is a dataset that shows how many customer applications we completed,
+in the preceding month for: first registrations, leases, transfers of part,
+dealings, official copies and searches. This is based on customer and location." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -122,12 +124,14 @@
 
     <div class="ref-description">
     
-    <p>Get Transaction Data</p>
+    <p>Transaction Data is a dataset that shows how many customer applications we completed,
+in the preceding month for: first registrations, leases, transfers of part,
+dealings, official copies and searches. This is based on customer and location.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>regexp</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

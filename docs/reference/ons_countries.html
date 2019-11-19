@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Linked Data Definitions — uklr_def • exuber</title>
+<title>Office of National Statistic Location Classification — ons_countries • exuber</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,10 +39,11 @@
 
 
 
-<meta property="og:title" content="Linked Data Definitions — uklr_def" />
+<meta property="og:title" content="Office of National Statistic Location Classification — ons_countries" />
 
-<meta property="og:description" content="These functions return the definitions for the linked data construction in
-a tibble." />
+<meta property="og:description" content="Functions ons_countries, ons_regions, ons_eng_counties
+and ons_la provide a vector of countries, regions, English counties
+and local authorities respectively." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -116,32 +117,49 @@ a tibble." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Linked Data Definitions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/definitions.R'><code>R/definitions.R</code></a></small>
-    <div class="hidden name"><code>uklr_def.Rd</code></div>
+    <h1>Office of National Statistic Location Classification</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/avail-ons.R'><code>R/avail-ons.R</code></a></small>
+    <div class="hidden name"><code>ons_countries.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>These functions return the definitions for the linked data construction in
-a tibble.</p>
+    <p>Functions <code>ons_countries</code>, <code>ons_regions</code>, <code>ons_eng_counties</code>
+and <code>ons_la</code> provide a vector of countries, regions, English counties
+and local authorities respectively.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>uklr_def</span>()
+    <pre class="usage"><span class='fu'>ons_countries</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>ukhp_def</span>()
+<span class='fu'>ons_regions</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>ukppd_def</span>()
+<span class='fu'>ons_eng_counties</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>uktrans_def</span>()</pre>
-        
+<span class='fu'>ons_la</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>modify</th>
+      <td><p>Modifies the vector to conform with the queries</p></td>
+    </tr>
+    </table>
+    
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

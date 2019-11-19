@@ -5,7 +5,7 @@
 \alias{ukhp_avail_regions}
 \alias{ukhp_avail_date_span}
 \alias{ukhp_avail_date_last}
-\title{Display Land Registry available regions, items and date-spanning.}
+\title{Display Land Registry available categories}
 \usage{
 ukhp_avail_items()
 
@@ -16,7 +16,9 @@ ukhp_avail_date_span()
 ukhp_avail_date_last()
 }
 \description{
-Display Land Registry available regions, items and date-spanning.
+\code{ukhp_avail_regions()} displays available regions, \code{ukhp_avail_regions()}
+displays available items, \code{ukhp_avail_date_span()} displays available date sample,
+and \code{ukhp_avail_date_last} displays the last available date.
 }
 \examples{
 ukhp_avail_regions()

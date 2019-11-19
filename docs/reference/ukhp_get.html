@@ -41,7 +41,10 @@
 
 <meta property="og:title" content="Get House Price Data — ukhp_get" />
 
-<meta property="og:description" content="Get House Price Data" />
+<meta property="og:description" content="The UK House Price Index (UK HPI) captures changes in the value of residential
+properties. The UK HPI uses sales data collected on residential housing
+transactions, whether for cash or with a mortgage. Data is available at a
+national and regional level, as well as counties, local authorities and London boroughs." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -122,7 +125,10 @@
 
     <div class="ref-description">
     
-    <p>Get House Price Data</p>
+    <p>The UK House Price Index (UK HPI) captures changes in the value of residential
+properties. The UK HPI uses sales data collected on residential housing
+transactions, whether for cash or with a mortgage. Data is available at a
+national and regional level, as well as counties, local authorities and London boroughs.</p>
     
     </div>
 
@@ -141,7 +147,8 @@ NULL selects all available regions.</p></td>
     </tr>
     <tr>
       <th>item</th>
-      <td><p>the item to select. See <code>ukhp_avail_items</code> for the available categories.</p></td>
+      <td><p>the item to select. See <code>ukhp_avail_items</code> for the available
+categories.</p></td>
     </tr>
     <tr>
       <th>regexp</th>
@@ -160,6 +167,16 @@ NULL selects all available regions.</p></td>
       <td><p>query modifiers passed through <code>rdf_modifiers</code>.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Properties have been included:</p>
+<ul>
+<li><p>in England and Wales since January 1995</p></li>
+<li><p>in Scotland since January 2004</p></li>
+<li><p>in Northern Ireland since January 2005</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -470,7 +487,20 @@ NULL selects all available regions.</p></td>
 #&gt; [47] "salesVolumeNewBuild"                      
 #&gt; [48] "salesVolumeCash"                          
 #&gt; [49] "salesVolumeMortgage"                      </div><div class='input'>
-<span class='fu'>ukhp_get</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"endland"</span>, <span class='st'>"wales"</span>), <span class='kw'>item</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"salesVolume"</span>, <span class='st'>"housePriceIndexDetached"</span>))</div><div class='output co'>#&gt; <span class='error'>Error: invalid region, see `ukhp_avail_regions()`</span></div><div class='input'># }
+<span class='fu'>ukhp_get</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"england"</span>, <span class='st'>"wales"</span>), <span class='kw'>item</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"salesVolume"</span>, <span class='st'>"housePriceIndexDetached"</span>))</div><div class='output co'>#&gt; # A tibble: 1,180 x 4
+#&gt;    region          date       salesVolume housePriceIndexDetached
+#&gt;    &lt;fct&gt;           &lt;date&gt;           &lt;dbl&gt;                   &lt;dbl&gt;
+#&gt;  1 east-of-england 1995-12-01        8660                    25.0
+#&gt;  2 east-of-england 1996-01-01        5931                    25.0
+#&gt;  3 east-of-england 1996-02-01        6407                    25.0
+#&gt;  4 east-of-england 1996-03-01        8394                    25.1
+#&gt;  5 east-of-england 1995-03-01        8374                    25.1
+#&gt;  6 east-of-england 1995-10-01        7442                    25.2
+#&gt;  7 east-of-england 1995-06-01        8864                    25.2
+#&gt;  8 east-of-england 1996-05-01        9886                    25.3
+#&gt;  9 east-of-england 1995-05-01        7765                    25.3
+#&gt; 10 east-of-england 1995-02-01        5928                    25.4
+#&gt; # ... with 1,170 more rows</div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -478,6 +508,8 @@ NULL selects all available regions.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>

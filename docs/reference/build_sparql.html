@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Perform — prefix_query • exuber</title>
+<title>Tools to create a custom SPARQL query — build_sparql • exuber</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,11 +39,11 @@
 
 
 
-<meta property="og:title" content="Perform — prefix_query" />
+<meta property="og:title" content="Tools to create a custom SPARQL query — build_sparql" />
 
 <meta property="og:description" content="Function to create custom queries with the `/landregistry/query endpoint`. All
 necessary prefixes have to be included and output will be parsed from json to
-dataframe." />
+dataframe. The most common prefixes can be include with prefix_query" />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -117,7 +117,7 @@ dataframe." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Perform</h1>
+    <h1>Tools to create a custom SPARQL query</h1>
     <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/query.R'><code>R/query.R</code></a></small>
     <div class="hidden name"><code>build_sparql.Rd</code></div>
     </div>
@@ -126,13 +126,13 @@ dataframe." />
     
     <p>Function to create custom queries with the `/landregistry/query endpoint`. All
 necessary prefixes have to be included and output will be parsed from json to
-dataframe.</p>
+dataframe. The most common prefixes can be include with <code>prefix_query</code></p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>prefix_query</span>(<span class='no'>query</span>)
+    <pre class="usage"><span class='fu'>build_sparql</span>(<span class='no'>query</span>)
 
-<span class='fu'>build_sparql</span>(<span class='no'>query</span>)</pre>
+<span class='fu'>prefix_query</span>(<span class='no'>query</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,12 +144,19 @@ dataframe.</p>
     </table>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>custom_query</span> <span class='kw'>&lt;-</span> <span class='st'>"select * where {
+  &lt;http://landregistry.data.gov.uk/data/ukhpi/region/newport/month/2013-10&gt; ?property ?value
+}"</span>
+<span class='fu'>build_sparql</span>(<span class='fu'>prefix_query</span>(<span class='no'>custom_query</span>))</div><div class='output co'>#&gt; <span class='error'>Error in prefix_query(custom_query): could not find function "prefix_query"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

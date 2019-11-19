@@ -1,4 +1,8 @@
-#' Display Land Registry available regions, items and date-spanning.
+#' Display Land Registry available categories
+#'
+#' \code{ukhp_avail_regions()} displays available regions, \code{ukhp_avail_regions()}
+#' displays available items, \code{ukhp_avail_date_span()} displays available date sample,
+#' and \code{ukhp_avail_date_last} displays the last available date.
 #'
 #' @export
 #' @examples

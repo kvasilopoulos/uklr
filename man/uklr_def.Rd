@@ -5,7 +5,7 @@
 \alias{ukhp_def}
 \alias{ukppd_def}
 \alias{uktrans_def}
-\title{Definitions}
+\title{Linked Data Definitions}
 \usage{
 uklr_def()
 
@@ -16,5 +16,6 @@ ukppd_def()
 uktrans_def()
 }
 \description{
-Definitions
+These functions return the definitions for the linked data construction in
+a tibble.
 }

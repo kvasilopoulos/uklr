@@ -41,11 +41,10 @@
 
 <meta property="og:title" content="Office of National Statistic Location Classification — ons_lookup" />
 
-<meta property="og:description" content="ons_lookup provides a table that that combines Local Authority
-District 1 and 2 to NUTS3, NUTS2 and NUTS1. Fucntion ons_countries,
-ons_regions, ons_eng_counties and ons_la
-provide a vector of countries, regions, English counties and local authorities
-respectively." />
+<meta property="og:description" content="ons_lookup provides a table that that combines local authority
+districts (lad), local administrative units (lau), nomenclature of territorial
+units for statistics(NUTS) 1,2 and 3. The other functions can extract the
+mentioned variables." />
 
 <meta property="og:image" content="https://kvasilopoulos.github.io/exuber/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -126,61 +125,29 @@ respectively." />
 
     <div class="ref-description">
     
-    <p><code>ons_lookup</code> provides a table that that combines Local Authority
-District 1 and 2 to NUTS3, NUTS2 and NUTS1. Fucntion <code>ons_countries</code>,
-<code>ons_regions</code>, <code>ons_eng_counties</code> and <code>ons_la</code>
-provide a vector of countries, regions, English counties and local authorities
-respectively.</p>
+    <p><code>ons_lookup</code> provides a table that that combines local authority
+districts (lad), local administrative units (lau), nomenclature of territorial
+units for statistics(NUTS) 1,2 and 3. The other functions can extract the
+mentioned variables.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ons_lookup</span>()
 
-<span class='fu'>ons_countries</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>ons_nuts1</span>()
 
-<span class='fu'>ons_regions</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>ons_nuts2</span>()
 
-<span class='fu'>ons_eng_counties</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>ons_nuts3</span>()
 
-<span class='fu'>ons_la</span>(<span class='kw'>modify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>modify</th>
-      <td><p>Modifies the vector to conformity with the package.</p></td>
-    </tr>
-    </table>
-    
+<span class='fu'>ons_lad</span>()</pre>
+        
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>ons_lookup</span>()</div><div class='output co'>#&gt; # A tibble: 400 x 11
-#&gt;    LAD18CD LAD18NM LAU118CD LAU118NM NUTS318CD NUTS318NM NUTS218CD NUTS218NM
-#&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;    
-#&gt;  1 E09000~ Lewish~ E090000~ Lewisham UKI44     Lewisham~ UKI4      Inner Lo~
-#&gt;  2 E09000~ Southw~ E090000~ Southwa~ UKI44     Lewisham~ UKI4      Inner Lo~
-#&gt;  3 E09000~ Lambeth E090000~ Lambeth  UKI45     Lambeth   UKI4      Inner Lo~
-#&gt;  4 E09000~ Bexley  E090000~ Bexley   UKI51     Bexley a~ UKI5      Outer Lo~
-#&gt;  5 E09000~ Greenw~ E090000~ Greenwi~ UKI51     Bexley a~ UKI5      Outer Lo~
-#&gt;  6 E09000~ Haveri~ E090000~ Havering UKI52     Barking ~ UKI5      Outer Lo~
-#&gt;  7 E09000~ Barkin~ E090000~ Barking~ UKI52     Barking ~ UKI5      Outer Lo~
-#&gt;  8 E09000~ Redbri~ E090000~ Redbrid~ UKI53     Redbridg~ UKI5      Outer Lo~
-#&gt;  9 E09000~ Waltha~ E090000~ Waltham~ UKI53     Redbridg~ UKI5      Outer Lo~
-#&gt; 10 E09000~ Enfield E090000~ Enfield  UKI54     Enfield   UKI5      Outer Lo~
-#&gt; # ... with 390 more rows, and 3 more variables: NUTS118CD &lt;chr&gt;,
-#&gt; #   NUTS118NM &lt;chr&gt;, FID &lt;int&gt;</div><div class='input'>
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>

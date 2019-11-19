@@ -1,11 +1,27 @@
 #' Get House Price Data
 #'
+#' The UK House Price Index (UK HPI) captures changes in the value of residential
+#' properties. The UK HPI uses sales data collected on residential housing
+#' transactions, whether for cash or with a mortgage. Data is available at a
+#' national and regional level, as well as counties, local authorities and London boroughs.
+#'
+#' @details
+#'
+#' Properties have been included:
+#'
+#' \itemize{
+#'  \item in England and Wales since January 1995
+#'  \item in Scotland since January 2004
+#'  \item in Northern Ireland since January 2005
+#' }
+#'
 #' @export
 #' @param region the region to select. If regexp is set to FALSE then the matching
 #' should be exact, see \code{ukhp_avail_regions} for available regions. If regexp
-#' is set to TRUE then partial matching is possible. Furthermore it is set to
-#' NULL selects all available regions.
-#' @param item the item to select. See \code{ukhp_avail_items} for the available categories.
+#' is set to TRUE then partial matching is possible. Furthermore if it is set to
+#' NULL then selects all available regions.
+#' @param item the item to select. See \code{ukhp_avail_items} for the available
+#' categories.
 #' @param regexp use regular expression in sparql to search for regions.
 #' @param start_date the start date
 #' @param end_date the end date
@@ -27,7 +43,7 @@
 #' # For all available items
 #' ukhp_avail_items()
 #'
-#' ukhp_get(c("endland", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
+#' ukhp_get(c("england", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
 #'}
 ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = TRUE,
                      start_date = NULL, end_date = NULL, ...) {
@@ -68,6 +84,9 @@ assert_valid_ukhp_region <- function(x) {
 
 
 #' Get Price Paid Data
+#'
+#' Price Paid Data tracks property sales in England and Wales submitted to HM Land
+#' Registry for registration.  Price Paid Data is based on the raw data released each month.
 #'
 #' @param postcode postcode to select
 #' @param item item to select
@@ -121,6 +140,10 @@ assert_valid_ukppd_postcodes <- function(x) {
 # Transaction data --------------------------------------------------------
 
 #' Get Transaction Data
+#'
+#' Transaction Data is a dataset that shows how many customer applications we completed,
+#' in the preceding month for: first registrations, leases, transfers of part,
+#' dealings, official copies and searches. This is based on customer and location.
 #'
 #' @param item item to select
 #' @inheritParams ukhp_get
