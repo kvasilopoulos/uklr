@@ -16,9 +16,9 @@ prefix_query(query)
 \arguments{
 \item{query}{custom query.}
 
-\item{...}{further arguments passed to \code{httr::GET}.}
+\item{endpoint}{land registry's web service endpoint.}
 
-\item{enpoint}{land registry's web service endpoint.}
+\item{...}{further arguments passed to \code{httr::GET}.}
 }
 \value{
 Returns a tibble that has been parsed from json.

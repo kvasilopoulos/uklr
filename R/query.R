@@ -12,7 +12,7 @@ process_request <- function(.query, ...) {
 #' dataframe. The most prefixes from land registry can be include with \code{prefix_query}.
 #'
 #' @param query custom query.
-#' @param enpoint land registry's web service endpoint.
+#' @param endpoint land registry's web service endpoint.
 #' @param ... further arguments passed to \code{httr::GET}.
 #'
 #' @importFrom httr stop_for_status
