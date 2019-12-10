@@ -28,7 +28,7 @@ sparql_file <- function(...) {
 
 build_sparql_filter <- function(...) {
   c(...) %!||%
-    paste("Filter (", paste(c(...), collapse = " && "), ")")
+    paste("Filter (", paste(c(...), collapse = " && \n\t\t"), ")")
 }
 
 build_sparql_filter_start_date <- function(start_date) {
@@ -44,7 +44,7 @@ build_sparql_filter_end_date <- function(end_date) {
 build_sparql_filter_region <- function(region) {
   inner <- region %!||%
     paste0("regex(str(?region), ", shQuote(region, "csh"), ", 'i' )",
-           collapse = "||")
+           collapse = " || \n\t\t")
   region %!||%
     paste0("(", inner, ")")
 }
@@ -163,15 +163,15 @@ ukppd_build_sparql_query <- function(..., postcode, item, optional_item, modifie
   values <- paste0('VALUES (?postcode) {', postcode_values, '}')
 
   addr_postcode <- "?addr lrcommon:postcode ?postcode."
-  transx_base <- "?transx lrppi:propertyAddress ?addr ;"
-  transx_item <- "lrppi:pricePaid ?amount ; lrppi:transactionDate ?dateStr ;
+  transx_base <- "?transx lrppi:propertyAddress ?addr;"
+  transx_item <- "lrppi:pricePaid ?amount; \n\t lrppi:transactionDate ?dateStr; \n\t
   lrppi:transactionCategory/skos:prefLabel ?category"
-  transx <- paste(transx_base, transx_item)
+  transx <- paste(transx_base, transx_item, sep = "\n")
   lrppi_item <- optional_item %!||%
     paste0("lrppi:", optional_item, " ?", item, collapse = "; ")
-  whr <- paste(values, addr_postcode, transx, lrppi_item)
 
-  paste(slct, "where {", whr, ..., "}", modifiers)
+  whr <- paste(values, addr_postcode, transx, lrppi_item)
+  paste("\n", slct, "\n", "where \n{", "\n", whr, ..., "}", modifiers)
 }
 
 # ukhp --------------------------------------------------------------------
@@ -201,7 +201,9 @@ ukhp_build_sparql_query <- function(..., item, extra, modifiers) {
   init_alloc <- "?region ukhpi:refPeriodStart ?dateStr;"
   ukhpi_item <- item %!||%
     paste0("ukhpi:", item, " ?", item, collapse = "; ")
-  paste(slct, "where {", init_alloc, ukhpi_item, ..., "}", modifiers)
+
+  paste0("\n", slct, "\n", "where","\n{", "\n\t", init_alloc, "\n\t\t",
+         ukhpi_item, "\n\n\t", ..., "\n", "}", "\n", modifiers)
 }
 
 

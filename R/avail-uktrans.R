@@ -3,6 +3,9 @@
 #'
 #' \code{uktrans_avail_items()} and \code{uktrans_avail_regions()} display
 #' available items and regions for search respectively.
+#'
+#' @return Returns a character vector.
+#'
 #' @export
 #' @examples
 #'

@@ -4,6 +4,8 @@
 #' a tibble.
 #'
 #' @importFrom utils read.csv
+#'
+#' @return Returns a tibble.
 #' @export
 #'
 #' @examples
@@ -12,9 +14,9 @@
 #'
 #' ukhp_def()
 uklr_def <- function() {
-  read.csv("http://landregistry.data.gov.uk/def/common.csv?_page=1")
-  def <- read.csv("http://landregistry.data.gov.uk/def/commmon.csv?_pageSize=100")
+  def <- read.csv("http://landregistry.data.gov.uk/def/common.csv?_pageSize=100")
   def$uri <- gsub(".*ukhpi/(.+)", "\\1", def$uri)
+  as_tibble(def)
 }
 
 #' @rdname uklr_def

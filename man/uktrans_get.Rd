@@ -28,6 +28,9 @@ available regions.}
 
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
+\value{
+Returns a tibble in long format.
+}
 \description{
 Transaction Data is a dataset that shows how many customer applications we completed,
 in the preceding month for: first registrations, leases, transfers of part,

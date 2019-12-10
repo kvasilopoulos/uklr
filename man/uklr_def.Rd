@@ -15,6 +15,9 @@ ukppd_def()
 
 uktrans_def()
 }
+\value{
+Returns a tibble.
+}
 \description{
 These functions return the definitions for the linked data construction in
 a tibble.

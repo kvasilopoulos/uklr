@@ -30,6 +30,9 @@ items.}
 
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
 }
+\value{
+Returns a tibble in long format.
+}
 \description{
 Price Paid Data tracks property sales in England and Wales submitted to HM Land
 Registry for registration.  Price Paid Data is based on the raw data released each month.

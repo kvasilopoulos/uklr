@@ -15,6 +15,9 @@ ukhp_avail_date_span()
 
 ukhp_avail_date_last()
 }
+\value{
+Returns a character vector.
+}
 \description{
 \code{ukhp_avail_regions()} displays available regions, \code{ukhp_avail_regions()}
 displays available items, \code{ukhp_avail_date_span()} displays available date sample,

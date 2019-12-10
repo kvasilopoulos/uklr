@@ -12,6 +12,9 @@ ukppd_avail_optional_items()
 
 ukppd_avail_postcodes()
 }
+\value{
+Returns a character vector.
+}
 \description{
 \code{ukppd_avail_items()} displays all available items for search,
 \code{ukppd_avail_optional_items()} displays optional items that refer to the

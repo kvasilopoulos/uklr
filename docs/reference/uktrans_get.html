@@ -169,61 +169,65 @@ available regions.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble in long format.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='st'>"East Anglia"</span>)</div><div class='output co'>#&gt; # A tibble: 94 x 3
+<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>, <span class='kw'>region</span> <span class='kw'>=</span> <span class='st'>"East Anglia"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 95 x 3</span><span>
 #&gt;    region      date       totalApplicationCountByRegion
-#&gt;    &lt;chr&gt;       &lt;date&gt;                             &lt;dbl&gt;
-#&gt;  1 East Anglia 2011-12-01                         37819
-#&gt;  2 East Anglia 2012-01-01                         44231
-#&gt;  3 East Anglia 2012-02-01                         44453
-#&gt;  4 East Anglia 2012-03-01                         46814
-#&gt;  5 East Anglia 2012-04-01                         40693
-#&gt;  6 East Anglia 2012-05-01                         47885
-#&gt;  7 East Anglia 2012-06-01                         39506
-#&gt;  8 East Anglia 2012-07-01                         46539
-#&gt;  9 East Anglia 2012-08-01                         45942
-#&gt; 10 East Anglia 2012-09-01                         41976
-#&gt; # ... with 84 more rows</div><div class='input'>
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>                             </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> East Anglia 2011-12-01                         </span><span style='text-decoration: underline;'>37</span><span>819
+#&gt; </span><span style='color: #555555;'> 2</span><span> East Anglia 2012-01-01                         </span><span style='text-decoration: underline;'>44</span><span>231
+#&gt; </span><span style='color: #555555;'> 3</span><span> East Anglia 2012-02-01                         </span><span style='text-decoration: underline;'>44</span><span>453
+#&gt; </span><span style='color: #555555;'> 4</span><span> East Anglia 2012-03-01                         </span><span style='text-decoration: underline;'>46</span><span>814
+#&gt; </span><span style='color: #555555;'> 5</span><span> East Anglia 2012-04-01                         </span><span style='text-decoration: underline;'>40</span><span>693
+#&gt; </span><span style='color: #555555;'> 6</span><span> East Anglia 2012-05-01                         </span><span style='text-decoration: underline;'>47</span><span>885
+#&gt; </span><span style='color: #555555;'> 7</span><span> East Anglia 2012-06-01                         </span><span style='text-decoration: underline;'>39</span><span>506
+#&gt; </span><span style='color: #555555;'> 8</span><span> East Anglia 2012-07-01                         </span><span style='text-decoration: underline;'>46</span><span>539
+#&gt; </span><span style='color: #555555;'> 9</span><span> East Anglia 2012-08-01                         </span><span style='text-decoration: underline;'>45</span><span>942
+#&gt; </span><span style='color: #555555;'>10</span><span> East Anglia 2012-09-01                         </span><span style='text-decoration: underline;'>41</span><span>976
+#&gt; </span><span style='color: #555555;'># ... with 85 more rows</span><span></div><div class='input'>
 <span class='co'># If `region` is left as NULL then it returns all available regions</span>
-<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>)</div><div class='output co'>#&gt; # A tibble: 1,128 x 3
+<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"totalApplicationCountByRegion"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 1,140 x 3</span><span>
 #&gt;    region     date       totalApplicationCountByRegion
-#&gt;    &lt;chr&gt;      &lt;date&gt;                             &lt;dbl&gt;
-#&gt;  1 South East 2011-12-01                        214852
-#&gt;  2 South East 2012-01-01                        247768
-#&gt;  3 South East 2012-02-01                        250045
-#&gt;  4 South East 2012-03-01                        271010
-#&gt;  5 South East 2012-04-01                        233486
-#&gt;  6 South East 2012-05-01                        267587
-#&gt;  7 South East 2012-06-01                        222280
-#&gt;  8 South East 2012-07-01                        263214
-#&gt;  9 South East 2012-08-01                        255424
-#&gt; 10 South East 2012-09-01                        233684
-#&gt; # ... with 1,118 more rows</div><div class='input'>
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>                             </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> South East 2011-12-01                        </span><span style='text-decoration: underline;'>214</span><span>852
+#&gt; </span><span style='color: #555555;'> 2</span><span> South East 2012-01-01                        </span><span style='text-decoration: underline;'>247</span><span>768
+#&gt; </span><span style='color: #555555;'> 3</span><span> South East 2012-02-01                        </span><span style='text-decoration: underline;'>250</span><span>045
+#&gt; </span><span style='color: #555555;'> 4</span><span> South East 2012-03-01                        </span><span style='text-decoration: underline;'>271</span><span>010
+#&gt; </span><span style='color: #555555;'> 5</span><span> South East 2012-04-01                        </span><span style='text-decoration: underline;'>233</span><span>486
+#&gt; </span><span style='color: #555555;'> 6</span><span> South East 2012-05-01                        </span><span style='text-decoration: underline;'>267</span><span>587
+#&gt; </span><span style='color: #555555;'> 7</span><span> South East 2012-06-01                        </span><span style='text-decoration: underline;'>222</span><span>280
+#&gt; </span><span style='color: #555555;'> 8</span><span> South East 2012-07-01                        </span><span style='text-decoration: underline;'>263</span><span>214
+#&gt; </span><span style='color: #555555;'> 9</span><span> South East 2012-08-01                        </span><span style='text-decoration: underline;'>255</span><span>424
+#&gt; </span><span style='color: #555555;'>10</span><span> South East 2012-09-01                        </span><span style='text-decoration: underline;'>233</span><span>684
+#&gt; </span><span style='color: #555555;'># ... with 1,130 more rows</span><span></div><div class='input'>
 <span class='co'># Quering all available transaction data</span>
-<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='fu'><a href='uktrans_avail_items.html'>uktrans_avail_items</a></span>())</div><div class='output co'>#&gt; # A tibble: 1,128 x 14
+<span class='fu'>uktrans_get</span>(<span class='kw'>item</span> <span class='kw'>=</span> <span class='fu'><a href='uktrans_avail_items.html'>uktrans_avail_items</a></span>())</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 1,140 x 14</span><span>
 #&gt;    region date       DFLCount DLGCount FRCount TPCount OSPCount OSWCount
-#&gt;    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-#&gt;  1 South~ 2011-12-01     2969    74122    1846    2010     5859    29053
-#&gt;  2 South~ 2012-01-01     3950    71168    2106    2874     4571    28591
-#&gt;  3 South~ 2012-02-01     4071    63747    2229    3118     4811    28164
-#&gt;  4 South~ 2012-03-01     4126    70021    2382    2578     6183    32853
-#&gt;  5 South~ 2012-04-01     3802    65445    1821    2055     4306    25757
-#&gt;  6 South~ 2012-05-01     3951    69133    1993    2426     5113    32780
-#&gt;  7 South~ 2012-06-01     2940    58046    1838    2138     5478    28140
-#&gt;  8 South~ 2012-07-01     3675    73408    2271    2769     4697    33578
-#&gt;  9 South~ 2012-08-01     2978    72609    1959    2549     5114    32433
-#&gt; 10 South~ 2012-09-01     2951    63909    1837    2376     4882    28948
-#&gt; # ... with 1,118 more rows, and 6 more variables: OSNPWCount &lt;dbl&gt;,
-#&gt; #   OC1Count &lt;dbl&gt;, SIMCount &lt;dbl&gt;, OSNPPCount &lt;dbl&gt;, OC2Count &lt;dbl&gt;,
-#&gt; #   totalApplicationCountByRegion &lt;dbl&gt;</div><div class='input'># }
-</div></pre>
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> South~ 2011-12-01     </span><span style='text-decoration: underline;'>2</span><span>969    </span><span style='text-decoration: underline;'>74</span><span>122    </span><span style='text-decoration: underline;'>1</span><span>846    </span><span style='text-decoration: underline;'>2</span><span>010     </span><span style='text-decoration: underline;'>5</span><span>859    </span><span style='text-decoration: underline;'>29</span><span>053
+#&gt; </span><span style='color: #555555;'> 2</span><span> South~ 2012-01-01     </span><span style='text-decoration: underline;'>3</span><span>950    </span><span style='text-decoration: underline;'>71</span><span>168    </span><span style='text-decoration: underline;'>2</span><span>106    </span><span style='text-decoration: underline;'>2</span><span>874     </span><span style='text-decoration: underline;'>4</span><span>571    </span><span style='text-decoration: underline;'>28</span><span>591
+#&gt; </span><span style='color: #555555;'> 3</span><span> South~ 2012-02-01     </span><span style='text-decoration: underline;'>4</span><span>071    </span><span style='text-decoration: underline;'>63</span><span>747    </span><span style='text-decoration: underline;'>2</span><span>229    </span><span style='text-decoration: underline;'>3</span><span>118     </span><span style='text-decoration: underline;'>4</span><span>811    </span><span style='text-decoration: underline;'>28</span><span>164
+#&gt; </span><span style='color: #555555;'> 4</span><span> South~ 2012-03-01     </span><span style='text-decoration: underline;'>4</span><span>126    </span><span style='text-decoration: underline;'>70</span><span>021    </span><span style='text-decoration: underline;'>2</span><span>382    </span><span style='text-decoration: underline;'>2</span><span>578     </span><span style='text-decoration: underline;'>6</span><span>183    </span><span style='text-decoration: underline;'>32</span><span>853
+#&gt; </span><span style='color: #555555;'> 5</span><span> South~ 2012-04-01     </span><span style='text-decoration: underline;'>3</span><span>802    </span><span style='text-decoration: underline;'>65</span><span>445    </span><span style='text-decoration: underline;'>1</span><span>821    </span><span style='text-decoration: underline;'>2</span><span>055     </span><span style='text-decoration: underline;'>4</span><span>306    </span><span style='text-decoration: underline;'>25</span><span>757
+#&gt; </span><span style='color: #555555;'> 6</span><span> South~ 2012-05-01     </span><span style='text-decoration: underline;'>3</span><span>951    </span><span style='text-decoration: underline;'>69</span><span>133    </span><span style='text-decoration: underline;'>1</span><span>993    </span><span style='text-decoration: underline;'>2</span><span>426     </span><span style='text-decoration: underline;'>5</span><span>113    </span><span style='text-decoration: underline;'>32</span><span>780
+#&gt; </span><span style='color: #555555;'> 7</span><span> South~ 2012-06-01     </span><span style='text-decoration: underline;'>2</span><span>940    </span><span style='text-decoration: underline;'>58</span><span>046    </span><span style='text-decoration: underline;'>1</span><span>838    </span><span style='text-decoration: underline;'>2</span><span>138     </span><span style='text-decoration: underline;'>5</span><span>478    </span><span style='text-decoration: underline;'>28</span><span>140
+#&gt; </span><span style='color: #555555;'> 8</span><span> South~ 2012-07-01     </span><span style='text-decoration: underline;'>3</span><span>675    </span><span style='text-decoration: underline;'>73</span><span>408    </span><span style='text-decoration: underline;'>2</span><span>271    </span><span style='text-decoration: underline;'>2</span><span>769     </span><span style='text-decoration: underline;'>4</span><span>697    </span><span style='text-decoration: underline;'>33</span><span>578
+#&gt; </span><span style='color: #555555;'> 9</span><span> South~ 2012-08-01     </span><span style='text-decoration: underline;'>2</span><span>978    </span><span style='text-decoration: underline;'>72</span><span>609    </span><span style='text-decoration: underline;'>1</span><span>959    </span><span style='text-decoration: underline;'>2</span><span>549     </span><span style='text-decoration: underline;'>5</span><span>114    </span><span style='text-decoration: underline;'>32</span><span>433
+#&gt; </span><span style='color: #555555;'>10</span><span> South~ 2012-09-01     </span><span style='text-decoration: underline;'>2</span><span>951    </span><span style='text-decoration: underline;'>63</span><span>909    </span><span style='text-decoration: underline;'>1</span><span>837    </span><span style='text-decoration: underline;'>2</span><span>376     </span><span style='text-decoration: underline;'>4</span><span>882    </span><span style='text-decoration: underline;'>28</span><span>948
+#&gt; </span><span style='color: #555555;'># ... with 1,130 more rows, and 6 more variables: OSNPWCount </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,
+#&gt; #   OC1Count </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, SIMCount </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, OSNPPCount </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, OC2Count </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,
+#&gt; #   totalApplicationCountByRegion </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'># }
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

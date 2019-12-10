@@ -4,6 +4,8 @@
 #' displays available items, \code{ukhp_avail_date_span()} displays available date sample,
 #' and \code{ukhp_avail_date_last} displays the last available date.
 #'
+#' @return Returns a character vector.
+#'
 #' @export
 #' @examples
 #'

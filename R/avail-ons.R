@@ -9,8 +9,12 @@ gsub_lr <- function(x, lgl) {
 #' and \code{ons_la} provide a vector of countries, regions, English counties
 #' and local authorities respectively.
 #'
-#' @param modify Modifies the vector to conform with the queries
+#' @param modify Modifies the vector to conform with the queries.
+#'
+#' @return A character vector with the location names.
+#'
 #' @export
+#'
 #' @examples
 #' \donttest{
 #' ons_countries()
@@ -26,10 +30,18 @@ ons_countries <- function(modify = TRUE) {
 
 #' @rdname ons_countries
 #' @export
-ons_regions <- function(modify = TRUE) {
+ons_eng_regions <- function(modify = TRUE) {
   x <- httr::GET("https://opendata.arcgis.com/datasets/7d1316afac3f4d508cd07592715cb0ee_0.geojson")
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   gsub_lr(y$properties$RGN18NM, modify)
+}
+
+#' @rdname ons_countries
+#' @export
+ons_regions <- function(modify = TRUE) {
+  countries <- ons_countries(modify)[-1]
+  eng_regions <- ons_eng_regions(modify)
+  c(countries, eng_regions)
 }
 
 #' @rdname ons_countries
@@ -81,6 +93,8 @@ ons_la <- function(modify = FALSE) {
 #' districts (lad), local administrative units (lau), nomenclature of territorial
 #' units for statistics(NUTS) 1,2 and 3. The other functions can extract the
 #' mentioned variables.
+#'
+#' @return A character vector with the location names.
 #'
 #' @export
 #' @examples

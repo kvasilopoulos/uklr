@@ -18,6 +18,9 @@ ons_nuts3()
 
 ons_lad()
 }
+\value{
+A character vector with the location names.
+}
 \description{
 \code{ons_lookup} provides a table that that combines local authority
 districts (lad), local administrative units (lau), nomenclature of territorial

@@ -9,6 +9,9 @@ uktrans_avail_items()
 
 uktrans_avail_regions()
 }
+\value{
+Returns a character vector.
+}
 \description{
 \code{uktrans_avail_items()} and \code{uktrans_avail_regions()} display
 available items and regions for search respectively.

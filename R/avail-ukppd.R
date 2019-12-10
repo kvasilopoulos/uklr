@@ -7,6 +7,8 @@
 #'/
 #' @export
 #'
+#' @return Returns a character vector.
+#'
 #' @examples
 #'
 #' ukppd_avail_items()

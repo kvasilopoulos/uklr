@@ -2,12 +2,15 @@
 % Please edit documentation in R/avail-ons.R
 \name{ons_countries}
 \alias{ons_countries}
+\alias{ons_eng_regions}
 \alias{ons_regions}
 \alias{ons_eng_counties}
 \alias{ons_la}
 \title{Office of National Statistic Location Classification}
 \usage{
 ons_countries(modify = TRUE)
+
+ons_eng_regions(modify = TRUE)
 
 ons_regions(modify = TRUE)
 
@@ -16,7 +19,10 @@ ons_eng_counties(modify = TRUE)
 ons_la(modify = FALSE)
 }
 \arguments{
-\item{modify}{Modifies the vector to conform with the queries}
+\item{modify}{Modifies the vector to conform with the queries.}
+}
+\value{
+A character vector with the location names.
 }
 \description{
 Functions \code{ons_countries}, \code{ons_regions}, \code{ons_eng_counties}

@@ -4,9 +4,6 @@
     <loc>https://kvasilopoulos.github.io/uklr//index.html</loc>
   </url>
   <url>
-    <loc>https://kvasilopoulos.github.io/uklr//reference/build_sparql.html</loc>
-  </url>
-  <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/ons_countries.html</loc>
   </url>
   <url>
@@ -17,6 +14,9 @@
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/pc.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/uklr//reference/sparql.html</loc>
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/ukhp_avail_items.html</loc>

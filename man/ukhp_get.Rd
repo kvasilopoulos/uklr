@@ -7,7 +7,7 @@
 ukhp_get(
   region = "england",
   item = "housePriceIndex",
-  regexp = TRUE,
+  regexp = FALSE,
   start_date = NULL,
   end_date = NULL,
   ...
@@ -29,6 +29,9 @@ categories.}
 \item{end_date}{the end date as YYYY-MM-DD.}
 
 \item{...}{query modifiers passed through \code{rdf_modifiers}.}
+}
+\value{
+Returns a tibble in long format.
 }
 \description{
 The UK House Price Index (UK HPI) captures changes in the value of residential

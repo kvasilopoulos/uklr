@@ -169,55 +169,59 @@ items.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble in long format.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>)</div><div class='output co'>#&gt; # A tibble: 32 x 4
+<span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 32 x 4</span><span>
 #&gt;    postcode amount date       category                       
-#&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          
-#&gt;  1 PL6 8RU  227000 2007-06-29 Standard price paid transaction
-#&gt;  2 PL6 8RU  149950 2002-11-08 Standard price paid transaction
-#&gt;  3 PL6 8RU  220000 2005-06-29 Standard price paid transaction
-#&gt;  4 PL6 8RU  195000 2004-06-17 Standard price paid transaction
-#&gt;  5 PL6 8RU  172000 2008-11-14 Standard price paid transaction
-#&gt;  6 PL6 8RU  180000 2014-06-02 Standard price paid transaction
-#&gt;  7 PL6 8RU   58000 2000-05-19 Standard price paid transaction
-#&gt;  8 PL6 8RU  179000 2011-04-20 Standard price paid transaction
-#&gt;  9 PL6 8RU  192500 2011-07-27 Standard price paid transaction
-#&gt; 10 PL6 8RU  202500 2015-06-29 Standard price paid transaction
-#&gt; # ... with 22 more rows</div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; # A tibble: 30 x 4
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                          
+#&gt; </span><span style='color: #555555;'> 1</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>227</span><span>000 2007-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 2</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>149</span><span>950 2002-11-08 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 3</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>220</span><span>000 2005-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 4</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>195</span><span>000 2004-06-17 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 5</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>172</span><span>000 2008-11-14 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 6</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>180</span><span>000 2014-06-02 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 7</span><span> PL6 8RU   </span><span style='text-decoration: underline;'>58</span><span>000 2000-05-19 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 8</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>179</span><span>000 2011-04-20 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 9</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>192</span><span>500 2011-07-27 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'>10</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>202</span><span>500 2015-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'># ... with 22 more rows</span><span></div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 30 x 4</span><span>
 #&gt;    postcode amount date       category                       
-#&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          
-#&gt;  1 PL6 8RU  227000 2007-06-29 Standard price paid transaction
-#&gt;  2 PL6 8RU  149950 2002-11-08 Standard price paid transaction
-#&gt;  3 PL6 8RU  220000 2005-06-29 Standard price paid transaction
-#&gt;  4 PL6 8RU  195000 2004-06-17 Standard price paid transaction
-#&gt;  5 PL6 8RU  172000 2008-11-14 Standard price paid transaction
-#&gt;  6 PL6 8RU  180000 2014-06-02 Standard price paid transaction
-#&gt;  7 PL6 8RU  179000 2011-04-20 Standard price paid transaction
-#&gt;  8 PL6 8RU  192500 2011-07-27 Standard price paid transaction
-#&gt;  9 PL6 8RU  202500 2015-06-29 Standard price paid transaction
-#&gt; 10 PL6 8RU  199950 2004-07-21 Standard price paid transaction
-#&gt; # ... with 20 more rows</div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; # A tibble: 30 x 4
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                          
+#&gt; </span><span style='color: #555555;'> 1</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>227</span><span>000 2007-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 2</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>149</span><span>950 2002-11-08 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 3</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>220</span><span>000 2005-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 4</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>195</span><span>000 2004-06-17 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 5</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>172</span><span>000 2008-11-14 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 6</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>180</span><span>000 2014-06-02 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 7</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>179</span><span>000 2011-04-20 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 8</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>192</span><span>500 2011-07-27 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 9</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>202</span><span>500 2015-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'>10</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>199</span><span>950 2004-07-21 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'># ... with 20 more rows</span><span></div><div class='input'><span class='fu'>ukppd_get</span>(<span class='st'>"PL6 8RU"</span>, <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2001-01-01"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 30 x 4</span><span>
 #&gt;    postcode amount date       category                       
-#&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          
-#&gt;  1 PL6 8RU  227000 2007-06-29 Standard price paid transaction
-#&gt;  2 PL6 8RU  149950 2002-11-08 Standard price paid transaction
-#&gt;  3 PL6 8RU  220000 2005-06-29 Standard price paid transaction
-#&gt;  4 PL6 8RU  195000 2004-06-17 Standard price paid transaction
-#&gt;  5 PL6 8RU  172000 2008-11-14 Standard price paid transaction
-#&gt;  6 PL6 8RU  180000 2014-06-02 Standard price paid transaction
-#&gt;  7 PL6 8RU  179000 2011-04-20 Standard price paid transaction
-#&gt;  8 PL6 8RU  192500 2011-07-27 Standard price paid transaction
-#&gt;  9 PL6 8RU  202500 2015-06-29 Standard price paid transaction
-#&gt; 10 PL6 8RU  199950 2004-07-21 Standard price paid transaction
-#&gt; # ... with 20 more rows</div><div class='input'># }
-</div></pre>
+#&gt;  </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                          
+#&gt; </span><span style='color: #555555;'> 1</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>227</span><span>000 2007-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 2</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>149</span><span>950 2002-11-08 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 3</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>220</span><span>000 2005-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 4</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>195</span><span>000 2004-06-17 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 5</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>172</span><span>000 2008-11-14 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 6</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>180</span><span>000 2014-06-02 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 7</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>179</span><span>000 2011-04-20 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 8</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>192</span><span>500 2011-07-27 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'> 9</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>202</span><span>500 2015-06-29 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'>10</span><span> PL6 8RU  </span><span style='text-decoration: underline;'>199</span><span>950 2004-07-21 Standard price paid transaction
+#&gt; </span><span style='color: #555555;'># ... with 20 more rows</span><span></div><div class='input'># }
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

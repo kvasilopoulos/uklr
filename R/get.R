@@ -29,6 +29,8 @@
 #'
 #' @seealso \code{rdf_modifiers}
 #'
+#' @return Returns a tibble in long format.
+#'
 #' @examples
 #'\donttest{
 #' # This is case sensitive
@@ -42,7 +44,7 @@
 #'
 #' ukhp_get(c("england", "wales"), item = c("salesVolume", "housePriceIndexDetached"))
 #'}
-ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = TRUE,
+ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = FALSE,
                      start_date = NULL, end_date = NULL, ...) {
   assert_valid_ukhp_region(region)
   assert_valid_ukhp_items(item)
@@ -93,6 +95,8 @@ assert_valid_ukhp_region <- function(x) {
 #' the transaction, , see \code{ukppd_avail_optional_items()} for available
 #' items.
 #' @inheritParams ukhp_get
+#'
+#' @return Returns a tibble in long format.
 #'
 #' @export
 #' @examples
@@ -151,6 +155,8 @@ assert_valid_ukppd_postcodes <- function(x) {
 #' @param region  region to select, see \code{uktrans_avail_regions()} for
 #' available regions.
 #' @inheritParams ukhp_get
+#'
+#' @return Returns a tibble in long format.
 #'
 #' @export
 #' @examples
