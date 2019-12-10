@@ -14,9 +14,11 @@ sparql(
 prefix_query(query)
 }
 \arguments{
-\item{query}{custom query}
+\item{query}{custom query.}
 
-\item{...}{further arguments passed to \code{httr::GET}}
+\item{...}{further arguments passed to \code{httr::GET}.}
+
+\item{enpoint}{land registry's web service endpoint.}
 }
 \value{
 Returns a tibble that has been parsed from json.

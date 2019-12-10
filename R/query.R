@@ -12,6 +12,7 @@ process_request <- function(.query, ...) {
 #' dataframe. The most prefixes from land registry can be include with \code{prefix_query}.
 #'
 #' @param query custom query.
+#' @param enpoint land registry's web service endpoint.
 #' @param ... further arguments passed to \code{httr::GET}.
 #'
 #' @importFrom httr stop_for_status
@@ -44,7 +45,10 @@ sparql <- function(query, endpoint = "http://landregistry.data.gov.uk/landregist
 
 #' Get the sparql query performed with \code{sparql}.
 #'
-#' @param x
+#' @param x the result of query.
+#'
+#' @value Returns the a character vector with the query.
+#'
 get_query <- function(x) {
   attr(x, "query")
 }
