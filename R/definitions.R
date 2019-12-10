@@ -9,10 +9,11 @@
 #' @export
 #'
 #' @examples
-#'
+#' \donttest{
 #' uklr_def()
 #'
 #' ukhp_def()
+#' }
 uklr_def <- function() {
   def <- read.csv("http://landregistry.data.gov.uk/def/common.csv?_pageSize=100")
   def$uri <- gsub(".*ukhpi/(.+)", "\\1", def$uri)
