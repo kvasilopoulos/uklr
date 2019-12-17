@@ -15,20 +15,13 @@
 
 * This is a new release.
 
+## Addressed comments
 
-Omit the redundant "R" from the title.
+* Omitted the redundant "R" from the title.
 
-Please always explain all acronyms in the description text.
+* Explained all acronyms in the description text.
 
-Please always and only write package names, software names and API names
-in single quotes in title and description.
-e.g: 'uklr'
+* Used single quotes to write package names, software names and API names
+in title and description. e.g: 'uklr' & 'SPARQL'
 
-Please only capitalize sentence beginnings and names in the description
-text. e.g. --> transaction data ...
-
-Please add \value to .Rd files regarding methods and explain the
-functions results in the documentation.
-(See: Writing R Extensions
-<https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Documenting-functions>
-)
+* Added 'value' entry to to all .Rd files.

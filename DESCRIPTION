@@ -8,7 +8,7 @@ Authors@R:
            email = "k.vasilopoulo@gmail.com",
            comment = c(ORCID = "0000-0002-9769-6395"))
 Description: Access data from Land Registry Open Data <http://landregistry.data.gov.uk/> 
-    through SPARQL queries. 'uklr' supports the house price index, transaction and price paid data.
+    through 'SPARQL' queries. 'uklr' supports the house price index, transaction and price paid data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
