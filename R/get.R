@@ -200,3 +200,5 @@ assert_valid_uktrans_regions <- function(x) {
   if (any(x %ni% uktrans_avail_regions()))
     stop("invalid region, see `uktrans_avail_regions()`", call. = FALSE)
 }
+
+# TODO check empty tibble
