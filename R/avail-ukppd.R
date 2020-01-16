@@ -22,6 +22,12 @@ ukppd_avail_items <- function() {
     "ppi", "transaction", "0A73B494-6838-4604-961B-0453DF4CC0BB", "current")
   proc <- process_request(query)
   gsub(".*/ppi/(.+)", "\\1", proc$type[-1])
+  # lrppi_label <- c("recordStatus", "propertyType", "estateType", "transactionCategory")
+  # if (label) {
+  #   skos_label <- out %in% lrppi_label
+  #   out[skos_label] <- paste0(out[skos_label], "/skos:prefLabel")
+  # }
+  # out
 }
 
 #'@rdname ukppd_avail_items
@@ -36,5 +42,6 @@ ukppd_avail_optional_items <- function() {
 #' @rdname ukppd_avail_items
 #' @export
 ukppd_avail_postcodes <- function() {
- ons_pc()
+  pc$NUTS3 <- gsub("[0-9]", "", pc$NUTS3)
+  pc[!pc$NUTS3 %in% c("UKM", "UKN"), ]$CODE
 }
