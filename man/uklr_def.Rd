@@ -23,8 +23,9 @@ These functions return the definitions for the linked data construction in
 a tibble.
 }
 \examples{
-
+\donttest{
 uklr_def()
 
 ukhp_def()
+}
 }

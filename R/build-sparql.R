@@ -138,9 +138,6 @@ uktrans_build_sparql_query <- function(..., item, modifiers) {
 
 # ukppd -------------------------------------------------------------------
 
-#' @examples
-#' ukppd_build_sparql("PL6 8RU", .item = NULL, .optional_item = NULL,
-#' .start_date = NULL, .end_date = NULL,)
 ukppd_build_sparql <-
   function(.postcode = NULL, .item = NULL, .optional_item = NULL,
            .start_date = NULL, .end_date = NULL, ...) {
