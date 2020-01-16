@@ -138,10 +138,16 @@ uktrans_build_sparql_query <- function(..., item, modifiers) {
 
 # ukppd -------------------------------------------------------------------
 
+#' @examples
+#' ukppd_build_sparql("PL6 8RU", .item = NULL, .optional_item = NULL,
+#' .start_date = NULL, .end_date = NULL,)
 ukppd_build_sparql <-
-  function(.postcode, .item, .optional_item, .start_date, .end_date, ...) {
+  function(.postcode = NULL, .item = NULL, .optional_item = NULL,
+           .start_date = NULL, .end_date = NULL, ...) {
     ukppd_build_sparql_query(
-      postcode = .postcode, item = .item, optional_item = .optional_item,
+      postcode = .postcode,
+      item = .item,
+      optional_item = .optional_item,
       build_sparql_filter(
         build_sparql_filter_start_date(.start_date),
         build_sparql_filter_end_date(.end_date)
@@ -159,19 +165,24 @@ ukppd_build_sparql_query <- function(..., postcode, item, optional_item, modifie
   slct <- paste("Select", base_item, categ_item, slct_optional_item)
 
   postcode_values <-
-    paste0("(", shQuote(postcode, "csh"), "^^xsd:string)", collapse = " ")
-  values <- paste0('VALUES (?postcode) {', postcode_values, '}')
+    paste0(shQuote(postcode, "csh"), "^^xsd:string", collapse = "\n ")
+  values <- paste0('VALUES ?postcode {', postcode_values, '}')
 
-  addr_postcode <- "?addr lrcommon:postcode ?postcode."
-  transx_base <- "?transx lrppi:propertyAddress ?addr;"
-  transx_item <- "lrppi:pricePaid ?amount; \n\t lrppi:transactionDate ?dateStr; \n\t
-  lrppi:transactionCategory/skos:prefLabel ?category"
+  addr_postcode <- "\n\n\t ?addr lrcommon:postcode ?postcode. \n"
+  transx_base <- "\t ?transx lrppi:propertyAddress ?addr; \n"
+  transx_item <- "\t lrppi:pricePaid ?amount;
+  \t lrppi:transactionDate ?dateStr;
+  \t lrppi:transactionCategory/skos:prefLabel ?category;\n"
   transx <- paste(transx_base, transx_item, sep = "\n")
-  lrppi_item <- optional_item %!||%
-    paste0("lrppi:", optional_item, " ?", item, collapse = "; ")
+  lrppi_item <- item %!||%
+    paste0("\t lrppi:", item, " ?", item, collapse = ";\n ")
 
-  whr <- paste(values, addr_postcode, transx, lrppi_item)
-  paste("\n", slct, "\n", "where \n{", "\n", whr, ..., "}", modifiers)
+  optional_addr <- optional_item %!||%
+    paste0("\n\t OPTIONAL {?addr lrcommon:",
+           optional_item, " ?", optional_item, "}", collapse =  "")
+
+  whr <- paste(values, addr_postcode, transx, lrppi_item, "\n", optional_addr)
+  paste("\n", slct, "\n", "where \n{", "\n", whr, ..., "\n}", modifiers)
 }
 
 # ukhp --------------------------------------------------------------------
