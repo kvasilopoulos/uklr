@@ -8,6 +8,6 @@
 #' @keywords internal
 #' @export
 get_query <- function(x) {
-  .Deprecated("get_query()", package = "exuber")
+  .Deprecated("get_query()", package = "uklr")
   retrieve_query(x)
 }

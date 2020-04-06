@@ -4,7 +4,9 @@
 \name{pc}
 \alias{pc}
 \title{UK Postcodes and NUTS3 Codes}
-\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1759911 rows and 2 columns.}
+\format{
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1759911 rows and 2 columns.
+}
 \usage{
 pc
 }

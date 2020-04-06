@@ -1,5 +1,8 @@
 context("build-sparql")
 
+skip_if_offline()
+skip_if_http_error()
+
 test_that("basic query", {
   expect_error(ukhp_get(), NA)
   expect_error(ukppd_get(), NA)
@@ -23,6 +26,9 @@ test_that("avail",{
          c("refMonth", "refRegion", "refPeriodStart", "refPeriodDuration"))
   expect_error(ukhp_avail_date_last(), NA)
   expect_error(ukhp_avail_date_span(), NA)
+})
+
+test_that("ons", {
   expect_error(ons_lookup(), NA)
   expect_error(ons_countries(), NA)
   expect_error(ons_regions(), NA)
@@ -43,9 +49,10 @@ test_that("def",{
   expect_error(uktrans_def(), NA)
 })
 
-# test_that("browse", {
-#   expect_equal(uklr_browse(), "http://landregistry.data.gov.uk/")
-#   expect_equal(ukhp_browse(), "http://landregistry.data.gov.uk/def/hpi")
-#   expect_equal(ukppd_browse(), "http://landregistry.data.gov.uk/def/ppi")
-#   expect_equal(uktrans_browse(), "http://landregistry.data.gov.uk/def/trans")
-# })
+test_that("browse", {
+  skip_if_interactive()
+  expect_equal(uklr_browse(), "http://landregistry.data.gov.uk")
+  expect_equal(ukhp_browse(), "http://landregistry.data.gov.uk/def/ukhpi")
+  expect_equal(ukppd_browse(), "http://landregistry.data.gov.uk/def/ppi")
+  expect_equal(uktrans_browse(), "http://landregistry.data.gov.uk/def/trans")
+})

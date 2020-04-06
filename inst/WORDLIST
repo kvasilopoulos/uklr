@@ -1,5 +1,6 @@
 AppVeyor
 Codecov
+england
 HPI
 http
 json
@@ -12,4 +13,5 @@ sparql
 SPARQL
 tibble
 uk
+URI
 YYYY

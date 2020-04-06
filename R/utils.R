@@ -37,8 +37,8 @@ view_url <- function(url, open = interactive()) {
 }
 
 
-if (getRversion() >= "2.15.1") {
-  utils::globalVariables(
-    c("pc")
-  )
-}
+# if (getRversion() >= "2.15.1") {
+#   utils::globalVariables(
+#     c("pc")
+#   )
+# }

@@ -142,10 +142,11 @@ ons_lad <- function() {
 #' @details
 #' ons_pc("EH21 8A")
 ons_pc <- function(pattern = NULL) {
+  x <- get("pc")
   if (!is.null(pattern)) {
-    out <- grep(pattern, pc$CODE, value = TRUE)
+    out <- grep(pattern, x$CODE, value = TRUE)
   } else {
-    out <- pc$CODE
+    out <- x$CODE
   }
   out
 }

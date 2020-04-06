@@ -127,13 +127,14 @@ uktrans_build_sparql_query <- function(..., item, modifiers) {
     paste0("?", item, collapse = " ")
   slct <- paste("Select", base_item, categ_item)
 
-  type_base <- "?type trans:regionName ?region; trans:countPeriod ?dt;"
+  type_base <- "?type trans:regionName ?region;\n\t trans:countPeriod ?dt;\n"
   transx_item <- item %!||%
-    paste0("trans:", item, " ?", item, collapse = "; ")
+    paste0("\t trans:", item, " ?", item, collapse = ";\n")
   bind_date <- "bind(concat(str(year(?dt)),'-', str(month(?dt)), '-01') as ?date)"
   whr <- paste(type_base, transx_item, bind_date)
 
-  paste(slct, "where {",  whr, ..., "}", modifiers)
+  paste0("\n", slct, "\n", "where","\n{", "\n", whr,
+         "\n\t", ..., "\n", "}", "\n", modifiers)
 }
 
 # ukppd -------------------------------------------------------------------

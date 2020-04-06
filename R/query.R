@@ -5,9 +5,10 @@ process_request <- function(.query, ...) {
   res
 }
 
+#' @importFrom httr timeout
 try_GET <- function(x, ...) {
   tryCatch(
-    GET(url = x, timeout(1), ...),
+    GET(url = x, timeout(10), ...),
     error = function(e) conditionMessage(e),
     warning = function(w) conditionMessage(w)
   )
@@ -26,7 +27,7 @@ is_response <- function(x) {
 #' @param endpoint land registry's web service endpoint.
 #' @param ... further arguments passed to \code{httr::GET}.
 #'
-#' @importFrom httr stop_for_status
+#' @importFrom httr message_for_status GET
 #' @importFrom utils URLencode
 #' @importFrom tibble as_tibble
 #' @importFrom curl has_internet
@@ -45,9 +46,9 @@ sparql <- function(query, endpoint = "http://landregistry.data.gov.uk/landregist
   enc_query <- gsub("\\+", "%2B", URLencode(query, reserved = TRUE))
   if (!curl::has_internet()) {
     message("No internet connection.")
-    return(NULL)
+    return(invisible(NULL))
   }
-  res_json <- try_GET(
+  res_json <- GET(
     paste(endpoint, "?query=", enc_query, sep = ""),
     httr::add_headers("Accept" = "application/sparql-results+json"),
     ...
@@ -76,7 +77,6 @@ retrieve_query <- function(x) {
   attr(x, "query")
 }
 
-#TODO depracate get_query
 
 print.query <- function(x) {
   cat(x)

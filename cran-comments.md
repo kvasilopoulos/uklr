@@ -1,6 +1,6 @@
 ## Test environments
 
-* local OS X install, R 3.6.1
+* local OS X install, R 3.6.3
 * Continuous Integration
   * Ubuntu Trusty 14.04 on travis-ci (devel and release)
   * macOS on travis-ci (devel and release)
@@ -11,17 +11,4 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release.
-
-## Addressed comments
-
-* Omitted the redundant "R" from the title.
-
-* Explained all acronyms in the description text.
-
-* Used single quotes to write package names, software names and API names
-in title and description. e.g: 'uklr' & 'SPARQL'
-
-* Added 'value' entry to to all .Rd files.
+0 errors | 0 warnings | 0 notes
