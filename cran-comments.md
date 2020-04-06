@@ -6,9 +6,10 @@
   * macOS on travis-ci (devel and release)
   * Windows Server 2012 on appveyor (devel and release)
 * Rhub
-  * Debian Linux, R-devel & R-devel, GCC ASAN/UBSAN
-  * Fedora Linux, R-devel & R-devel, clang, gfortran
-
+  * Fedora Linux, R-devel, clang, gfortran
+  * Ubuntu Linux 16.04 LTS, R-release, GCC
+  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+  
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
