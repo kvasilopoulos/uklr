@@ -23,6 +23,12 @@ supports the UK HPI, Transaction Data and Price Paid Data.
 
 ## Installation
 
+Install release version from CRAN
+
+``` r
+install.packages("exuber")
+```
+
 You can install the development version from
 [GitHub](https://github.com/) with:
 
@@ -30,6 +36,9 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("kvasilopoulos/uklr")
 ```
+
+If you encounter a clear bug, please file a reproducible example on
+[GitHub](https://github.com/kvasilopoulos/uklr/issues).
 
 ## Example
 
