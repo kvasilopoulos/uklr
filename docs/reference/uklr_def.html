@@ -78,7 +78,7 @@ a tibble." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">uklr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -141,48 +141,49 @@ a tibble.</p>
     <p>Returns a tibble.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>uklr_def</span>()</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 32 x 29</span><span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>uklr_def</span>()</div><div class='output co'>#&gt; # A tibble: 32 x 29
 #&gt;    uri   pref.label label comment domain domain...uri imports imports...uri
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        
-#&gt; </span><span style='color: #555555;'> 1</span><span> http~ </span><span style='color: #555555;'>""</span><span>         Comm~ Common~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           core    http://www.w~
-#&gt; </span><span style='color: #555555;'> 2</span><span> http~ </span><span style='color: #555555;'>""</span><span>         Addr~ Super ~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 3</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 4</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 5</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 6</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 7</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 8</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'> 9</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'>10</span><span> http~ </span><span style='color: #555555;'>""</span><span>         BS76~ BS7666~ </span><span style='color: #555555;'>""</span><span>     </span><span style='color: #555555;'>""</span><span>           </span><span style='color: #555555;'>""</span><span>      </span><span style='color: #555555;'>""</span><span>           
-#&gt; </span><span style='color: #555555;'># ... with 22 more rows, and 21 more variables: range </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, range...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   sub.class.of </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, sub.class.of...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, sub.property.of </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   sub.property.of...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, top.concept...estate.type.notation </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...property.type.notation </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, top.concept...label </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...notation </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, top.concept...pref.label </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...skos_definition </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, top.concept...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...type </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, top.concept...type...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...uri.1 </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, top.concept...top.concept.of </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   top.concept...top.concept.of...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, type </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, type...uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   version.info </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span></div><div class='input'>
-<span class='fu'>ukhp_def</span>()</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 155 x 20</span><span>
+#&gt;    &lt;chr&gt; &lt;fct&gt;      &lt;fct&gt; &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;        &lt;fct&gt;   &lt;fct&gt;        
+#&gt;  1 http~ ""         Comm~ Common~ ""     ""           "core"  "http://www.~
+#&gt;  2 http~ ""         Addr~ Super ~ ""     ""           ""      ""           
+#&gt;  3 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  4 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  5 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  6 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  7 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  8 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt;  9 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt; 10 http~ ""         BS76~ BS7666~ ""     ""           ""      ""           
+#&gt; # ... with 22 more rows, and 21 more variables: range &lt;fct&gt;, range...uri &lt;fct&gt;,
+#&gt; #   sub.class.of &lt;fct&gt;, sub.class.of...uri &lt;fct&gt;, sub.property.of &lt;fct&gt;,
+#&gt; #   sub.property.of...uri &lt;fct&gt;, top.concept...estate.type.notation &lt;fct&gt;,
+#&gt; #   top.concept...property.type.notation &lt;fct&gt;, top.concept...label &lt;fct&gt;,
+#&gt; #   top.concept...notation &lt;fct&gt;, top.concept...pref.label &lt;fct&gt;,
+#&gt; #   top.concept...skos_definition &lt;fct&gt;, top.concept...uri &lt;fct&gt;,
+#&gt; #   top.concept...type &lt;lgl&gt;, top.concept...type...uri &lt;fct&gt;,
+#&gt; #   top.concept...uri.1 &lt;fct&gt;, top.concept...top.concept.of &lt;fct&gt;,
+#&gt; #   top.concept...top.concept.of...uri &lt;fct&gt;, type &lt;fct&gt;, type...uri &lt;fct&gt;,
+#&gt; #   version.info &lt;fct&gt;</div><div class='input'>
+<span class='fu'>ukhp_def</span>()</div><div class='output co'>#&gt; # A tibble: 155 x 20
 #&gt;    uri   label comment component_uri component_attri~ component_attri~
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>           
-#&gt; </span><span style='color: #555555;'> 1</span><span> Mont~ UK h~ A dist~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 2</span><span> Mont~ UK h~ A dist~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 3</span><span> aver~ Aver~ </span><span style='color: #555555;'>"</span><span>Avera~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 4</span><span> aver~ Aver~ </span><span style='color: #555555;'>"</span><span>Avera~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 5</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 6</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 7</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 8</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'> 9</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'>10</span><span> aver~ Aver~ Averag~ </span><span style='color: #BB0000;'>NA</span><span>            </span><span style='color: #555555;'>""</span><span>               </span><span style='color: #555555;'>""</span><span>              
-#&gt; </span><span style='color: #555555;'># ... with 145 more rows, and 14 more variables: component_uri1 </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
-#&gt; #   component_dimension </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, component_dimension_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   component_uri2 </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, component_measure </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, component_measure_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   range </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, range_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, subclassof </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, subclassof_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>,
-#&gt; #   type </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, type_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, unit </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, unit_uri </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span></div></span></pre>
+#&gt;    &lt;chr&gt; &lt;fct&gt; &lt;fct&gt;   &lt;lgl&gt;         &lt;fct&gt;            &lt;fct&gt;           
+#&gt;  1 Mont~ UK h~ "A dis~ NA            ""               ""              
+#&gt;  2 Mont~ UK h~ "A dis~ NA            ""               ""              
+#&gt;  3 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  4 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  5 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  6 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  7 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  8 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt;  9 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt; 10 aver~ Aver~ "Avera~ NA            ""               ""              
+#&gt; # ... with 145 more rows, and 14 more variables: component_uri1 &lt;lgl&gt;,
+#&gt; #   component_dimension &lt;fct&gt;, component_dimension_uri &lt;fct&gt;,
+#&gt; #   component_uri2 &lt;lgl&gt;, component_measure &lt;fct&gt;, component_measure_uri &lt;fct&gt;,
+#&gt; #   range &lt;fct&gt;, range_uri &lt;fct&gt;, subclassof &lt;fct&gt;, subclassof_uri &lt;fct&gt;,
+#&gt; #   type &lt;fct&gt;, type_uri &lt;fct&gt;, unit &lt;fct&gt;, unit_uri &lt;fct&gt;</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

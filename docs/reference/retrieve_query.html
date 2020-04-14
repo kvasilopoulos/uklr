@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UK Postcodes — ons_pc • uklr</title>
+<title>Get the sparql query performed with <code>sparql</code>. — retrieve_query • uklr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="UK Postcodes — ons_pc" />
-<meta property="og:description" content="Vector of UK postcodes. Search for matches with the `pattern` argument." />
+<meta property="og:title" content="Get the sparql query performed with <code>sparql</code>. — retrieve_query" />
+<meta property="og:description" content="Get the sparql query performed with sparql." />
 <meta property="og:image" content="https://kvasilopoulos.github.io/uklr/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -116,36 +116,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>UK Postcodes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/avail-ons.R'><code>R/avail-ons.R</code></a></small>
-    <div class="hidden name"><code>ons_pc.Rd</code></div>
+    <h1>Get the sparql query performed with <code>sparql</code>.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kvasilopoulos/uklr/blob/master/R/query.R'><code>R/query.R</code></a></small>
+    <div class="hidden name"><code>retrieve_query.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Vector of UK postcodes. Search for matches with the `pattern` argument.</p>
+    <p>Get the sparql query performed with <code>sparql</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ons_pc</span>(<span class='kw'>pattern</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>retrieve_query</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pattern</th>
-      <td><p>partial matching</p></td>
+      <th>x</th>
+      <td><p>the result of query.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>ons_pc("EH21 8A")</p>
+    <p>Returns the a character vector with the query.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
 
   </div>

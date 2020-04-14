@@ -102,8 +102,10 @@ assert_valid_ukhp_region <- function(x) {
 #' @examples
 #' \donttest{
 #' ukppd_get("PL6 8RU")
+#'
 #' ukppd_get("PL6 8RU", start_date = "2001-01-01")
-#' ukppd_get("PL6 8RU", start_date = "2001-01-01")
+#'
+#' ukppd_get("PL6 8RU", item = "newBuild", optional_item = "street")
 #' }
 ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
                       start_date = NULL, end_date = NULL, ...) {

@@ -16,6 +16,9 @@
     <loc>https://kvasilopoulos.github.io/uklr//reference/pc.html</loc>
   </url>
   <url>
+    <loc>https://kvasilopoulos.github.io/uklr//reference/retrieve_query.html</loc>
+  </url>
+  <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/sparql.html</loc>
   </url>
   <url>
@@ -23,6 +26,9 @@
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/ukhp_get.html</loc>
+  </url>
+  <url>
+    <loc>https://kvasilopoulos.github.io/uklr//reference/uklr-deprecated.html</loc>
   </url>
   <url>
     <loc>https://kvasilopoulos.github.io/uklr//reference/uklr_browse.html</loc>

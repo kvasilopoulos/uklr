@@ -40,7 +40,9 @@ Registry for registration.  Price Paid Data is based on the raw data released ea
 \examples{
 \donttest{
 ukppd_get("PL6 8RU")
+
 ukppd_get("PL6 8RU", start_date = "2001-01-01")
-ukppd_get("PL6 8RU", start_date = "2001-01-01")
+
+ukppd_get("PL6 8RU", item = "newBuild", optional_item = "street")
 }
 }
