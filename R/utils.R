@@ -36,6 +36,12 @@ view_url <- function(url, open = interactive()) {
   invisible(url)
 }
 
+empty <- function(df) {
+  (is.null(df) || nrow(df) == 0 || ncol(df) == 0)
+}
+
+
+
 
 # if (getRversion() >= "2.15.1") {
 #   utils::globalVariables(

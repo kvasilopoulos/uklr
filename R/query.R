@@ -2,7 +2,14 @@
 process_request <- function(.query, ...) {
   req <- prefix_query(.query)
   res <- sparql(query = req, ...)
+  assert_nonempty(res)
   res
+}
+
+assert_nonempty <- function(x) {
+  if (empty(x)) {
+    stop("empty dataframe, check your query!", call. = FALSE)
+  }
 }
 
 #' @importFrom httr timeout
