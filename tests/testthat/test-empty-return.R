@@ -2,5 +2,7 @@ skip_if_offline()
 skip_if_http_error()
 
 test_that("emprty dataframe", {
-  expect_error(ukhp_get(limit = 0), "empty dataframe, check your query!")
+  empty_msg <- "empty dataframe, check your query!"
+  expect_warning(ukhp_get(limit = 0), empty_msg)
+  expect_warning(ukhp_get(start_date = "2100-01-01"), empty_msg)
 })

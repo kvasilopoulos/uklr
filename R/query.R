@@ -8,7 +8,7 @@ process_request <- function(.query, ...) {
 
 assert_nonempty <- function(x) {
   if (empty(x)) {
-    stop("empty dataframe, check your query!", call. = FALSE)
+    warning("empty dataframe, check your query!", call. = FALSE)
   }
 }
 

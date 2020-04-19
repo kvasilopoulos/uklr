@@ -52,6 +52,7 @@ ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = FALS
     .item = item, .region = region,
     .start_date = start_date, .end_date = end_date, ...)
   res <- process_request(query)
+  if(empty(res)) return(invisible(res))
   res$region <- as.factor(gsub(".*region/(.+)/month/.*", "\\1", res$region))
   res$date <- as.Date(res$date)
   item_names <- names(res)[-c(1,2)]
@@ -116,6 +117,7 @@ ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
     .postcode = postcode, .item = item, .optional_item = optional_item,
     .start_date = start_date, .end_date = end_date, ...)
   res <- process_request(query)
+  if(empty(res)) return(invisible(res))
   res <- clear_uri(res)
   res$amount <- as.numeric(res$amount)
   res$date <- as.Date(res$date)
@@ -192,9 +194,10 @@ uktrans_get <- function(item = "totalApplicationCountByRegion", region = NULL,
   assert_valid_uktrans_items(item)
   assert_valid_uktrans_regions(region)
   query <- uktrans_build_sparql(
-    .item = item, .region = region,  .start_date = start_date,
+    .item = item, .region = region, .start_date = start_date,
     .end_date = end_date)
   res <- process_request(query)
+  if(empty(res)) return(invisible(res))
   res$date <- as.Date(res$date)
   item_names <- names(res)[-c(1,2)]
   res[,item_names] <- lapply(res[,item_names], as.numeric)
