@@ -170,7 +170,7 @@ assert_valid_ukppd_postcodes <- function(x) {
 #' in the preceding month for: first registrations, leases, transfers of part,
 #' dealings, official copies and searches. This is based on customer and location.
 #'
-#' @param item item to select, see \code{uktrans_avail_item()} for
+#' @param item item to select, see \code{uktrans_avail_items()} for
 #' available items.
 #' @param region  region to select, see \code{uktrans_avail_regions()} for
 #' available regions.
