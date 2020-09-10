@@ -14,7 +14,7 @@ uktrans_get(
 )
 }
 \arguments{
-\item{item}{item to select, see \code{uktrans_avail_item()} for
+\item{item}{item to select, see \code{uktrans_avail_items()} for
 available items.}
 
 \item{region}{region to select, see \code{uktrans_avail_regions()} for
