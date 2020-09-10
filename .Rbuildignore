@@ -12,3 +12,6 @@
 ^pkgdown$
 ^\.github$
 ^CRAN-RELEASE$
+^app$
+^doc$
+^Makefile$

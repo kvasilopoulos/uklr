@@ -1,0 +1,37 @@
+---
+title: "App"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{Title of your vignette}
+  %\usepackage[UTF-8]{inputenc}
+---
+
+<style>
+.shiny-app {
+  position: fixed;
+  overflow:hidden;
+  top: 200px;
+  bottom: 90px;
+  right: 0;
+  left: 0
+}
+.shiny-app iframe {
+  display: block; 
+  position: absolute;
+  z-index: 999999;
+  height: 100%;
+  background: #000; 
+  border: none; 
+  width: 100vw;
+}
+  }
+</style>
+
+
+<div class="shiny-app"> 
+<iframe src="https://kvasilopoulos.shinyapps.io/uklr-search/" frameborder="0" >
+</iframe>
+</div>
+
+<!-- <iframe src="https://gallery.shinyapps.io/083-front-page" frameborder="0" > -->

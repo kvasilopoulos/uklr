@@ -1,0 +1,12 @@
+name: uklr-search
+title: uklr-search
+username:
+account: kvasilopoulos
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2777429
+bundleId: 3614662
+url: https://kvasilopoulos.shinyapps.io/uklr-search/
+when: 1599734410.91775
+asMultiple: FALSE
+asStatic: FALSE
