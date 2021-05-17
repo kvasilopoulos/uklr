@@ -1,0 +1,17 @@
+^uklr\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
+^data-raw$
+^\.travis\.yml$
+^appveyor\.yml$
+^cran-comments\.md$
+^codecov\.yml$
+^docs$
+^_pkgdown\.yml$
+^pkgdown$
+^\.github$
+^CRAN-RELEASE$
+^app$
+^doc$
+^Makefile$

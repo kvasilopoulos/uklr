@@ -1,0 +1,26 @@
+{
+    "id": "E83C653E",
+    "path": "~/R/01-CRAN/uklr/R/avail-ukppd.R",
+    "project_path": "R/avail-ukppd.R",
+    "type": "r_source",
+    "hash": "2809067764",
+    "contents": "",
+    "dirty": false,
+    "created": 1621252637006.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "cursorPosition": "41,35",
+        "scrollLine": "4",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1621252653,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1621252653307,
+    "read_only": false,
+    "read_only_alternatives": []
+}

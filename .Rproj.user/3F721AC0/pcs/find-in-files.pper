@@ -1,0 +1,10 @@
+{
+    "dialog-state": {
+        "query": "as.tibble",
+        "path": "",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "projectRelative": true
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "id": "DA3DC7F7",
+    "path": "~/R/01-CRAN/uklr/inst/uklr-search/ui.R",
+    "project_path": "inst/uklr-search/ui.R",
+    "type": "r_source",
+    "hash": "475448913",
+    "contents": "",
+    "dirty": false,
+    "created": 1599671172737.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "cursorPosition": "19,7",
+        "scrollLine": "0",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1599734233,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1599734233514,
+    "read_only": false,
+    "read_only_alternatives": []
+}

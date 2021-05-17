@@ -1,0 +1,26 @@
+{
+    "id": "EDDCB3F0",
+    "path": "~/R/01-CRAN/uklr/R/avail-ons.R",
+    "project_path": "R/avail-ons.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1621252558868.0,
+    "source_on_save": false,
+    "relative_order": 17,
+    "properties": {
+        "cursorPosition": "109,32",
+        "scrollLine": "106",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1621252698,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1621252698934,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,26 @@
+{
+    "id": "872BBFE7",
+    "path": "~/R/01-CRAN/uklr/R/avail-ukhp.R",
+    "project_path": "R/avail-ukhp.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1621247353350.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "19,35",
+        "scrollLine": "7"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1621250188,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1621250951280,
+    "read_only": false,
+    "read_only_alternatives": []
+}

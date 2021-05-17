@@ -1,0 +1,72 @@
+title: uklr
+url: https://kvasilopoulos.github.io/uklr/
+
+template:
+  params:
+    bootswatch: cosmo
+
+authors:
+  Kostas Vasilopoulos:
+    href: https://kvasilopoulos.com/
+
+reference:
+
+  - title: House Price Data
+    contents:
+      - ukhp_get
+      - ukhp_avail_items
+
+  - title: Price Paid Data
+    contents:
+      - ukppd_get
+      - ukppd_avail_items
+
+  - title: Transaction Data
+    contents:
+      - uktrans_get
+      - uktrans_avail_items
+
+  - title: ONS Location Data
+    contents:
+      - ons_countries
+      - ons_lookup
+      - ons_pc
+      - pc
+
+  - title: Build Custom Query
+    contents:
+      - sparql
+
+  - title: Definitions
+    contents:
+      - uklr_def
+
+  - title: Browse
+    contents:
+      - uklr_browse
+
+navbar:
+  type: default
+  structure:
+    left:
+    - home
+    - reference
+    right:
+    - news
+    - github
+  components:
+    home:
+      icon: fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: App
+      href: articles/shiny.html
+    news:
+      text: News
+      href: news/index.html
+    github:
+      icon: fa-github fa-lg
+      href: https://github.com/kvasilopoulos/uklr
