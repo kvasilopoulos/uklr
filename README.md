@@ -15,6 +15,7 @@ status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://tra
 status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
 [![Codecov test
 coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr)
+[![R-CMD-check](https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg)](https://github.com/kvasilopoulos/uklr/actions)
 <!-- badges: end -->
 
 The goal of {uklr} is to access data from HM Land Registry Open Data
@@ -43,11 +44,10 @@ If you encounter a clear bug, please file a reproducible example on
 ## Example
 
 ``` r
-
 library(uklr)
 
 ukhp_get(region = "newport", start_date = "2019-01-01")
-#> # A tibble: 13 x 3
+#> # A tibble: 26 x 3
 #>    region  date       housePriceIndex
 #>    <fct>   <date>               <dbl>
 #>  1 newport 2019-01-01            129.
@@ -60,9 +60,7 @@ ukhp_get(region = "newport", start_date = "2019-01-01")
 #>  8 newport 2019-08-01            134.
 #>  9 newport 2019-09-01            134.
 #> 10 newport 2019-10-01            133.
-#> 11 newport 2019-11-01            135.
-#> 12 newport 2019-12-01            134.
-#> 13 newport 2020-01-01            136.
+#> # ... with 16 more rows
 
 ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 #> # A tibble: 7 x 4
@@ -77,7 +75,7 @@ ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 #> 7 PL6 8RU  205000 2018-09-07 Standard price paid transaction
 
 uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
-#> # A tibble: 99 x 3
+#> # A tibble: 112 x 3
 #>    region      date       totalApplicationCountByRegion
 #>    <chr>       <date>                             <dbl>
 #>  1 East Anglia 2011-12-01                         37819
@@ -90,5 +88,5 @@ uktrans_get(item = "totalApplicationCountByRegion", region = "East Anglia")
 #>  8 East Anglia 2012-07-01                         46539
 #>  9 East Anglia 2012-08-01                         45942
 #> 10 East Anglia 2012-09-01                         41976
-#> # ... with 89 more rows
+#> # ... with 102 more rows
 ```

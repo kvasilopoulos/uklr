@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
 [![Codecov test coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr)
+[![R-CMD-check](https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg)](https://github.com/kvasilopoulos/uklr/actions)
 <!-- badges: end -->
 
 The goal of {uklr} is to access data from HM Land Registry Open Data <http://landregistry.data.gov.uk/> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
