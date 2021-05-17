@@ -46,12 +46,15 @@
 #'}
 ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = FALSE,
                      start_date = NULL, end_date = NULL, ...) {
-  assert_valid_ukhp_region(region)
-  assert_valid_ukhp_items(item)
+  suppressMessages({
+    assert_valid_ukhp_region(region)
+    assert_valid_ukhp_items(item)
+  })
   query <- ukhp_build_sparql(
     .item = item, .region = region,
     .start_date = start_date, .end_date = end_date, ...)
   res <- process_request(query)
+  res %||% return(invisible(NULL))
   if(empty(res)) return(invisible(res))
   res$region <- as.factor(gsub(".*region/(.+)/month/.*", "\\1", res$region))
   res$date <- as.Date(res$date)
@@ -67,14 +70,18 @@ ukhp_get <- function(region = "england", item = "housePriceIndex", regexp = FALS
 # assertions ukhp -----------------------------------------------------------
 
 assert_valid_ukhp_items <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% ukhp_avail_items()))
+  x %||% return(invisible(NULL))
+  avail <- ukhp_avail_items()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid item, see `ukhp_avail_items()`", call. = FALSE)
 }
 
 assert_valid_ukhp_region <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% ukhp_avail_regions()))
+  x %||% return(invisible(NULL))
+  avail <- ukhp_avail_regions()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid region, see `ukhp_avail_regions()`", call. = FALSE)
 }
 
@@ -117,6 +124,7 @@ ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
     .postcode = postcode, .item = item, .optional_item = optional_item,
     .start_date = start_date, .end_date = end_date, ...)
   res <- process_request(query)
+  res %||% return(invisible(NULL))
   if(empty(res)) return(invisible(res))
   res <- clear_uri(res)
   res$amount <- as.numeric(res$amount)
@@ -143,21 +151,27 @@ clear_uri <- function(x) {
 # assertions ukppd ---------------------------------------------------------
 
 assert_valid_ukppd_items <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% ukppd_avail_items()))
+  x %||% return(invisible(NULL))
+  avail <- ukppd_avail_items()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid item, see `ukppd_avail_items()`", call. = FALSE)
 }
 
 assert_valid_ukppd_optional_items <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% ukppd_avail_optional_items()))
+  x %||% return(invisible(NULL))
+  avail <- ukppd_avail_optional_items()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid optional item, see `ukppd_avail_optional_items()`",
          call. = FALSE)
 }
 
 assert_valid_ukppd_postcodes <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% ukppd_avail_postcodes()))
+  x %||% return(invisible(NULL))
+  avail <- ukppd_avail_postcodes()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid postcode, see `ukppd_avail_postcodes()`", call. = FALSE)
 }
 
@@ -197,6 +211,7 @@ uktrans_get <- function(item = "totalApplicationCountByRegion", region = NULL,
     .item = item, .region = region, .start_date = start_date,
     .end_date = end_date)
   res <- process_request(query)
+  res %||% return(invisible(NULL))
   if(empty(res)) return(invisible(res))
   res$date <- as.Date(res$date)
   item_names <- names(res)[-c(1,2)]
@@ -211,15 +226,18 @@ uktrans_get <- function(item = "totalApplicationCountByRegion", region = NULL,
 # assertions uktrans ------------------------------------------------------
 
 assert_valid_uktrans_items <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% uktrans_avail_items()))
+  x %||% return(invisible(NULL))
+  avail <- uktrans_avail_items()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid item, see `uktrans_avail_items()`", call. = FALSE)
 }
 
 assert_valid_uktrans_regions <- function(x) {
-  x %||% invisible()
-  if (any(x %ni% uktrans_avail_regions()))
+  x %||% return(invisible(NULL))
+  avail <- uktrans_avail_regions()
+  avail %||% return(invisible(NULL))
+  if (any(x %ni% avail))
     stop("invalid region, see `uktrans_avail_regions()`", call. = FALSE)
 }
 
-# TODO check empty tibble

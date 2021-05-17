@@ -2,20 +2,23 @@
 process_request <- function(.query, ...) {
   req <- prefix_query(.query)
   res <- sparql(query = req, ...)
-  assert_nonempty(res)
-  res
+  res %||% return(invisible(NULL))
+  tbl <- process_json(res)
+  msg_empty(tbl)
+  class(.query) <- "query"
+  structure(tbl, query = .query)
 }
 
-assert_nonempty <- function(x) {
+msg_empty <- function(x) {
   if (empty(x)) {
-    warning("empty dataframe, check your query!", call. = FALSE)
+    message("empty dataframe, check your query!")
   }
 }
 
-#' @importFrom httr timeout
+#' @importFrom httr timeout RETRY
 try_GET <- function(x, ...) {
   tryCatch(
-    GET(url = x, timeout(10), ...),
+    RETRY("GET", quiet = TRUE, url = x, timeout(10), ...),
     error = function(e) conditionMessage(e),
     warning = function(w) conditionMessage(w)
   )
@@ -55,23 +58,25 @@ sparql <- function(query, endpoint = "http://landregistry.data.gov.uk/landregist
     message("No internet connection.")
     return(invisible(NULL))
   }
-  res_json <- GET(
+  res <- try_GET(
     paste(endpoint, "?query=", enc_query, sep = ""),
     httr::add_headers("Accept" = "application/sparql-results+json"),
     ...
   )
-  if (!is_response(res_json)) {
-    message(res_json)
+  if (!is_response(res)) {
+    message(res)
     return(invisible(NULL))
   }
-  if (httr::http_error(res_json)) {
-    message_for_status(res_json)
+  if (httr::http_error(res)) {
+    message_for_status(res)
     return(invisible(NULL))
   }
-  res <- jsonlite::parse_json(res_json, simplifyVector = TRUE)$results$bindings
-  x <- as_tibble(sapply(res, function(x) x$value))
-  class(query) <- "query"
-  structure(x, query = query)
+  res
+}
+
+process_json <- function(res) {
+  res <- jsonlite::parse_json(res, simplifyVector = TRUE)$results$bindings
+  as_tibble(sapply(res, function(x) x$value))
 }
 
 #' Get the sparql query performed with \code{sparql}.

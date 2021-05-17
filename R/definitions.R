@@ -21,7 +21,7 @@ uklr_def <- function() {
     return(invisible(NULL))
   }
   def$uri <- gsub(".*ukhpi/(.+)", "\\1", def$uri)
-  as_tibble(def)
+  def
 }
 
 #' @rdname uklr_def
@@ -73,7 +73,7 @@ uktrans_def <- function() {
 
 try_read_csv <- function(x, ...) {
   tryCatch(
-    read.csv(x, ...),
+    as_tibble(read.csv(x, ...)),
     error = function(e) conditionMessage(e),
     warning = function(w) conditionMessage(w)
   )

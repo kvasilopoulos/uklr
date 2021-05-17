@@ -20,7 +20,8 @@ gsub_lr <- function(x, lgl) {
 #' ons_countries()
 #' }
 ons_countries <- function(modify = TRUE) {
-  x <- httr::GET("https://opendata.arcgis.com/datasets/7579a399b413418db5a3bdd1c824bffb_0.geojson")
+  x <- try_GET("https://opendata.arcgis.com/datasets/7579a399b413418db5a3bdd1c824bffb_0.geojson")
+  x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   reg <- y$properties$CTRY18NM
   out <- reg[!reg %in% c("United Kingdom", "Great Britain", "England and Wales")]
@@ -31,7 +32,8 @@ ons_countries <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_eng_regions <- function(modify = TRUE) {
-  x <- httr::GET("https://opendata.arcgis.com/datasets/7d1316afac3f4d508cd07592715cb0ee_0.geojson")
+  x <- try_GET("https://opendata.arcgis.com/datasets/7d1316afac3f4d508cd07592715cb0ee_0.geojson")
+  x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   gsub_lr(y$properties$RGN18NM, modify)
 }
@@ -47,7 +49,8 @@ ons_regions <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_eng_counties <- function(modify = TRUE) {
-  x <- httr::GET("https://opendata.arcgis.com/datasets/1e96fd2cc44e4dbc8c6f96f7340562fe_0.geojson")
+  x <- try_GET("https://opendata.arcgis.com/datasets/1e96fd2cc44e4dbc8c6f96f7340562fe_0.geojson")
+  x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   gsub_lr(y$properties$CTY18NM, modify)
 }
@@ -55,7 +58,8 @@ ons_eng_counties <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_la <- function(modify = FALSE) {
-  x <- httr::GET("https://opendata.arcgis.com/datasets/17eb563791b648f9a7025ca408bb09c6_0.geojson")
+  x <- try_GET("https://opendata.arcgis.com/datasets/17eb563791b648f9a7025ca408bb09c6_0.geojson")
+  x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   out <- y$properties$LAD18NM
   if (modify) {
@@ -102,7 +106,8 @@ ons_la <- function(modify = FALSE) {
 #' ons_lookup()
 #' }
 ons_lookup <- function() {
-  x <- httr::GET("http://geoportal1-ons.opendata.arcgis.com/datasets/9b4c94e915c844adb11e15a4b1e1294d_0.geojson")
+  x <- try_GET("http://geoportal1-ons.opendata.arcgis.com/datasets/9b4c94e915c844adb11e15a4b1e1294d_0.geojson")
+  x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
   as_tibble(y$properties)
 }

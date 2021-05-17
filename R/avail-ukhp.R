@@ -17,6 +17,7 @@ ukhp_avail_items <- function() {
   .query <- build_sparql_file_query(
     "ukhpi", "region", "newport", "month","2013-10")
   proc <- process_request(.query)
+  proc %||% return(invisible(NULL))
   categories_url <- grep("ukhpi", proc$type, value = TRUE)
   complete <- gsub(".*ukhpi/(.+)", "\\1", categories_url)
   grep("^[^ref]", complete, value = TRUE)
@@ -30,6 +31,7 @@ ukhp_avail_regions <- function() {
     .end_date = "2009-01-01"
   )
   proc <- process_request(.query)
+  proc %||% return(invisible(NULL))
   out <- gsub(".*region/(.+)/month/.*", "\\1", proc$region) # there are duplicates
   unique(out)
 }
