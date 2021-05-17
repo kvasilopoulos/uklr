@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   shiny: shiny.html
-last_built: 2021-05-17T12:39Z
+last_built: 2021-05-17T12:42Z
 urls:
   reference: https://kvasilopoulos.github.io/uklr//reference
   article: https://kvasilopoulos.github.io/uklr//articles
