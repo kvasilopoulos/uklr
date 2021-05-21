@@ -8,14 +8,11 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/package=uklr)
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master)](https://travis-ci.org/kvasilopoulos/uklr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&svg=true)](https://ci.appveyor.com/project/kvasilopoulos/uklr)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg)](https://github.com/kvasilopoulos/uklr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr)
-[![R-CMD-check](https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg)](https://github.com/kvasilopoulos/uklr/actions)
+
 <!-- badges: end -->
 
 The goal of {uklr} is to access data from HM Land Registry Open Data
@@ -47,7 +44,7 @@ If you encounter a clear bug, please file a reproducible example on
 library(uklr)
 
 ukhp_get(region = "newport", start_date = "2019-01-01")
-#> # A tibble: 26 x 3
+#> # A tibble: 27 x 3
 #>    region  date       housePriceIndex
 #>    <fct>   <date>               <dbl>
 #>  1 newport 2019-01-01            129.
@@ -60,7 +57,7 @@ ukhp_get(region = "newport", start_date = "2019-01-01")
 #>  8 newport 2019-08-01            134.
 #>  9 newport 2019-09-01            134.
 #> 10 newport 2019-10-01            133.
-#> # ... with 16 more rows
+#> # ... with 17 more rows
 
 ukppd_get(postcode = "PL6 8RU", start_date = "2015-01-01")
 #> # A tibble: 7 x 4
