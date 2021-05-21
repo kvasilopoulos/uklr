@@ -87,6 +87,7 @@
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p>The goal of {uklr} is to access data from HM Land Registry Open Data <a href="http://landregistry.data.gov.uk/" class="uri">http://landregistry.data.gov.uk/</a> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -104,10 +105,10 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://kvasilopoulos.github.io/uklr">uklr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://kvasilopoulos.github.io/uklr/">uklr</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/ukhp_get.html">ukhp_get</a></span><span class="op">(</span>region <span class="op">=</span> <span class="st">"newport"</span>, start_date <span class="op">=</span> <span class="st">"2019-01-01"</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 26 x 3</span>
+<span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;    region  date       housePriceIndex</span>
 <span class="co">#&gt;    &lt;fct&gt;   &lt;date&gt;               &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 newport 2019-01-01            129.</span>
@@ -120,7 +121,7 @@
 <span class="co">#&gt;  8 newport 2019-08-01            134.</span>
 <span class="co">#&gt;  9 newport 2019-09-01            134.</span>
 <span class="co">#&gt; 10 newport 2019-10-01            133.</span>
-<span class="co">#&gt; # ... with 16 more rows</span>
+<span class="co">#&gt; # ... with 17 more rows</span>
 
 <span class="fu"><a href="reference/ukppd_get.html">ukppd_get</a></span><span class="op">(</span>postcode <span class="op">=</span> <span class="st">"PL6 8RU"</span>, start_date <span class="op">=</span> <span class="st">"2015-01-01"</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 7 x 4</span>
@@ -191,11 +192,9 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=uklr"><img src="https://www.r-pkg.org/badges/version/uklr" alt="CRAN status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://travis-ci.org/kvasilopoulos/uklr"><img src="https://travis-ci.org/kvasilopoulos/uklr.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://ci.appveyor.com/project/kvasilopoulos/uklr"><img src="https://ci.appveyor.com/api/projects/status/github/kvasilopoulos/uklr?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="https://codecov.io/gh/kvasilopoulos/uklr"><img src="https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/kvasilopoulos/uklr/actions"><img src="https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/kvasilopoulos/uklr"><img src="https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>

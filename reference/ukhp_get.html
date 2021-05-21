@@ -199,7 +199,7 @@ categories.</p></td>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'># This is case sensitive</span>
 <span class='fu'>ukhp_get</span><span class='op'>(</span><span class='st'>"england"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 635 x 3</span><span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 636 x 3</span><span>
 #&gt;    region  date       housePriceIndex
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> england 1968-04-01            1.68
@@ -212,10 +212,10 @@ categories.</p></td>
 #&gt; </span><span style='color: #BCBCBC;'> 8</span><span> england 1968-10-01            1.73
 #&gt; </span><span style='color: #BCBCBC;'> 9</span><span> england 1968-10-01            1.73
 #&gt; </span><span style='color: #BCBCBC;'>10</span><span> england 1969-01-01            1.76
-#&gt; </span><span style='color: #949494;'># … with 625 more rows</span><span></div><div class='input'>
+#&gt; </span><span style='color: #949494;'># … with 626 more rows</span><span></div><div class='input'>
 <span class='co'># However you can use regular expression instead of exact match</span>
 <span class='fu'>ukhp_get</span><span class='op'>(</span><span class='st'>"england"</span>, regexp <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 1,296 x 3</span><span>
+</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 1,299 x 3</span><span>
 #&gt;    region  date       housePriceIndex
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> england 1968-04-01            1.68
@@ -228,7 +228,7 @@ categories.</p></td>
 #&gt; </span><span style='color: #BCBCBC;'> 8</span><span> england 1968-10-01            1.73
 #&gt; </span><span style='color: #BCBCBC;'> 9</span><span> england 1968-10-01            1.73
 #&gt; </span><span style='color: #BCBCBC;'>10</span><span> england 1969-01-01            1.76
-#&gt; </span><span style='color: #949494;'># … with 1,286 more rows</span><span></div><div class='input'>
+#&gt; </span><span style='color: #949494;'># … with 1,289 more rows</span><span></div><div class='input'>
 <span class='co'># For all available items</span>
 <span class='fu'><a href='ukhp_avail_items.html'>ukhp_avail_items</a></span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  [1] "averagePrice"                             
@@ -281,7 +281,7 @@ categories.</p></td>
 #&gt; [48] "salesVolumeCash"                          
 #&gt; [49] "salesVolumeMortgage"                      </div><div class='input'>
 <span class='fu'>ukhp_get</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"england"</span>, <span class='st'>"wales"</span><span class='op'>)</span>, item <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"salesVolume"</span>, <span class='st'>"housePriceIndexDetached"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 624 x 4</span><span>
+</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 626 x 4</span><span>
 #&gt;    region  date       salesVolume housePriceIndexDetached
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>                   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> england 1996-02-01       </span><span style='text-decoration: underline;'>51</span><span>401                    27.6
@@ -294,7 +294,7 @@ categories.</p></td>
 #&gt; </span><span style='color: #BCBCBC;'> 8</span><span> england 1995-11-01       </span><span style='text-decoration: underline;'>63</span><span>955                    27.9
 #&gt; </span><span style='color: #BCBCBC;'> 9</span><span> england 1995-06-01       </span><span style='text-decoration: underline;'>72</span><span>640                    28.0
 #&gt; </span><span style='color: #BCBCBC;'>10</span><span> england 1995-09-01       </span><span style='text-decoration: underline;'>67</span><span>251                    28.0
-#&gt; </span><span style='color: #949494;'># … with 614 more rows</span><span></div><div class='input'><span class='co'># }</span>
+#&gt; </span><span style='color: #949494;'># … with 616 more rows</span><span></div><div class='input'><span class='co'># }</span>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
