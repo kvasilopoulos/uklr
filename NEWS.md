@@ -1,5 +1,11 @@
 # uklr 1.0.2
 
+# `uktrans_get` is fixed when start_date is used (#2)
+# Extra layer of of NULL returns to fail gracefully with an informative message.
+# Removed travis & appveyor and using gh_actions instead.
+# Using gh-pages to create the pkgdown website.
+# Create an app as vignette page to search with the help of uklr.
+
 # uklr 1.0.1
 
 ## Fixed Bugs
