@@ -24,7 +24,7 @@ supports the UK HPI, Transaction Data and Price Paid Data.
 Install release version from CRAN
 
 ``` r
-install.packages("exuber")
+install.packages("uklr")
 ```
 
 You can install the development version from
