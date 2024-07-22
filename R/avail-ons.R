@@ -147,11 +147,11 @@ ons_lad <- function() {
 #' @details
 #' ons_pc("EH21 8A")
 ons_pc <- function(pattern = NULL) {
-  x <- get("pc")
+  x <- get("internal_postcodes_2018")
   if (!is.null(pattern)) {
-    out <- grep(pattern, x$CODE, value = TRUE)
+    out <- grep(pattern, x, value = TRUE)
   } else {
-    out <- x$CODE
+    out <- x
   }
   out
 }

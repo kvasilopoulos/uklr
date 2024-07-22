@@ -45,6 +45,6 @@ empty <- function(df) {
 
 # if (getRversion() >= "2.15.1") {
 #   utils::globalVariables(
-#     c("pc")
+#     c("internal_postcodes_2018")
 #   )
 # }
