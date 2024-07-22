@@ -48,6 +48,9 @@ ukppd_avail_optional_items <- function() {
 #' @rdname ukppd_avail_items
 #' @export
 ukppd_avail_postcodes <- function() {
-  pc$NUTS3 <- gsub("[0-9]", "", pc$NUTS3)
-  pc[!pc$NUTS3 %in% c("UKM", "UKN"), ]$CODE
+  data("internal_postcodes_2018", package = "uklr")
+  internal_postcodes_2018$NUTS3 <- gsub("[0-9]", "", internal_postcodes_2018$NUTS3)
+  # pc_[!pc_$NUTS3 %in% c("UKM", "UKN"), ]$CODE  # what is this? don't want to return those 2 codes?
+  o =  internal_postcodes_2018[!internal_postcodes_2018$NUTS3 %in% c("UKM", "UKN"), ]
+  o$PC  # return simple vector
 }

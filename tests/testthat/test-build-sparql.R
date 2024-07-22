@@ -4,9 +4,9 @@ skip_if_offline()
 skip_if_http_error()
 
 test_that("basic query", {
-  expect_error(ukhp_get(), NA)
-  expect_error(ukppd_get(), NA)
-  expect_error(uktrans_get(), NA)
+  expect_error(ukhp_get(region = NA))
+  expect_error(ukppd_get(postcode = NA))
+  expect_error(uktrans_get(item = NA))
 })
 
 
@@ -55,4 +55,14 @@ test_that("browse", {
   expect_equal(ukhp_browse(), "http://landregistry.data.gov.uk/def/ukhpi")
   expect_equal(ukppd_browse(), "http://landregistry.data.gov.uk/def/ppi")
   expect_equal(uktrans_browse(), "http://landregistry.data.gov.uk/def/trans")
+})
+
+test_that("single transaction is handled correctly", {
+  this_works <- ukppd_get("N13 5UR")
+  expect_true(nrow(this_works) == 1)
+})
+
+test_that("multiple transactions are handled correctly", {
+  this_works <- ukppd_get("PL6 8RU")
+  expect_true(nrow(this_works) > 1)
 })
