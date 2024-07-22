@@ -147,18 +147,13 @@ ons_lad <- function() {
 #' @details
 #' ons_pc("EH21 8A")
 ons_pc <- function(pattern = NULL) {
-  x <- get("internal_postcodes_2018")
+  data("internal_postcodes_2018", package = "uklr")
   if (!is.null(pattern)) {
-    out <- grep(pattern, x, value = TRUE)
+    out <- grep(pattern, internal_postcodes_2018$PC, value = TRUE)
   } else {
-    out <- x
+    out <- internal_postcodes_2018
   }
   out
 }
 
 
-#' UK Postcodes and NUTS3 Codes
-#'
-#' @examples
-#' pc
-"pc"
