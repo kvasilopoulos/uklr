@@ -3,7 +3,10 @@ gsub_lr <- function(x, lgl) {
   x
 }
 
+
 #' Office of National Statistic Location Classification
+#'
+#' `r lifecycle::badge("deprecated")`
 #'
 #' Functions \code{ons_countries}, \code{ons_regions}, \code{ons_eng_counties}
 #' and \code{ons_la} provide a vector of countries, regions, English counties
@@ -20,6 +23,9 @@ gsub_lr <- function(x, lgl) {
 #' ons_countries()
 #' }
 ons_countries <- function(modify = TRUE) {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_countries()", details = "ons opendata API no longer available")
+
   x <- try_GET("https://opendata.arcgis.com/datasets/7579a399b413418db5a3bdd1c824bffb_0.geojson")
   x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -32,6 +38,9 @@ ons_countries <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_eng_regions <- function(modify = TRUE) {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_eng_regions()", details = "ons opendata API no longer available")
+
   x <- try_GET("https://opendata.arcgis.com/datasets/7d1316afac3f4d508cd07592715cb0ee_0.geojson")
   x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -41,6 +50,10 @@ ons_eng_regions <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_regions <- function(modify = TRUE) {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_regions()", details = "ons opendata API no longer available")
+
+
   countries <- ons_countries(modify)[-1]
   eng_regions <- ons_eng_regions(modify)
   c(countries, eng_regions)
@@ -49,6 +62,10 @@ ons_regions <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_eng_counties <- function(modify = TRUE) {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_eng_counties()", details = "ons opendata API no longer available")
+
+
   x <- try_GET("https://opendata.arcgis.com/datasets/1e96fd2cc44e4dbc8c6f96f7340562fe_0.geojson")
   x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -58,6 +75,9 @@ ons_eng_counties <- function(modify = TRUE) {
 #' @rdname ons_countries
 #' @export
 ons_la <- function(modify = FALSE) {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_la()", details = "ons opendata API no longer available")
+
   x <- try_GET("https://opendata.arcgis.com/datasets/17eb563791b648f9a7025ca408bb09c6_0.geojson")
   x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -93,6 +113,8 @@ ons_la <- function(modify = FALSE) {
 
 #' Office of National Statistic Location Classification
 #'
+#' `r lifecycle::badge("deprecated")`
+#'
 #' \code{ons_lookup} provides a table that that combines local authority
 #' districts (lad), local administrative units (lau), nomenclature of territorial
 #' units for statistics(NUTS) 1,2 and 3. The other functions can extract the
@@ -106,6 +128,9 @@ ons_la <- function(modify = FALSE) {
 #' ons_lookup()
 #' }
 ons_lookup <- function() {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_lookup()", details = "ons opendata API no longer available")
+
   x <- try_GET("http://geoportal1-ons.opendata.arcgis.com/datasets/9b4c94e915c844adb11e15a4b1e1294d_0.geojson")
   x %||% return(invisible(NULL))
   y <- jsonlite::parse_json(x, simplifyVector = TRUE)$features
@@ -115,24 +140,36 @@ ons_lookup <- function() {
 #' @rdname ons_lookup
 #' @export
 ons_nuts1 <- function() {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_nuts1()", details = "ons opendata API no longer available")
+
   unique(ons_lookup()$NUTS118NM)
 }
 
 #' @rdname ons_lookup
 #' @export
 ons_nuts2 <- function() {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_nuts2()", details = "ons opendata API no longer available")
+
   unique(ons_lookup()$NUTS218NM)
 }
 
 #' @rdname ons_lookup
 #' @export
 ons_nuts3 <- function() {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_nuts3()", details = "ons opendata API no longer available")
+
   unique(ons_lookup()$NUTS318NM)
 }
 
 #' @rdname ons_lookup
 #' @export
 ons_lad <- function() {
+
+  lifecycle::deprecate_stop("1.0.3", what = "ons_lad()", details = "ons opendata API no longer available")
+
   unique(ons_lookup()$LAU118NM)
 }
 
