@@ -48,6 +48,8 @@ ukppd_avail_optional_items <- function() {
 #' @rdname ukppd_avail_items
 #' @export
 ukppd_avail_postcodes <- function() {
-  pc$NUTS3 <- gsub("[0-9]", "", pc$NUTS3)
-  pc[!pc$NUTS3 %in% c("UKM", "UKN"), ]$CODE
+  pc <- uklr::uklr_pc
+  pc$NUTS3 <- gsub("[0-9]", "", pc$NUTS318CD)
+  pc[!pc$NUTS3 %in% c("UKM", "UKN"), ]$PC
 }
+

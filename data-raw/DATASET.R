@@ -5,8 +5,8 @@ download.file("http://ec.europa.eu/eurostat/tercet/download.do?file=pc2018_uk_NU
               "data-raw/zip_pc.zip")
 unzip("data-raw/zip_pc.zip", exdir = "data-raw")
 
-pc <- readr::read_csv2("data-raw/pc2018_uk_NUTS-2016_v2.0.csv") %>%
+uklr_pc <- readr::read_csv2("data-raw/pc2018_uk_NUTS-2016_v2.0.csv") %>%
   mutate_all(~ gsub("[']", "", .)) %>%
   set_names(c("NUTS318CD", "PC"))
 
-usethis::use_data(pc, overwrite = TRUE, compress = "xz")
+usethis::use_data(uklr_pc, overwrite = TRUE, compress = "xz")

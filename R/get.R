@@ -126,10 +126,22 @@ ukppd_get <- function(postcode = "PL6 8RU", item = NULL, optional_item = NULL,
   res <- process_request(query)
   res %||% return(invisible(NULL))
   if(empty(res)) return(invisible(res))
-  res <- clear_uri(res)
-  res$amount <- as.numeric(res$amount)
-  res$date <- as.Date(res$date)
-  res$category <- gsub("@en", "", res$category)
+
+  # Handle single-row result format (Issue #5)
+  if (ncol(res) == 1 && "value" %in% names(res)) {
+    vals <- res$value
+    res <- tibble::tibble(
+      postcode = vals[1],
+      amount = as.numeric(vals[2]),
+      date = as.Date(vals[3]),
+      category = gsub("@en", "", vals[4])
+    )
+  } else {
+    res <- clear_uri(res)
+    res$amount <- as.numeric(res$amount)
+    res$date <- as.Date(res$date)
+    res$category <- gsub("@en", "", res$category)
+  }
   res
 }
 
