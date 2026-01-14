@@ -33,7 +33,7 @@ and \code{ons_la} provide a vector of countries, regions, English counties
 and local authorities respectively.
 }
 \examples{
-\donttest{
+\dontrun{
 ons_countries()
 }
 }

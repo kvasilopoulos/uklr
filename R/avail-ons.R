@@ -19,7 +19,7 @@ gsub_lr <- function(x, lgl) {
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' ons_countries()
 #' }
 ons_countries <- function(modify = TRUE) {
@@ -124,7 +124,7 @@ ons_la <- function(modify = FALSE) {
 #'
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' ons_lookup()
 #' }
 ons_lookup <- function() {

@@ -31,7 +31,7 @@ units for statistics(NUTS) 1,2 and 3. The other functions can extract the
 mentioned variables.
 }
 \examples{
-\donttest{
+\dontrun{
 ons_lookup()
 }
 }
