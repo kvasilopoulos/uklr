@@ -34,6 +34,7 @@ reference:
   - title: Build Custom Query
     contents:
       - sparql
+      - retrieve_query
 
   - title: Definitions
     contents:
