@@ -1,16 +1,27 @@
+## Release summary
+
+This is a bug fix release that addresses two user-reported issues:
+
+* Fixed single-row transaction result handling (issue #5)
+* Renamed dataset `pc` to `uklr_pc` to avoid naming conflicts with user variables (issue #4)
+
 ## Test environments
 
-* local OS MS install, R 3.6.3
-* Continuous Integration
-  * Ubuntu Trusty 14.04 on travis-ci (devel and release)
-  * macOS on travis-ci (devel and release)
-  * Windows Server 2012 on appveyor (devel and release)
-* Rhub
-  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-  * Ubuntu Linux 16.04 LTS, R-release, GCC
-  * Fedora Linux, R-devel, clang, gfortran
-* win-builder (devel and release)
-  
+* local Windows install, R 4.3.2
+* GitHub Actions (via r-lib/actions/examples@v2):
+  * macOS-latest (R-release)
+  * windows-latest (R-release)
+  * ubuntu-latest (R-devel, R-release, R-oldrel-1)
+* win-builder (R-devel and R-release)
+
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
+
+## Downstream dependencies
+
+There are currently no downstream dependencies for this package.
+
+## Breaking changes
+
+* Dataset `pc` has been renamed to `uklr_pc`. This is a breaking change for code that directly accesses the dataset, but function interfaces remain unchanged.
