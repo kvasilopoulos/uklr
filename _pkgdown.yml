@@ -26,9 +26,10 @@ reference:
       - uktrans_get
       - uktrans_avail_items
 
-  - title: ONS Location Data
+  - title: Datasets
     contents:
-      - pc
+      - uklr_pc
+      - ons_pc
 
   - title: Build Custom Query
     contents:
@@ -41,6 +42,20 @@ reference:
   - title: Browse
     contents:
       - uklr_browse
+
+  - title: Deprecated Functions
+    desc: These functions are deprecated and no longer functional due to the ONS OpenData API being discontinued.
+    contents:
+      - ons_countries
+      - ons_eng_regions
+      - ons_regions
+      - ons_eng_counties
+      - ons_la
+      - ons_lookup
+      - ons_nuts1
+      - ons_nuts2
+      - ons_nuts3
+      - ons_lad
 
 navbar:
   type: default
