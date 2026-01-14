@@ -25,6 +25,9 @@ ons_la(modify = FALSE)
 A character vector with the location names.
 }
 \description{
+`r lifecycle::badge("deprecated")`
+}
+\details{
 Functions \code{ons_countries}, \code{ons_regions}, \code{ons_eng_counties}
 and \code{ons_la} provide a vector of countries, regions, English counties
 and local authorities respectively.

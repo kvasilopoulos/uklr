@@ -22,6 +22,9 @@ ons_lad()
 A character vector with the location names.
 }
 \description{
+`r lifecycle::badge("deprecated")`
+}
+\details{
 \code{ons_lookup} provides a table that that combines local authority
 districts (lad), local administrative units (lau), nomenclature of territorial
 units for statistics(NUTS) 1,2 and 3. The other functions can extract the

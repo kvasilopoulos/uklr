@@ -196,6 +196,17 @@ ons_pc <- function(pattern = NULL) {
 
 #' UK Postcodes and NUTS3 Codes
 #'
+#' A dataset containing UK postcodes and their corresponding NUTS3 codes.
+#'
+#' @format A tibble with 1,759,911 rows and 2 variables:
+#' \describe{
+#'   \item{NUTS318CD}{NUTS3 code}
+#'   \item{PC}{Postcode}
+#' }
+#' @source \url{http://ec.europa.eu/eurostat/tercet/}
+#'
 #' @examples
-#' uklr_pc
+#' \dontrun{
+#' head(uklr_pc)
+#' }
 "uklr_pc"

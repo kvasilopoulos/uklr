@@ -6,6 +6,9 @@
 
 * Fixed single-row transaction result handling in `ukppd_get()` (#5).
 * Renamed `pc` dataset to `uklr_pc` to avoid naming conflicts with user variables (#4).
+* Added missing `lifecycle` dependency to DESCRIPTION.
+* Fixed data object naming in `uklr_pc.rda` file.
+* Added proper documentation for `uklr_pc` dataset.
 
 ## Breaking changes
 
