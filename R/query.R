@@ -89,8 +89,8 @@ retrieve_query <- function(x) {
   attr(x, "query")
 }
 
-
-print.query <- function(x) {
+#' @export
+print.query <- function(x, ...) {
   cat(x)
 }
 
