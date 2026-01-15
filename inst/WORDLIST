@@ -16,6 +16,7 @@ ons
 pc
 pkgdown
 sparql
+lifecycle
 tibble
 travis
 uk
