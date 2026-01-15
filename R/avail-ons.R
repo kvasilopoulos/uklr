@@ -203,7 +203,7 @@ ons_pc <- function(pattern = NULL) {
 #'   \item{NUTS318CD}{NUTS3 code}
 #'   \item{PC}{Postcode}
 #' }
-#' @source \url{http://ec.europa.eu/eurostat/tercet/}
+#' @source \url{https://ec.europa.eu/eurostat/tercet/}
 #'
 #' @examples
 #' \dontrun{

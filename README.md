@@ -11,12 +11,12 @@ status](https://www.r-pkg.org/badges/version/uklr)](https://CRAN.R-project.org/p
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg)](https://github.com/kvasilopoulos/uklr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg)](https://codecov.io/gh/kvasilopoulos/uklr)
+coverage](https://codecov.io/gh/kvasilopoulos/uklr/graph/badge.svg)](https://app.codecov.io/gh/kvasilopoulos/uklr)
 
 <!-- badges: end -->
 
 The goal of {uklr} is to access data from HM Land Registry Open Data
-<http://landregistry.data.gov.uk/> through SPARQL queries. {uklr}
+<https://landregistry.data.gov.uk/> through SPARQL queries. {uklr}
 supports the UK HPI, Transaction Data and Price Paid Data.
 
 ## Installation

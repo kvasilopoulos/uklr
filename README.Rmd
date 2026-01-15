@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/kvasilopoulos/uklr/graph/badge.svg)](https://app.codecov.io/gh/kvasilopoulos/uklr)
 <!-- badges: end -->
 
-The goal of {uklr} is to access data from HM Land Registry Open Data <http://landregistry.data.gov.uk/> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
+The goal of {uklr} is to access data from HM Land Registry Open Data <https://landregistry.data.gov.uk/> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.
 
 ## Installation
 
