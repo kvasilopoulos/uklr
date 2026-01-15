@@ -28,7 +28,7 @@ The goal of {uklr} is to access data from HM Land Registry Open Data <https://la
 Install release version from CRAN
 
 ```r
-install.packages("exuber")
+install.packages("uklr")
 ```
 
 You can install the development version from [GitHub](https://github.com/) with:
