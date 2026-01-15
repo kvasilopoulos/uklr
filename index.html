@@ -82,8 +82,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
-<p>The goal of {uklr} is to access data from HM Land Registry Open Data <a href="http://landregistry.data.gov.uk/" class="external-link uri">http://landregistry.data.gov.uk/</a> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.</p>
+<p>The goal of {uklr} is to access data from HM Land Registry Open Data <a href="https://landregistry.data.gov.uk/" class="external-link uri">https://landregistry.data.gov.uk/</a> through SPARQL queries. {uklr} supports the UK HPI, Transaction Data and Price Paid Data.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -100,38 +99,44 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://kvasilopoulos.github.io/uklr/">uklr</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://kvasilopoulos.github.io/uklr/">uklr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/ukhp_get.html">ukhp_get</a></span><span class="op">(</span>region <span class="op">=</span> <span class="st">"newport"</span>, start_date <span class="op">=</span> <span class="st">"2019-01-01"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 27 x 3</span></span>
+<span><span class="co">#&gt; # A tibble: 82 × 3</span></span>
 <span><span class="co">#&gt;    region  date       housePriceIndex</span></span>
 <span><span class="co">#&gt;    &lt;fct&gt;   &lt;date&gt;               &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 newport 2019-01-01            129.</span></span>
-<span><span class="co">#&gt;  2 newport 2019-02-01            130.</span></span>
-<span><span class="co">#&gt;  3 newport 2019-03-01            131.</span></span>
-<span><span class="co">#&gt;  4 newport 2019-04-01            132.</span></span>
-<span><span class="co">#&gt;  5 newport 2019-05-01            132.</span></span>
-<span><span class="co">#&gt;  6 newport 2019-06-01            132.</span></span>
-<span><span class="co">#&gt;  7 newport 2019-07-01            134.</span></span>
-<span><span class="co">#&gt;  8 newport 2019-08-01            134.</span></span>
-<span><span class="co">#&gt;  9 newport 2019-09-01            134.</span></span>
-<span><span class="co">#&gt; 10 newport 2019-10-01            133.</span></span>
-<span><span class="co">#&gt; # ... with 17 more rows</span></span>
+<span><span class="co">#&gt;  1 newport 2019-01-01            76  </span></span>
+<span><span class="co">#&gt;  2 newport 2019-02-01            76.8</span></span>
+<span><span class="co">#&gt;  3 newport 2019-03-01            77.5</span></span>
+<span><span class="co">#&gt;  4 newport 2019-04-01            77.8</span></span>
+<span><span class="co">#&gt;  5 newport 2019-05-01            78.2</span></span>
+<span><span class="co">#&gt;  6 newport 2019-06-01            78.1</span></span>
+<span><span class="co">#&gt;  7 newport 2019-07-01            79.3</span></span>
+<span><span class="co">#&gt;  8 newport 2019-08-01            79  </span></span>
+<span><span class="co">#&gt;  9 newport 2019-09-01            79.2</span></span>
+<span><span class="co">#&gt; 10 newport 2019-10-01            78.3</span></span>
+<span><span class="co">#&gt; # ℹ 72 more rows</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/ukppd_get.html">ukppd_get</a></span><span class="op">(</span>postcode <span class="op">=</span> <span class="st">"PL6 8RU"</span>, start_date <span class="op">=</span> <span class="st">"2015-01-01"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 7 x 4</span></span>
-<span><span class="co">#&gt;   postcode amount date       category                       </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          </span></span>
-<span><span class="co">#&gt; 1 PL6 8RU  202500 2015-06-29 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 2 PL6 8RU  195000 2016-07-08 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 3 PL6 8RU  207000 2018-03-29 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 4 PL6 8RU  245000 2016-08-19 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 5 PL6 8RU  255000 2016-09-07 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 6 PL6 8RU  280000 2017-10-02 Standard price paid transaction</span></span>
-<span><span class="co">#&gt; 7 PL6 8RU  205000 2018-09-07 Standard price paid transaction</span></span>
+<span><span class="co">#&gt; # A tibble: 12 × 4</span></span>
+<span><span class="co">#&gt;    postcode amount date       category                       </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                          </span></span>
+<span><span class="co">#&gt;  1 PL6 8RU  230000 2022-03-28 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  2 PL6 8RU  202500 2015-06-29 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  3 PL6 8RU  195000 2016-07-08 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  4 PL6 8RU  207000 2018-03-29 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  5 PL6 8RU  255000 2016-09-07 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  6 PL6 8RU  245000 2016-08-19 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  7 PL6 8RU  350000 2022-05-06 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  8 PL6 8RU  280000 2017-10-02 Standard price paid transaction</span></span>
+<span><span class="co">#&gt;  9 PL6 8RU  205000 2018-09-07 Standard price paid transaction</span></span>
+<span><span class="co">#&gt; 10 PL6 8RU  275000 2023-09-15 Standard price paid transaction</span></span>
+<span><span class="co">#&gt; 11 PL6 8RU  310000 2024-06-13 Standard price paid transaction</span></span>
+<span><span class="co">#&gt; 12 PL6 8RU  217750 2025-06-30 Standard price paid transaction</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/uktrans_get.html">uktrans_get</a></span><span class="op">(</span>item <span class="op">=</span> <span class="st">"totalApplicationCountByRegion"</span>, region <span class="op">=</span> <span class="st">"East Anglia"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 112 x 3</span></span>
+<span><span class="co">#&gt; # A tibble: 165 × 3</span></span>
 <span><span class="co">#&gt;    region      date       totalApplicationCountByRegion</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;                             &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 East Anglia 2011-12-01                         37819</span></span>
@@ -144,7 +149,7 @@
 <span><span class="co">#&gt;  8 East Anglia 2012-07-01                         46539</span></span>
 <span><span class="co">#&gt;  9 East Anglia 2012-08-01                         45942</span></span>
 <span><span class="co">#&gt; 10 East Anglia 2012-09-01                         41976</span></span>
-<span><span class="co">#&gt; # ... with 102 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 155 more rows</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -196,8 +201,8 @@
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=uklr" class="external-link"><img src="https://www.r-pkg.org/badges/version/uklr" alt="CRAN status"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/kvasilopoulos/uklr/actions" class="external-link"><img src="https://github.com/kvasilopoulos/uklr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://codecov.io/gh/kvasilopoulos/uklr" class="external-link"><img src="https://codecov.io/gh/kvasilopoulos/uklr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/kvasilopoulos/uklr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kvasilopoulos/uklr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://app.codecov.io/gh/kvasilopoulos/uklr" class="external-link"><img src="https://codecov.io/gh/kvasilopoulos/uklr/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
